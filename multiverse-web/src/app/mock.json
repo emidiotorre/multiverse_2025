@@ -1,0 +1,113 @@
+{
+  "works": [
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    },
+    {
+      "title": "lorem",
+      "description": "lorem",
+      "image_url": "https://picsum.photos/800"
+    }
+  ],
+  "home": {
+    "body": "lorem"
+  },
+  "play": {
+    "body": "lorem",
+    "items": [
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      },
+      {
+        "title": "lorem",
+        "description": "lorem",
+        "image_url": "https://picsum.photos/800"
+      }
+    ]
+  },
+  "about": {
+    "body": "lorem"
+  },
+  "footer": {
+    "body": "lorem"
+  }
+}
