@@ -15,18 +15,26 @@ function Header() {
                   <img src="/png/logoSmall.png" width={200} />
                 </Link>
                 <div className="flex ml-8 ">
-                  <button className="bg-[#d0d0d0] px-8 rounded-full hover:bg-red-500 drop-shadow-lg">
+                  <Link
+                    href="/works"
+                    className="bg-[#d0d0d0] px-8 py-3 rounded-full hover:bg-red-500 drop-shadow-lg"
+                  >
                     work
-                  </button>{' '}
-                  <button className="bg-[#d0d0d0] px-8 pl-16 -ml-12 hover:bg-red-500 rounded-full">
+                  </Link>{' '}
+                  <Link
+                    href="/play"
+                    className="bg-[#d0d0d0] px-8 py-3 pl-16 -ml-12 hover:bg-red-500 rounded-full"
+                  >
                     play
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="flex justify-end">
-                <button className="bg-[#d0d0d0] px-8 rounded-full">
-                  about
-                </button>
+                <Link href="/about">
+                  <button className="bg-[#d0d0d0] px-8 py-3 rounded-full  hover:bg-red-500">
+                    about
+                  </button>
+                </Link>
               </div>
             </div>
           </Container>

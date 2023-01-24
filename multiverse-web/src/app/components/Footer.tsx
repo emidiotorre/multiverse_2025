@@ -5,8 +5,8 @@ import DateTime from './DateTime'
 
 function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full bg-white">
-      <Container>
+    <footer className="w-full grow flex align-bottom">
+      <Container style={{ alignSelf: 'flex-end' }}>
         <div className="flex justify-between items-start py-6">
           <div className="flex flex-col pt-0">
             <div>
@@ -29,7 +29,7 @@ function Footer() {
               </small>
             </div>
           </div>
-          <div className="flex flex-row justify-end items-end">
+          <div className="flex flex-row justify-end">
             <DateTime />
           </div>
         </div>

@@ -16,9 +16,11 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <main className="flex flex-col w-full justify-start min-h-screen">
+          <Header />
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   )
