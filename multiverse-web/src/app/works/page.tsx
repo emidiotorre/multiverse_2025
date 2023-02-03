@@ -2,25 +2,19 @@ import React from 'react'
 import mock from '@/app/mock.json'
 import Card from '@/app/components/Card'
 import Container from '@/app/components/Container'
+import client from '@/app/apollo'
+import { GET_WORKS_IMG } from '../apollo/queries'
+import WorksGrid from '../components/WorksGrid'
 
-export default function Work() {
+export default async function Work() {
+  const { data, loading, error } = await client.query({ query: GET_WORKS_IMG })
+  if (loading || error) {
+    return null
+  }
   return (
     <>
       <Container>
-        <div className="grid grid-cols-2 gap-3">
-          {mock.works.map((work) => {
-            return (
-              <div key={work.id}>
-                <Card
-                  id={work.id}
-                  image_url={work.image_url}
-                  slug={work.slug}
-                  title={work.title}
-                ></Card>
-              </div>
-            )
-          })}
-        </div>
+        <WorksGrid works={data.works} />
       </Container>
     </>
   )

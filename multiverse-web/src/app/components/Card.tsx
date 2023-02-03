@@ -10,16 +10,16 @@ type Props = {
 
 const Card = (props: Props) => {
   return (
-    <Link href={`/works/${props.slug}`} key={props.id} className="contents">
-      <div className="relative rounded-lg overflow-hidden">
+    <div className="relative rounded-lg overflow-hidden self-stretch">
+      <Link href={`/works/${props.slug}`} key={props.id} className="contents">
         <div className="absolute top-0 left-0 w-full h-full z-10 opacity-0 hover:opacity-90 hover:bg-red-500">
           <div className="text-black text-4xl pt-6 pl-10 absolute">
             <h1 className="absolute">{props.title}</h1>
           </div>
         </div>
         <img src={props.image_url} className="object-cover w-full h-full  " />
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }
 

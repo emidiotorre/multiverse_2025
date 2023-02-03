@@ -2,6 +2,8 @@ import Container from './components/Container'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import './globals.css'
+import { ApolloProvider } from '@apollo/client'
+import client from '@/app/apollo'
 
 export default function RootLayout({
   children,
