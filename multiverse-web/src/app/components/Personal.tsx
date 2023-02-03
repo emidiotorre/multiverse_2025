@@ -21,7 +21,7 @@ const Personal = ({ work }: Props) => {
             {/*  <h1 className=" text-center text-4xl uppercase">{work.Name}</h1> */}
             <div className=" w-full h-full py-10">
               <img
-                className="w-full rounded-lg overflow-hidden object-cover mb-4 "
+                className="w-full rounded-lg overflow-hidden object-cover mb-3 "
                 src={`${
                   process.env.REACT_APP_HOSTNAME ??
                   'https://galattico-dev-directus.ov3mip.easypanel.host'
@@ -32,11 +32,17 @@ const Personal = ({ work }: Props) => {
                 gap={12}
                 defaultDirection={'end'}
                 frame={[
-                  [1, 1, 2, 2],
-                  [3, 3, 2, 2],
-                  [4, 4, 5, 5],
-                  [4, 4, 6, 6],
-                  [7, 7, 7, 7],
+                  [1, 1, 1, 2, 2, 2],
+                  [1, 1, 1, 2, 2, 2],
+                  [1, 1, 1, 3, 3, 3],
+                  [1, 1, 1, 3, 3, 3],
+                  [4, 4, 4, 4, 4, 4],
+                  [4, 4, 4, 4, 4, 4],
+                  [4, 4, 4, 4, 4, 4],
+                  [5, 5, 5, 7, 7, 7],
+                  [5, 5, 5, 7, 7, 7],
+                  [6, 6, 6, 7, 7, 7],
+                  [6, 6, 6, 7, 7, 7],
                 ]}
                 useResizeObserver={true}
                 observeChildren={true}
