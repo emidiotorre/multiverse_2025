@@ -1,7 +1,6 @@
-'use client'
-import { motion } from 'framer-motion'
-import AnimationDiv from './components/AnimationDiv'
-import Container from './components/Container'
+"use client";
+import AnimationDiv from "./components/AnimationDiv";
+import Container from "./components/Container";
 
 export default function Home() {
   return (
@@ -12,13 +11,13 @@ export default function Home() {
             <span className="float-left pt-[0.5rem] px-3 -mb-4">
               <img
                 className="object-scale-down h-full w-[15vh]"
-                src={`${'../materiale/home/img1.png'}`}
+                src={`${"../materiale/home/img1.png"}`}
               ></img>
             </span>
             <span className="inline-flex">
               <img
                 className="object-scale-down h-full w-[40vh]"
-                src={`${'../materiale/mvs_logo.png'}`}
+                src={`${"../materiale/mvs_logo.png"}`}
               ></img>
             </span>
             is a multidimensional laboratory that combines
@@ -26,10 +25,10 @@ export default function Home() {
               <AnimationDiv>
                 <img
                   style={{
-                    pointerEvents: 'none',
+                    pointerEvents: "none",
                   }}
                   className="object-coverh-full w-[15vh]"
-                  src={`${'../materiale/home/img2.png'}`}
+                  src={`${"../materiale/home/img2.png"}`}
                 ></img>
               </AnimationDiv>
             </span>
@@ -41,10 +40,10 @@ export default function Home() {
               <AnimationDiv>
                 <img
                   style={{
-                    pointerEvents: 'none',
+                    pointerEvents: "none",
                   }}
                   className="object-coverh-full w-[15vh]"
-                  src={`${'../materiale/home/img3.png'}`}
+                  src={`${"../materiale/home/img3.png"}`}
                 ></img>
               </AnimationDiv>
             </span>
@@ -56,10 +55,10 @@ export default function Home() {
               <AnimationDiv>
                 <img
                   style={{
-                    pointerEvents: 'none',
+                    pointerEvents: "none",
                   }}
                   className="object-coverh-full w-[15vh]"
-                  src={`${'../materiale/home/img4.png'}`}
+                  src={`${"../materiale/home/img4.png"}`}
                 ></img>
               </AnimationDiv>
             </span>
@@ -67,5 +66,5 @@ export default function Home() {
         </div>
       </Container>
     </>
-  )
+  );
 }
