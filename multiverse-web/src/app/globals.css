@@ -86,3 +86,33 @@ a {
   font-style: expanded;
   font-display: swap;
 }
+
+/* prettier-ignore */
+.grid-play-area {
+  grid-template-areas:  'A A B B B'
+                        'A A B B B'
+                        'C C B B B'
+                        'C C D D D'
+                        'E E D D D'
+                        'A A A B B'
+                        'A A A B B'
+                        'A A A B B'
+                        'A A A B B'
+                        'A A A B B'
+                        'A A A B B'
+                        'A A A B B';
+}
+/* prettier-ignore */
+.grid-about-area {
+  grid-template-areas:  
+                        'A A A A A A'
+                        'B B B B B B'
+                        'C C C D D D'
+                        'C C C D D D'
+                        'C C C E E E'
+                        'C C C E E E'
+                        'F F F G G G'
+                        'F F F G G G'
+                        'H H H G G G'
+                        'H H H G G G';
+}

@@ -1,79 +1,103 @@
 'use client'
 import React from 'react'
 import Container from '@/app/components/Container'
-import { FrameGrid } from '@egjs/react-grid'
+import Link from 'next/link'
 
 export default function About() {
   return (
     <Container>
-      <FrameGrid
-        gap={12}
-        defaultDirection={'end'}
-        frame={[
-          [1, 1, 1, 1, 1, 1],
-          [1, 1, 1, 1, 1, 1],
-          [2, 2, 2, 2, 2, 2],
-          [2, 2, 2, 2, 2, 2],
-          [2, 2, 2, 2, 2, 2],
-          [3, 3, 3, 4, 4, 4],
-          [3, 3, 3, 4, 4, 4],
-          [3, 3, 3, 5, 5, 5],
-          [3, 3, 3, 5, 5, 5],
-          [7, 7, 7, 6, 6, 6],
-          [7, 7, 7, 6, 6, 6],
-          [8, 8, 8, 6, 6, 6],
-          [8, 8, 8, 6, 6, 6],
-        ]}
-        useResizeObserver={true}
-        observeChildren={true}
-        useFrameFill={true}
-      >
-        <div className="rounded-lg overflow-hidden">
+      <div className="grid  grid-about-area gap-3">
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'A' }}>
           <img
-            className="object-contain h-full w-full"
-            src={`${'../about/img_1.png'}`}
+            className="object-contain h-[80vh] w-full"
+            src={`${'../materiale/about/img_1.png'}`}
           ></img>
         </div>
-        <div className="rounded-lg overflow-hidden">
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'B' }}>
           <img
             className="object-cover h-full w-full"
-            src={`${'../about/img_2.png'}`}
+            src={`${'../materiale/about/img_2.png'}`}
           ></img>
         </div>
-        <div className="rounded-lg overflow-hidden">
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'C' }}>
           <img
             className="object-cover h-full w-full"
-            src={`${'../about/img_3.png'}`}
+            src={`${'../materiale/about/img_3.png'}`}
           ></img>
         </div>
-        <div className="rounded-lg overflow-hidden">
-          <div className="bg-slate-400 h-full w-full ">
-            <h3 className="font-extrabold text-3xl">studio</h3>
-
-            <div className="rounded-lg overflow-hidden">
-              <div className="py-16">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas ac ornare sem. Morbi tristique nisl suscipit ante
-                placerat auctor. Etiam dolor dolor, consectetur cursus nulla
-                non, tincidunt mollis lorem. Nulla sodales, elit nec tempus
-                imperdiet, arcu leo laoreet nisi, mollis vestibulum arcu arcu id
-                quam. Aliquam ut ante purus. Pellentesque ultricies nunc at
-                purus pellentesque malesuada. Maecenas pharetra tortor purus,
-                eget tempor mauris viverra ac. Vivamus risus eros, semper sed
-                tempor eu, porta at leo. Praesent elementum nisl semper nisl
-                rutrum rhoncus. Mauris congue eget lacus sed mollis. Donec at
-                tortor sit amet justo lobortis hendrerit accumsan eu sem.
-              </div>
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'D' }}>
+          <div className="bg-gray-200 h-full w-full">
+            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6">studio</h3>
+            <div className="rounded-lg overflow-hidden mx-6 pt-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              ac ornare sem. Morbi tristique nisl suscipit ante placerat auctor.
+              Etiam dolor dolor, consectetur cursus nulla non, tincidunt mollis
+              lorem. Nulla sodales, elit nec tempus imperdiet, arcu leo laoreet
+              nisi, mollis vestibulum arcu arcu id quam. Aliquam ut ante purus.
+              Pellentesque ultricies nunc at purus pellentesque malesuada.
             </div>
           </div>
         </div>
-        <div className={'item'}>5</div>
-        <div className={'item'}>6</div>
-        <div className={'item'}>7</div>
-        <div className={'item'}>8</div>
-        <div className={'item'}>9</div>
-        <div className={'item'}>10</div>
-      </FrameGrid>
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'E' }}>
+          <img
+            className="object-cover h-full w-full"
+            src={`${'../materiale/about/img_4.png'}`}
+          ></img>
+        </div>
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'F' }}>
+          <div className="bg-gray-200 h-full w-full">
+            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6 ">clients</h3>
+            <div className="font-medium rounded-lg overflow-hidden gap-x-10 mx-6 pt-8 grid grid-cols-2 divide-x">
+              <div>Airbnb</div>
+              <div>Apple</div>
+              <div>Brooklyn Museum</div>
+              <div>Coinbase</div>
+              <div>Google</div>
+              <div>H&M</div>
+              <div>Harper Collins</div>
+              <div>Melissa</div>
+              <div>Milk Bar</div>
+              <div>Nabr</div>
+              <div>Netflix</div>
+              <div>Nike</div>
+              <div>Nubank</div>
+              <div>Olympikus</div>
+              <div>Pinterest</div>
+              <div>QuintoAndar</div>
+              <div>Republic Records</div>
+              <div>Shopify</div>
+            </div>
+          </div>
+        </div>
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'H' }}>
+          <div className="bg-red-600 h-full w-full">
+            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6">contact</h3>
+            <div className="rounded-lg overflow-hidden mx-6 pt-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              ac ornare sem. Morbi tristique nisl suscipit ante placerat auctor.
+              Etiam dolor dolor, consectetur cursus nulla non, tincidunt mollis
+              lorem. Nulla sodales, elit nec tempus imperdiet, arcu leo laoreet
+              nisi, mollis vestibulum arcu arcu id quam. Aliquam ut ante purus.
+              Pellentesque ultricies nunc at purus pellentesque malesuada.
+            </div>
+          </div>
+        </div>
+        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'G' }}>
+          <img
+            className="object-cover h-full w-full"
+            src={`${'../materiale/about/img_5.png'}`}
+          ></img>
+        </div>
+      </div>
+
+      <div className="flex justify-end py-10">
+        <Link href={'/about'}>
+          <img
+            className="object-cover h-[18vh] w-[10vh] "
+            src={`${'../materiale/UP.png'}`}
+          ></img>
+        </Link>
+      </div>
     </Container>
   )
 }
