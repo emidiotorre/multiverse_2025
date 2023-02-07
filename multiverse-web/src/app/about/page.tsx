@@ -91,12 +91,17 @@ export default function About() {
       </div>
 
       <div className="flex justify-end py-10">
-        <Link href={'/about'}>
-          <img
-            className="object-cover h-[18vh] w-[10vh] "
-            src={`${'../materiale/UP.png'}`}
-          ></img>
-        </Link>
+        <img
+          onClick={() =>
+            document.documentElement.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth', // Optional if you want to skip the scrolling animation
+            })
+          }
+          className="object-cover h-[18vh] w-[10vh] "
+          src={`${'../materiale/UP.png'}`}
+        ></img>
       </div>
     </Container>
   )
