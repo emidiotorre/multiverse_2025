@@ -17,10 +17,7 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 const httpLink = createHttpLink({
-  uri: `${
-    process.env.REACT_APP_HOSTNAME ??
-    'https://galattico-dev-directus.ov3mip.easypanel.host'
-  }/graphql`,
+  uri: `${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/graphql`,
 })
 const defaultOptions: DefaultOptions = {
   watchQuery: {

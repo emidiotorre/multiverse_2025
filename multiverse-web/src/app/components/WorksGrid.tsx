@@ -1,7 +1,6 @@
 'use client'
 import { FrameGrid } from '@egjs/react-grid'
 import React from 'react'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import Card from './Card'
 
 type Props = {
@@ -30,12 +29,11 @@ function WorksGrid({ works }: Props) {
           <Card
             key={work.id}
             id={work.id}
-            image_url={`${
-              process.env.REACT_APP_HOSTNAME ??
-              'https://galattico-dev-directus.ov3mip.easypanel.host'
-            }/assets/${work.image.id}`}
+            image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+              work.image.id
+            }`}
             slug={work.slug}
-            title={work.name}
+            Name={work.Name}
           ></Card>
         )
       })}

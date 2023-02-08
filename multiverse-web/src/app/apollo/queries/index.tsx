@@ -17,6 +17,18 @@ export const GET_WORKS_IMG = gql`
     }
   }
 `
+export const GET_PLAYS = gql`
+  query GetPlays {
+    plays: Play {
+      id
+      image {
+        id
+      }
+      body
+      url
+    }
+  }
+`
 
 const WORK_FRAG = gql`
   fragment fullWork on Works {
@@ -43,14 +55,6 @@ const WORK_FRAG = gql`
 export const GET_ABOUT_PAGE = gql`
   query getAboutPage {
     about: About {
-      id
-      body
-    }
-  }
-`
-export const GET_COSE_PAGE = gql`
-  query getCosePage {
-    cose: Cose {
       id
       body
     }
@@ -86,25 +90,6 @@ export const GET_WORKS = gql`
   }
   ${LISTWORK_FRAG}
 `
-export const GET_HOME = gql`
-  query getHome {
-    works: Works {
-      ...listWork
-    }
-
-    cose: Cose {
-      id
-      body
-    }
-
-    about: About {
-      id
-      body
-    }
-  }
-  ${LISTWORK_FRAG}
-`
-
 export const GET_WORK_BY_SLUG = gql`
   query getWorkBySlug($slug: String) {
     work: Works(filter: { slug: { _eq: $slug } }) {

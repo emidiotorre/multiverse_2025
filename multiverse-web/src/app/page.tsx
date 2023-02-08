@@ -4,7 +4,7 @@ import AnimationDiv from './components/AnimationDiv'
 import Container from './components/Container'
 
 export default function Home() {
-  const constraintsRef = useRef(null)
+  const constraintsRef = useRef()
   return (
     <>
       <div className="relative top-3 left-7">
@@ -20,6 +20,7 @@ export default function Home() {
           </div>
         </AnimationDiv>
       </div>
+
       <div className="flex justify-center">
         <AnimationDiv>
           <div>

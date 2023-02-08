@@ -92,15 +92,15 @@ a {
   grid-template-areas:  'A A B B B'
                         'A A B B B'
                         'C C B B B'
-                        'C C D D D'
-                        'F E D D D'
-                        'F E G H H'
-                        'I E G H H'
-                        'I J J L L'
-                        'I K K L L'
-                        'M K K N N'
-                        'M O O N N';
+                        'C C D D F'
+                        'E E D D F'
+                        'E E G H H'
+                        'I I K J J'
+                        'I I K L L'
+                        /* 'M N N O O'
+                        'M N N O O' */;
 }
+
 /* prettier-ignore */
 .grid-about-area {
   grid-template-areas:  
