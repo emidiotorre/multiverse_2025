@@ -1,8 +1,8 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 import Container from '@/app/components/Container'
-import Link from 'next/link'
-
+import Up from '../../../public/materiale/UP.png'
 export default function About() {
   return (
     <Container>
@@ -89,9 +89,8 @@ export default function About() {
           ></img>
         </div>
       </div>
-
       <div className="flex justify-end py-10">
-        <img
+        <Image
           onClick={() =>
             document.documentElement.scrollTo({
               top: 0,
@@ -100,8 +99,10 @@ export default function About() {
             })
           }
           className="object-cover h-[18vh] w-[10vh] "
-          src={`${'../materiale/UP.png'}`}
-        ></img>
+          src={Up}
+          alt={''}
+          quality={100}
+        />
       </div>
     </Container>
   )

@@ -12,20 +12,20 @@ type Props = {
 
 function Item(props: Props) {
   return (
-    <div className="relative  overflow-hidden self-stretch" style={props.style}>
+    <div className="relative overflow-hidden self-stretch " style={props.style}>
       <Link href={`${props.url}`} key={props.id} className="contents">
         <Image
           src={props.image_url}
           width={800}
           height={800}
-          className="object-cover w-full h-full rounded-lg"
+          className="object-cover w-full h-[97%] rounded-lg"
           alt={''}
-          quality={75}
+          quality={100}
         />
-        <div className="text-black text-4xl pt-6 pl-10 absolute">
+        <div className="flex justify-start">
           <div
+            className="text-black text-[10px] "
             dangerouslySetInnerHTML={{ __html: props.body }}
-            className="absolute"
           />
         </div>
       </Link>

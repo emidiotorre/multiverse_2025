@@ -1,9 +1,11 @@
 'use client'
 import React from 'react'
-import Container from '@/app/components/Container'
+
 import { FrameGrid } from '@egjs/react-grid'
 import Image from 'next/image'
 
+import Container from '@/app/components/Container'
+import Up from '../../../public/materiale/UP.png'
 type Props = {
   work: any
 }
@@ -48,13 +50,28 @@ const Personal = ({ work }: Props) => {
                   src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                     img.image.id
                   }`}
-                  quality={80}
+                  quality={100}
                   alt={''}
                 />
               </div>
             )
           })}
         </FrameGrid>
+        <div className="flex justify-end py-10">
+          <Image
+            onClick={() =>
+              document.documentElement.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth', // Optional if you want to skip the scrolling animation
+              })
+            }
+            className="object-cover h-[18vh] w-[10vh] "
+            src={Up}
+            alt={''}
+            quality={100}
+          />
+        </div>
       </Container>
     </>
   )

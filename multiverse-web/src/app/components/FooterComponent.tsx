@@ -1,19 +1,23 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import React from 'react'
 import Container from './Container'
 import DateTime from './DateTime'
 import Logo from '../../../public/materiale/mvs_logo.png'
+import { usePathname } from 'next/navigation'
 
-function Footer() {
-  const pathname = usePathname()
+type Props = {
+  footer: any
+}
+
+function FooterComponent({ footer }: Props) {
+  const pathName = usePathname()
 
   return (
     <footer className="w-full grow flex align-bottom font-Sharp_Grotesk_Medium20 ">
       <Container style={{ alignSelf: 'flex-end' }}>
-        {pathname === '/' ? (
+        {pathName === '/' ? (
           <div className=" flex justify-between items-end py-10">
             <div className="flex flex-col pt-0 ">
               <small>
@@ -29,11 +33,8 @@ function Footer() {
                   Facebook
                 </Link>
               </small>
-              <div>
-                <small>
-                  Via Benedetto Croce, 31 - Salerno | +39 347 2240367 |
-                  info@multiversestudio.it
-                </small>
+              <div key={footer.id}>
+                <small>{footer.col1}</small>
               </div>
             </div>
             <div className="flex flex-col-reverse ">
@@ -50,7 +51,7 @@ function Footer() {
                   className="object-scale-down h-full w-[40vh]"
                   height={500}
                   width={500}
-                  priority
+                  quality={100}
                 />
               </div>
               <div className="flex flex-col pt-0 items-end">
@@ -67,11 +68,8 @@ function Footer() {
                     Facebook
                   </Link>
                 </small>
-                <div>
-                  <small>
-                    Via Benedetto Croce, 31 - Salerno | +39 347 2240367 |
-                    info@multiversestudio.it
-                  </small>
+                <div key={footer.id}>
+                  <small>{footer.col1}</small>
                 </div>
               </div>
             </div>
@@ -82,4 +80,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default FooterComponent

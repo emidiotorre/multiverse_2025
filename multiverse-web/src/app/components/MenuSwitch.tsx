@@ -10,7 +10,7 @@ function MenuSwitch({}: Props) {
     <div className="flex ml-8 ">
       <Link
         href="/works"
-        className={`bg-[#d0d0d0] px-8 py-3 rounded-full transition-colors hover:bg-red-500    ${
+        className={`bg-[#d0d0d0] px-8 py-3 rounded-full transition-colors hover:bg-red-500 ${
           pathname?.split('/').includes('works')
             ? 'bg-red-500 z-10 drop-shadow-lg'
             : pathname == '/' || pathname == '/about'

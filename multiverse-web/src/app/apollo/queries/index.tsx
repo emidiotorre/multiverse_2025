@@ -60,12 +60,19 @@ export const GET_ABOUT_PAGE = gql`
     }
   }
 `
+export const GET_HOME = gql`
+  query getHome {
+    home: Home {
+      id
+      header
+    }
+  }
+`
 export const GET_FOOTER = gql`
   query getFooter {
     footer: Footer {
       id
       col1
-      col2
     }
   }
 `
