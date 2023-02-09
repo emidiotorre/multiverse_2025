@@ -2,6 +2,7 @@
 import React from 'react'
 import Container from '@/app/components/Container'
 import { FrameGrid } from '@egjs/react-grid'
+import Image from 'next/image'
 
 type Props = {
   work: any
@@ -40,12 +41,16 @@ const Personal = ({ work }: Props) => {
           {work.gallery?.map((img: any, imgIdx: number) => {
             return (
               <div key={imgIdx} className="overflow-hidden rounded-lg ">
-                <img
+                <Image
+                  width={1400}
+                  height={1400}
                   className="w-full h-full object-cover"
                   src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                    img.image?.id
+                    img.image.id
                   }`}
-                ></img>
+                  quality={80}
+                  alt={''}
+                />
               </div>
             )
           })}

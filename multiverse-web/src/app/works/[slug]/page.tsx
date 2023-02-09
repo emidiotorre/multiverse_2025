@@ -1,5 +1,4 @@
 import React from 'react'
-
 import client from '@/app/apollo'
 import { GET_WORK_BY_SLUG } from '@/app/apollo/queries'
 import Personal from '@/app/components/Personal'

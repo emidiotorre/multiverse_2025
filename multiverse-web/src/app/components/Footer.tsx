@@ -1,10 +1,11 @@
 'use client'
-
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import Container from './Container'
 import DateTime from './DateTime'
+import Logo from '../../../public/materiale/mvs_logo.png'
 
 function Footer() {
   const pathname = usePathname()
@@ -43,10 +44,14 @@ function Footer() {
           <>
             <div className=" flex justify-between	 py-10">
               <div>
-                <img
+                <Image
+                  src={Logo}
+                  alt={''}
                   className="object-scale-down h-full w-[40vh]"
-                  src={`${'../materiale/mvs_logo.png'}`}
-                ></img>
+                  height={500}
+                  width={500}
+                  priority
+                />
               </div>
               <div className="flex flex-col pt-0 items-end">
                 <small>

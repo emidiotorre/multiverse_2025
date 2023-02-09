@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -21,7 +22,14 @@ const Card = (props: Props) => {
             <h1 className="absolute">{props.Name}</h1>
           </div>
         </div>
-        <img src={props.image_url} className="object-cover w-full h-full" />
+        <Image
+          width={1400}
+          height={1400}
+          src={props.image_url}
+          className="object-cover w-full h-full"
+          alt={''}
+          quality={100}
+        />
       </Link>
     </div>
   )

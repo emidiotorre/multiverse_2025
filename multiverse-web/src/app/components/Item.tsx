@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 type Props = {
   id: number
@@ -9,25 +10,27 @@ type Props = {
   style?: any
 }
 
-const PlayPoster = (props: Props) => {
+function Item(props: Props) {
   return (
-    <div
-      className="relative rounded-lg overflow-hidden self-stretch"
-      style={props.style}
-    >
+    <div className="relative  overflow-hidden self-stretch" style={props.style}>
       <Link href={`${props.url}`} key={props.id} className="contents">
-        <img src={props.image_url} className="object-cover w-full h-full" />
+        <Image
+          src={props.image_url}
+          width={800}
+          height={800}
+          className="object-cover w-full h-full rounded-lg"
+          alt={''}
+          quality={75}
+        />
         <div className="text-black text-4xl pt-6 pl-10 absolute">
-          <p
+          <div
             dangerouslySetInnerHTML={{ __html: props.body }}
             className="absolute"
-          >
-            {props.body}
-          </p>
+          />
         </div>
       </Link>
     </div>
   )
 }
 
-export default PlayPoster
+export default Item

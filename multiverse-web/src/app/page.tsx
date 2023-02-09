@@ -2,6 +2,12 @@
 import { useRef } from 'react'
 import AnimationDiv from './components/AnimationDiv'
 import Container from './components/Container'
+import Image from 'next/image'
+import ImgU from '../../public/materiale/home/img1.png'
+import ImgD from '../../public/materiale/home/img2.png'
+import ImgT from '../../public/materiale/home/img3.png'
+import ImgQ from '../../public/materiale/home/img4.png'
+import Logo from '../../public/materiale/mvs_logo.png'
 
 export default function Home() {
   const constraintsRef = useRef()
@@ -10,27 +16,29 @@ export default function Home() {
       <div className="relative top-3 left-7">
         <AnimationDiv dragConstraints={constraintsRef}>
           <div>
-            <img
+            <Image
               style={{
                 pointerEvents: 'none',
               }}
               className="object-cover h-full w-[15vh]"
-              src={`${'../materiale/home/img1.png'}`}
-            ></img>
+              quality={75}
+              src={ImgU}
+              alt={''}
+            />
           </div>
         </AnimationDiv>
       </div>
-
       <div className="flex justify-center">
         <AnimationDiv>
           <div>
-            <img
+            <Image
               style={{
                 pointerEvents: 'none',
               }}
               className="object-cover w-[15vh]"
-              src={`${'../materiale/home/img2.png'}`}
-            ></img>
+              src={ImgD}
+              alt={''}
+            />
           </div>
         </AnimationDiv>
       </div>
@@ -39,10 +47,13 @@ export default function Home() {
         <div>
           <h1 className="font-sans font-semibold max-w-[60vw] text-5xl pb-10 break-words leading-[1.2]">
             <span className="inline-flex">
-              <img
+              <Image
                 className="object-cover h-full w-[40vh]"
-                src={`${'../materiale/mvs_logo.png'}`}
-              ></img>
+                src={Logo}
+                width={500}
+                height={500}
+                alt={''}
+              />
             </span>
             is a multidimensional laboratory that combines multiple universes
             thanks to the professional who make up the team. we create highly
@@ -55,26 +66,28 @@ export default function Home() {
         <div className="relative left-20 bottom-44">
           <AnimationDiv>
             <div>
-              <img
+              <Image
                 style={{
                   pointerEvents: 'none',
                 }}
                 className="object-cover  w-[15vh]"
-                src={`${'../materiale/home/img3.png'}`}
-              ></img>
+                src={ImgT}
+                alt={''}
+              />
             </div>
           </AnimationDiv>
         </div>
         <div className="relative left-[68rem] bottom-[14.5rem]">
           <AnimationDiv>
             <div>
-              <img
+              <Image
                 style={{
                   pointerEvents: 'none',
                 }}
                 className="object-cover w-[15vh]"
-                src={`${'../materiale/home/img4.png'}`}
-              ></img>
+                src={ImgQ}
+                alt={''}
+              />
             </div>
           </AnimationDiv>
         </div>
