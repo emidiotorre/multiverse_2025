@@ -47,7 +47,7 @@ export default function About() {
         <div className="rounded-lg overflow-hidden" style={{ gridArea: 'F' }}>
           <div className="bg-gray-200 h-full w-full">
             <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6 ">clients</h3>
-            <div className="font-medium rounded-lg overflow-hidden gap-x-10 mx-6 pt-8 grid grid-cols-2 divide-x">
+            <div className="font-medium rounded-lg overflow-hidden gap-x-10 mx-6 pt-8 grid grid-cols-2 divide-x-0">
               <div>Airbnb</div>
               <div>Apple</div>
               <div>Brooklyn Museum</div>

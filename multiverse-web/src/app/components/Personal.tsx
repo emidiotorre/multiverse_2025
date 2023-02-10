@@ -57,6 +57,15 @@ const Personal = ({ work }: Props) => {
             )
           })}
         </FrameGrid>
+        <div className="grid grid-cols-2 gap-4 mt-7">
+          <p> - Project Information</p>
+          <div>
+            <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
+            <div className="pt-32 grid grid-cols-2 divide-x-0">
+              <ul dangerouslySetInnerHTML={{ __html: work.Credits }}></ul>
+            </div>
+          </div>
+        </div>
         <div className="flex justify-end py-10">
           <Image
             onClick={() =>

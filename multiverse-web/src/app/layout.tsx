@@ -9,7 +9,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { data, loading, error } = await client.query({ query: GET_FOOTER })
+const { data, loading, error } = await client.query({ query: GET_FOOTER })
 
   if (loading || error) {
     return null

@@ -10,8 +10,6 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      /* Authorization:
-        "Bearer TNh8qGdGB1jmZdL8Ej7hlfZjb7YisndJgZTS6ZLldue9Y0xHOviVzjrpF7De7Ark", */
       'Content-Type': 'application/json',
     },
   }
