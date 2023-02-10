@@ -1,8 +1,15 @@
-import { motion } from 'framer-motion'
+import { motion, MotionValue } from 'framer-motion'
+import { ReactNode, RefObject } from 'react'
 
-const AnimationDiv = (props: any) => {
+type Props = {
+  children?: ReactNode | MotionValue<number> | MotionValue<string>
+  myRef?: RefObject<HTMLDivElement>
+}
+
+const AnimationDiv = (props: Props) => {
   return (
     <motion.div
+      dragConstraints={props.myRef}
       style={{ position: 'absolute', zIndex: 100, height: 200, width: 200 }}
       drag
       onClick={(e) => e.stopPropagation()}

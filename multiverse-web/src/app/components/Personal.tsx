@@ -57,12 +57,23 @@ const Personal = ({ work }: Props) => {
             )
           })}
         </FrameGrid>
-        <div className="grid grid-cols-2 gap-4 mt-7">
+        <div className="grid grid-cols-3 gap-4 mt-7">
           <p> - Project Information</p>
-          <div>
+          <div className="col-span-2">
             <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
             <div className="pt-32 grid grid-cols-2 divide-x-0">
-              <ul dangerouslySetInnerHTML={{ __html: work.Credits }}></ul>
+              {work.Credits.map((credit: any, idx: number) => {
+                return (
+                  <>
+                    <div key={idx}>
+                      <p>{credit.Credit_Category}</p>
+                    </div>
+                    <div>
+                      <p>{credit.Credit_Value}</p>
+                    </div>
+                  </>
+                )
+              })}
             </div>
           </div>
         </div>

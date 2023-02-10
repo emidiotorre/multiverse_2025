@@ -18,7 +18,7 @@ function Item(props: Props) {
           src={props.image_url}
           width={800}
           height={800}
-          className="object-cover w-full h-[97%] rounded-lg"
+          className="object-cover w-full h-[calc(100%-2rem)] rounded-lg"
           alt={''}
           quality={100}
         />
