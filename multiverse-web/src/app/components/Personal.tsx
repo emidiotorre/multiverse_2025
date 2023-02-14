@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 
 import { FrameGrid } from '@egjs/react-grid'
 import Image from 'next/image'
@@ -11,6 +11,7 @@ type Props = {
 }
 
 const Personal = ({ work }: Props) => {
+  const [description, setDescription] = useState(false)
   return (
     <>
       <Container>
@@ -57,25 +58,29 @@ const Personal = ({ work }: Props) => {
             )
           })}
         </FrameGrid>
-        <div className="grid grid-cols-3 gap-4 mt-7">
-          <p> - Project Information</p>
-          <div className="col-span-2">
-            <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
-            <div className="pt-32 grid grid-cols-2 divide-x-0">
-              {work.Credits.map((credit: any, idx: number) => {
-                return (
-                  <>
-                    <div key={idx}>
-                      <p>{credit.Credit_Category}</p>
-                    </div>
-                    <div>
-                      <p>{credit.Credit_Value}</p>
-                    </div>
-                  </>
-                )
-              })}
-            </div>
+        <div className="grid md:grid-cols-3 gap-4 mt-7">
+          <div onClick={() => setDescription(!description)}>
+            <p> - Project Information</p>
           </div>
+          {description && (
+            <div className="col-span-2">
+              <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
+              <div className="pt-32 grid grid-cols-2 divide-x-0">
+                {work.Credits.map((credit: any, idx: number) => {
+                  return (
+                    <>
+                      <div key={idx}>
+                        <p>{credit.Credit_Category}</p>
+                      </div>
+                      <div>
+                        <p>{credit.Credit_Value}</p>
+                      </div>
+                    </>
+                  )
+                })}
+              </div>
+            </div>
+          )}
         </div>
         <div className="flex justify-end py-10">
           <Image

@@ -9,7 +9,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-const { data, loading, error } = await client.query({ query: GET_FOOTER })
+  const { data, loading, error } = await client.query({ query: GET_FOOTER })
 
   if (loading || error) {
     return null
@@ -22,7 +22,7 @@ const { data, loading, error } = await client.query({ query: GET_FOOTER })
       */}
       <head />
       <body>
-        <main className="flex flex-col w-full justify-start min-h-screen">
+        <main className="pb-[15vh] pt-2 md:pt-0 md:pb-o flex flex-col w-full justify-start min-h-screen">
           <Header />
           {children}
           {data.footer && <FooterComponent footer={data.footer} />}

@@ -4,25 +4,31 @@ import React from 'react'
 import Card from './Card'
 import Image from 'next/image'
 import Up from '../../../public/materiale/UP.png'
-
+import { useMediaQuery } from 'usehooks-ts'
 type Props = {
   works: any[]
 }
 
 function WorksGrid({ works }: Props) {
+  const matches = useMediaQuery('(max-width: 768px)')
   return (
     <>
       <FrameGrid
         gap={12}
         defaultDirection={'end'}
-        frame={[
-          [1, 1, 1, 2, 2, 2],
-          [1, 1, 1, 2, 2, 2],
-          [1, 1, 1, 3, 3, 3],
-          [1, 1, 1, 3, 3, 3],
-          [4, 4, 4, 5, 5, 5],
-          [4, 4, 4, 5, 5, 5],
-        ]}
+        break
+        frame={
+          matches
+            ? [[1], [2], [3], [4], [5]]
+            : [
+                [1, 1, 1, 2, 2, 2],
+                [1, 1, 1, 2, 2, 2],
+                [1, 1, 1, 3, 3, 3],
+                [1, 1, 1, 3, 3, 3],
+                [4, 4, 4, 5, 5, 5],
+                [4, 4, 4, 5, 5, 5],
+              ]
+        }
         useResizeObserver={true}
         observeChildren={true}
         useFrameFill={true}

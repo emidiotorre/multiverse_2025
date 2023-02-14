@@ -54,18 +54,17 @@ function HomeComponent({ home }: Props) {
 
         <Container>
           <div>
-            <h1 className="font-sans font-semibold max-w-[60vw] text-5xl pb-10 break-words leading-[1.2]">
-              <span className="inline-flex">
+            <h1 className="font-sans font-semibold md:max-w-[60vw] text-2xl md:text-5xl pb-10 break-words leading-[1.2] overflow-visible">
+              <span className="block w-38">
                 <Image
-                  className="object-cover h-full w-[40vh]"
+                  className="object-contain h-12 object-left"
                   src={Logo}
-                  width={500}
                   height={500}
                   quality={100}
                   alt={''}
                 />
               </span>
-              <span key={home.id}>{home.header}</span>
+              {home.header}
             </h1>
           </div>
 
