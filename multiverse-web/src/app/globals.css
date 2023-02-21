@@ -117,3 +117,14 @@ a {
                         'H H H G G G'
                         'H H H G G G';
 }
+.photo-list {
+  width: '90%';
+  list-style: none;
+  margin: 20px auto;
+}
+.photo-item {
+  display: flex;
+  width: '300px';
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  margin: 20px 0;
+}

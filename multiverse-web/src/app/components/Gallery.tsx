@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-component'
 
 const masonryOptions = {
   fitWidth: false,
-  columWidth: 300,
+  columnWidth: 300,
   gutter: 30,
   itemSelector: '.photo-item',
 }
@@ -11,6 +11,8 @@ const masonryOptions = {
 function Gallery(props: any) {
   return (
     <Masonry
+      elementType={'ul'}
+      className={'photo-list'}
       {...props}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false

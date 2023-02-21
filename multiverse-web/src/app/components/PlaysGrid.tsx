@@ -16,7 +16,8 @@ const maxLetter = 'O'
 function PlaysGrid({ plays }: Props) {
   return (
     <>
-      <div className="columns-4 gap-3 w-auto mx-auto space-y-3 pv-28">
+      {/* <div className="columns-2 gap-3 w-auto mx-auto space-y-3 pb-28"> */}
+      <Gallery>
         {plays &&
           plays.map((playsElement: any, idx: number) => {
             return (
@@ -27,38 +28,42 @@ function PlaysGrid({ plays }: Props) {
                     maxLetter,
                   )
                   return (
-                    <Item
-                      key={'subgrid_item_' + indx}
-                      id={play.id}
-                      image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                        play.image.id
-                      }`}
-                      url={play.url}
-                      body={play.body}
-                      style={{
-                        gridArea: letterGridElement,
-                      }}
-                    ></Item>
+                    <li key={'subgrid_item_' + indx} className="photo-item">
+                      <Item
+                        id={play.id}
+                        image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          play.image.id
+                        }`}
+                        url={play.url}
+                        body={play.body}
+                        style={{
+                          display: 'flex',
+                          width: '100%',
+                          gridArea: letterGridElement,
+                        }}
+                      ></Item>
+                    </li>
                   )
                 })}
               </div>
             )
           })}
-        <div className="flex justify-end py-10">
-          <Image
-            onClick={() =>
-              document.documentElement.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth',
-              })
-            }
-            className="object-cover h-[18vh] w-[10vh] "
-            src={Up}
-            alt={''}
-            quality={100}
-          />
-        </div>
+      </Gallery>
+      {/* </div> */}
+      <div className="flex justify-end py-10">
+        <Image
+          onClick={() =>
+            document.documentElement.scrollTo({
+              top: 0,
+              left: 0,
+              behavior: 'smooth',
+            })
+          }
+          className="object-cover h-[18vh] w-[10vh] "
+          src={Up}
+          alt={''}
+          quality={100}
+        />
       </div>
     </>
   )
