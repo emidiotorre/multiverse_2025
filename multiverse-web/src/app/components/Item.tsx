@@ -1,14 +1,14 @@
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
 
 type Props = {
-  id: number
-  body: string
-  url: string
-  image_url: string
-  style?: any
-}
+  id: number;
+  body: string;
+  url: string;
+  image_url: string;
+  style?: any;
+};
 
 function Item(props: Props) {
   return (
@@ -18,8 +18,8 @@ function Item(props: Props) {
           src={props.image_url}
           width={800}
           height={800}
-          className="  rounded-lg"
-          alt={''}
+          className=" rounded-lg"
+          alt={""}
           quality={100}
         />
         <div className="flex justify-start">
@@ -30,7 +30,7 @@ function Item(props: Props) {
         </div>
       </Link>
     </div>
-  )
+  );
 }
 
-export default Item
+export default Item;

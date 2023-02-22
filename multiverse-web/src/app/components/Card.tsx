@@ -1,14 +1,14 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 type Props = {
-  id: number
-  Name: string
-  slug: string
-  image_url: string
-  style?: any
-}
+  id: number;
+  Name: string;
+  slug: string;
+  image_url: string;
+  style?: any;
+};
 
 const Card = (props: Props) => {
   return (
@@ -26,13 +26,12 @@ const Card = (props: Props) => {
           width={1400}
           height={1400}
           src={props.image_url}
-          className="object-cover w-full h-full"
-          alt={''}
+          alt={""}
           quality={100}
         />
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

@@ -1,19 +1,20 @@
-'use client'
-import { FrameGrid } from '@egjs/react-grid'
-import React from 'react'
-import Card from './Card'
-import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
-import { useMediaQuery } from 'usehooks-ts'
+"use client";
+import { FrameGrid } from "@egjs/react-grid";
+import React from "react";
+import Card from "./Card";
+import Image from "next/image";
+import Up from "../../../public/materiale/UP.png";
+import { useMediaQuery } from "usehooks-ts";
+import Gallery from "./Gallery";
 type Props = {
-  works: any[]
-}
+  works: any[];
+};
 
 function WorksGrid({ works }: Props) {
-  const matches = useMediaQuery('(max-width: 768px)')
+  const matches = useMediaQuery("(max-width: 768px)");
   return (
     <>
-      <FrameGrid
+      {/* <FrameGrid
         gap={12}
         defaultDirection={'end'}
         break
@@ -32,38 +33,41 @@ function WorksGrid({ works }: Props) {
         useResizeObserver={true}
         observeChildren={true}
         useFrameFill={true}
-      >
-        {works?.map((work: any) => {
+      > */}
+      <Gallery style={{ "column-width": "600px" }}>
+        {works?.map((work: any, idx: number) => {
           return (
-            <Card
-              key={work.id}
-              id={work.id}
-              image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                work.image.id
-              }`}
-              slug={work.slug}
-              Name={work.Name}
-            ></Card>
-          )
+            <li key={idx} className="photo-item">
+              <Card
+                id={work.id}
+                image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                  work.image.id
+                }`}
+                slug={work.slug}
+                Name={work.Name}
+              ></Card>
+            </li>
+          );
         })}
-      </FrameGrid>
-      <div className="flex justify-end py-10">
+        {/* </FrameGrid> */}
+      </Gallery>
+      <div className=" flex justify-end py-10">
         <Image
           onClick={() =>
             document.documentElement.scrollTo({
               top: 0,
               left: 0,
-              behavior: 'smooth',
+              behavior: "smooth",
             })
           }
           className="object-cover h-[18vh] w-[10vh] "
           src={Up}
-          alt={''}
+          alt={""}
           quality={100}
         />
       </div>
     </>
-  )
+  );
 }
 
-export default WorksGrid
+export default WorksGrid;
