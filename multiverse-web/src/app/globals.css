@@ -12,6 +12,9 @@
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -27,63 +30,63 @@ a {
   }
 } */
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Book20.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Book20.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Book20.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Book20.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Light20.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Light20.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Light20.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Light20.woff') format('woff');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Medium20.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Medium20.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Medium20.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Medium20.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-SemiBold25.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-SemiBold25.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-SemiBold25.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-SemiBold25.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Light25.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Light25.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Light25.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Light25.woff') format('woff');
   font-weight: 300;
   font-style: expanded;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Book25.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Book25.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Book25.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Book25.woff') format('woff');
   font-weight: normal;
   font-style: expanded;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Sharp Grotesk";
-  src: url("/fonts/SharpGrotesk-Medium25.woff2") format("woff2"),
-    url("/fonts/SharpGrotesk-Medium25.woff") format("woff");
+  font-family: 'Sharp Grotesk';
+  src: url('/fonts/SharpGrotesk-Medium25.woff2') format('woff2'),
+    url('/fonts/SharpGrotesk-Medium25.woff') format('woff');
   font-weight: 500;
   font-style: expanded;
   font-display: swap;
@@ -118,7 +121,6 @@ a {
                         'H H H G G G';
 }
 .photo-list {
-  width: "100%";
   list-style: none;
   margin: 20px auto;
 }
