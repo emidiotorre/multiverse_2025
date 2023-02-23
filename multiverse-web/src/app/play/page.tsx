@@ -1,28 +1,29 @@
-'use client'
 import React from 'react'
-import mock from '@/app/mock.json'
-import Card from '@/app/components/Card'
 import Container from '@/app/components/Container'
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
+import client from '../apollo'
+import { GET_PLAYS } from '../apollo/queries'
+import PlaysGrid from '../components/PlaysGrid'
 
-export default function Play() {
+function spliceIntoChunks(arr: any[], chunkSize: number) {
+  const res = []
+  while (arr.length > 0) {
+    const chunk = arr.splice(0, chunkSize)
+
+    res.push(chunk)
+  }
+  return res
+}
+export default async function Play() {
+  const { data, loading, error } = await client.query({ query: GET_PLAYS })
+
+  if (loading || error) {
+    return null
+  }
+
   return (
     <>
       <Container>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 350: 2, 750: 3, 900: 4 }}>
-          <Masonry gutter={'1rem'}>
-            {mock.play.items.map((play) => {
-              return (
-                <Card
-                  id={play.id}
-                  image_url={play.image_url}
-                  slug={play.slug}
-                  title={play.title}
-                ></Card>
-              )
-            })}
-          </Masonry>
-        </ResponsiveMasonry>
+        <PlaysGrid plays={spliceIntoChunks(data.plays, 10)} />
       </Container>
     </>
   )

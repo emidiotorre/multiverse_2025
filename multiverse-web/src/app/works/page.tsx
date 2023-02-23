@@ -1,6 +1,4 @@
 import React from 'react'
-import mock from '@/app/mock.json'
-import Card from '@/app/components/Card'
 import Container from '@/app/components/Container'
 import client from '@/app/apollo'
 import { GET_WORKS_IMG } from '../apollo/queries'

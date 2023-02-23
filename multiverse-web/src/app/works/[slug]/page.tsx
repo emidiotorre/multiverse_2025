@@ -1,7 +1,6 @@
 import React from 'react'
-
 import client from '@/app/apollo'
-import { GET_WORKS_IMG, GET_WORK_BY_SLUG } from '@/app/apollo/queries'
+import { GET_WORK_BY_SLUG } from '@/app/apollo/queries'
 import Personal from '@/app/components/Personal'
 
 export default async function Work({ params }: { params: any }) {

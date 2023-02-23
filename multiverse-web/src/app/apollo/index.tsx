@@ -10,17 +10,12 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      /* Authorization:
-        "Bearer TNh8qGdGB1jmZdL8Ej7hlfZjb7YisndJgZTS6ZLldue9Y0xHOviVzjrpF7De7Ark", */
       'Content-Type': 'application/json',
     },
   }
 })
 const httpLink = createHttpLink({
-  uri: `${
-    process.env.REACT_APP_HOSTNAME ??
-    'https://galattico-dev-directus.ov3mip.easypanel.host'
-  }/graphql`,
+  uri: `${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/graphql`,
 })
 const defaultOptions: DefaultOptions = {
   watchQuery: {
