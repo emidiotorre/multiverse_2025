@@ -1,13 +1,13 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import Container from './components/Container'
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import Container from "./components/Container";
 
 export default function Home() {
   return (
     <>
       <Container>
         <div>
-          <h1 className="font-sans font-semibold max-w-[60vw] text-5xl pb-10 break-words leading-[1.2]">
+          <h1 className="font-sans font-semibold max-w-[100vw] text-5xl pb-10 break-words leading-[1.2]">
             Multiverse is a multidimensional laboratory that combines multiple
             universes thanks to the professional who make up the team. we create
             highly distinctive visual identities by focusing on the concept and
@@ -17,5 +17,5 @@ export default function Home() {
         </div>
       </Container>
     </>
-  )
+  );
 }
