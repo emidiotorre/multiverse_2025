@@ -1,23 +1,23 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 
-import { FrameGrid } from '@egjs/react-grid'
-import Image from 'next/image'
+import { FrameGrid } from "@egjs/react-grid";
+import Image from "next/image";
 
-import Container from '@/app/components/Container'
-import Up from '../../../public/materiale/UP.png'
+import Container from "@/app/components/Container";
+import Up from "../../../public/materiale/UP.png";
 type Props = {
-  work: any
-}
+  work: any;
+};
 
 const Personal = ({ work }: Props) => {
-  const [description, setDescription] = useState(false)
+  const [description, setDescription] = useState(false);
   return (
     <>
       <Container>
         <FrameGrid
           gap={12}
-          defaultDirection={'end'}
+          defaultDirection={"end"}
           frame={[
             [1, 1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1, 1],
@@ -48,14 +48,14 @@ const Personal = ({ work }: Props) => {
                   width={1400}
                   height={1400}
                   className="w-full h-full object-cover"
-                  src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                  src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                     img.image.id
                   }`}
                   quality={100}
-                  alt={''}
+                  alt={""}
                 />
               </div>
-            )
+            );
           })}
         </FrameGrid>
         <div className="grid md:grid-cols-3 gap-4 mt-7">
@@ -66,18 +66,19 @@ const Personal = ({ work }: Props) => {
             <div className="col-span-2">
               <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
               <div className="pt-32 grid grid-cols-2 divide-x-0">
-                {work.Credits.map((credit: any, idx: number) => {
-                  return (
-                    <>
-                      <div key={idx}>
-                        <p>{credit.Credit_Category}</p>
-                      </div>
-                      <div>
-                        <p>{credit.Credit_Value}</p>
-                      </div>
-                    </>
-                  )
-                })}
+                {work.Credits &&
+                  work.Credits.map((credit: any, idx: number) => {
+                    return (
+                      <>
+                        <div key={idx}>
+                          <p>{credit.Credit_Category}</p>
+                        </div>
+                        <div>
+                          <p>{credit.Credit_Value}</p>
+                        </div>
+                      </>
+                    );
+                  })}
               </div>
             </div>
           )}
@@ -88,18 +89,18 @@ const Personal = ({ work }: Props) => {
               document.documentElement.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: 'smooth', // Optional if you want to skip the scrolling animation
+                behavior: "smooth", // Optional if you want to skip the scrolling animation
               })
             }
             className="object-cover h-[18vh] w-[10vh] "
             src={Up}
-            alt={''}
+            alt={""}
             quality={100}
           />
         </div>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Personal
+export default Personal;
