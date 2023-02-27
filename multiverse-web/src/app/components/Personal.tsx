@@ -1,65 +1,179 @@
-"use client";
-import React, { useState } from "react";
+'use client'
+import React, { useState } from 'react'
 
-import { FrameGrid } from "@egjs/react-grid";
-import Image from "next/image";
+import { FrameGrid } from '@egjs/react-grid'
+import Image from 'next/image'
 
-import Container from "@/app/components/Container";
-import Up from "../../../public/materiale/UP.png";
+import Container from '@/app/components/Container'
+import Up from '../../../public/materiale/UP.png'
 type Props = {
-  work: any;
-};
+  work: any
+}
 
 const Personal = ({ work }: Props) => {
-  const [isDescriptionOpen, setisDescriptionOpen] = useState(false);
+  const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
   return (
     <>
       <Container>
-        <FrameGrid
-          gap={12}
-          defaultDirection={"end"}
-          frame={[
-            [1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1],
-            [1, 1, 1, 1, 1, 1],
-            [2, 2, 2, 3, 3, 3],
-            [2, 2, 2, 3, 3, 3],
-            [2, 2, 2, 3, 3, 3],
-            [2, 2, 2, 3, 3, 3],
-            [4, 4, 4, 4, 4, 4],
-            [4, 4, 4, 4, 4, 4],
-            [4, 4, 4, 4, 4, 4],
-            [5, 5, 5, 6, 6, 6],
-            [5, 5, 5, 6, 6, 6],
-            [5, 5, 5, 7, 7, 7],
-            [5, 5, 5, 7, 7, 7],
-            [8, 8, 8, 8, 8, 8],
-            [8, 8, 8, 8, 8, 8],
-            [8, 8, 8, 8, 8, 8],
-          ]}
-          useResizeObserver={true}
-          observeChildren={true}
-          useFrameFill={true}
-        >
-          {work &&
-            work.gallery &&
-            work.gallery?.map((img: any, imgIdx: number) => {
+        {work.gallery?.map((img: any, idx: number) => {
+          switch (img.item.tipologia) {
+            case 'full-width':
               return (
-                <div key={imgIdx} className="overflow-hidden rounded-lg ">
+                <div
+                  className={`overflow-hidden rounded-lg mb-2 w-full relative`}
+                  style={{
+                    aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                  }}
+                >
                   <Image
-                    width={1400}
-                    height={1400}
-                    className="w-full h-full object-cover"
-                    src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                      img.image.id
+                    fill={true}
+                    className={`object-cover `}
+                    src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      img.item.image_1.id
                     }`}
                     quality={100}
-                    alt={""}
+                    alt={''}
                   />
                 </div>
-              );
-            })}
-        </FrameGrid>
+              )
+            case 'half-split':
+              return (
+                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                  <div className="row-span-2">
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                </div>
+              )
+            case 'split-half':
+              return <div></div>
+            case 'half-half':
+              return (
+                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                  <div className="row-span-2 my-2">
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div className="row-span-2 my-2">
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                </div>
+              )
+            case 'third-third-third':
+              return (
+                <div className="grid grid-cols-3 gap-x-2 gap-y-2">
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover  rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                </div>
+              )
+            default:
+              return (
+                <div
+                  key={idx}
+                  className="overflow-hidden rounded-lg my-2"
+                ></div>
+              )
+          }
+
+          /*      return (
+            <div key={imgIdx} className="overflow-hidden rounded-lg ">
+            
+              <Image
+                width={1400}
+                height={1400}
+                className="w-full h-full object-cover"
+                src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                  img.item.
+                }`}
+                quality={100}
+                alt={''}
+              />
+            </div>
+          ) */
+        })}
         <div className="grid md:grid-cols-3 gap-4 mt-7">
           <div onClick={() => setisDescriptionOpen(!isDescriptionOpen)}>
             <p> - Project Information</p>
@@ -68,20 +182,18 @@ const Personal = ({ work }: Props) => {
             <div className="col-span-2">
               <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
               <div className="pt-32 grid grid-cols-2 divide-x-0">
-                {work &&
-                  work.Credits &&
-                  work.Credits.map((credit: any, idx: number) => {
-                    return (
-                      <>
-                        <div key={idx}>
-                          <p>{credit.Credit_Category}</p>
-                        </div>
-                        <div>
-                          <p>{credit.Credit_Value}</p>
-                        </div>
-                      </>
-                    );
-                  })}
+                {work.Credits.map((credit: any, idx: number) => {
+                  return (
+                    <>
+                      <div key={idx}>
+                        <p>{credit.Credit_Category}</p>
+                      </div>
+                      <div>
+                        <p>{credit.Credit_Value}</p>
+                      </div>
+                    </>
+                  )
+                })}
               </div>
             </div>
           )}
@@ -92,18 +204,18 @@ const Personal = ({ work }: Props) => {
               document.documentElement.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: "smooth", // Optional if you want to skip the scrolling animation
+                behavior: 'smooth', // Optional if you want to skip the scrolling animation
               })
             }
             className="object-cover h-[18vh] w-[10vh] "
             src={Up}
-            alt={""}
+            alt={''}
             quality={100}
           />
         </div>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default Personal;
+export default Personal

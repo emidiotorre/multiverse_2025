@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const GET_WORKS_IMG = gql`
   query getWorkImg {
@@ -10,14 +10,9 @@ export const GET_WORKS_IMG = gql`
       image {
         id
       }
-      gallery {
-        image: directus_files_id {
-          id
-        }
-      }
     }
   }
-`;
+`
 export const GET_PLAYS = gql`
   query GetPlays {
     plays: Play {
@@ -29,7 +24,7 @@ export const GET_PLAYS = gql`
       url
     }
   }
-`;
+`
 
 const WORK_FRAG = gql`
   fragment fullWork on Works {
@@ -46,12 +41,26 @@ const WORK_FRAG = gql`
       id
     }
     gallery {
-      image: directus_files_id {
-        id
+      id
+      item {
+        ... on GalleryBlocks {
+          __typename
+          tipologia
+          aspect_ratio
+          image_1 {
+            id
+          }
+          image_2 {
+            id
+          }
+          image_3 {
+            id
+          }
+        }
       }
     }
   }
-`;
+`
 export const GET_ABOUT_PAGE = gql`
   query getAboutPage {
     about: About {
@@ -59,7 +68,7 @@ export const GET_ABOUT_PAGE = gql`
       body
     }
   }
-`;
+`
 export const GET_HOME = gql`
   query getHome {
     home: Home {
@@ -67,7 +76,7 @@ export const GET_HOME = gql`
       header
     }
   }
-`;
+`
 export const GET_FOOTER = gql`
   query getFooter {
     footer: Footer {
@@ -75,7 +84,7 @@ export const GET_FOOTER = gql`
       col1
     }
   }
-`;
+`
 
 const LISTWORK_FRAG = gql`
   fragment listWork on Works {
@@ -87,7 +96,7 @@ const LISTWORK_FRAG = gql`
       id
     }
   }
-`;
+`
 
 export const GET_WORKS = gql`
   query getWorks {
@@ -96,7 +105,7 @@ export const GET_WORKS = gql`
     }
   }
   ${LISTWORK_FRAG}
-`;
+`
 export const GET_WORK_BY_SLUG = gql`
   query getWorkBySlug($slug: String) {
     work: Works(filter: { slug: { _eq: $slug } }) {
@@ -105,4 +114,4 @@ export const GET_WORK_BY_SLUG = gql`
   }
 
   ${WORK_FRAG}
-`;
+`
