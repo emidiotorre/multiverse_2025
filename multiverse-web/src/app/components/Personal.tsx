@@ -1,161 +1,171 @@
-'use client'
-import React, { useState } from 'react'
+"use client";
+import React, { useState } from "react";
 
-import { FrameGrid } from '@egjs/react-grid'
-import Image from 'next/image'
+import { FrameGrid } from "@egjs/react-grid";
+import Image from "next/image";
 
-import Container from '@/app/components/Container'
-import Up from '../../../public/materiale/UP.png'
+import Container from "@/app/components/Container";
+import Up from "../../../public/materiale/UP.png";
 type Props = {
-  work: any
-}
+  work: any;
+};
 
 const Personal = ({ work }: Props) => {
-  const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
+  const [isDescriptionOpen, setisDescriptionOpen] = useState(false);
   return (
     <>
       <Container>
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
-            case 'full-width':
+            case "full-width":
               return (
                 <div
                   className={`overflow-hidden rounded-lg mb-2 w-full relative`}
                   style={{
-                    aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                    aspectRatio: img.item.aspect_ratio.replace("-", "/"),
                   }}
                 >
                   <Image
                     fill={true}
+                    unoptimized={true}
+                    priority={idx < 3 ? true : false}
                     className={`object-cover `}
-                    src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                    src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                       img.item.image_1.id
                     }`}
                     quality={100}
-                    alt={''}
+                    alt={""}
                   />
                 </div>
-              )
-            case 'half-split':
+              );
+            case "half-split":
               return (
                 <div className="grid grid-cols-2 gap-x-2 gap-y-2">
                   <div className="row-span-2">
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div>
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div>
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
-            case 'split-half':
-              return <div></div>
-            case 'half-half':
+              );
+            case "split-half":
+              return <div></div>;
+            case "half-half":
               return (
                 <div className="grid grid-cols-2 gap-x-2 gap-y-2">
                   <div className="row-span-2 my-2">
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div className="row-span-2 my-2">
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
-            case 'third-third-third':
+              );
+            case "third-third-third":
               return (
                 <div className="grid grid-cols-3 gap-x-2 gap-y-2">
                   <div>
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover  rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div>
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div>
                     <Image
                       width={1400}
                       height={1400}
+                      priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={100}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
+              );
             default:
               return (
                 <div
                   key={idx}
                   className="overflow-hidden rounded-lg my-2"
                 ></div>
-              )
+              );
           }
 
           /*      return (
@@ -192,7 +202,7 @@ const Personal = ({ work }: Props) => {
                         <p>{credit.Credit_Value}</p>
                       </div>
                     </>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -204,18 +214,18 @@ const Personal = ({ work }: Props) => {
               document.documentElement.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: 'smooth', // Optional if you want to skip the scrolling animation
+                behavior: "smooth", // Optional if you want to skip the scrolling animation
               })
             }
             className="object-cover h-[18vh] w-[10vh] "
             src={Up}
-            alt={''}
+            alt={""}
             quality={100}
           />
         </div>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Personal
+export default Personal;
