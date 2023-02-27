@@ -11,7 +11,7 @@ type Props = {
 };
 
 const Personal = ({ work }: Props) => {
-  const [description, setDescription] = useState(false);
+  const [isDescriptionOpen, setisDescriptionOpen] = useState(false);
   return (
     <>
       <Container>
@@ -41,32 +41,35 @@ const Personal = ({ work }: Props) => {
           observeChildren={true}
           useFrameFill={true}
         >
-          {work.gallery?.map((img: any, imgIdx: number) => {
-            return (
-              <div key={imgIdx} className="overflow-hidden rounded-lg ">
-                <Image
-                  width={1400}
-                  height={1400}
-                  className="w-full h-full object-cover"
-                  src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                    img.image.id
-                  }`}
-                  quality={100}
-                  alt={""}
-                />
-              </div>
-            );
-          })}
+          {work &&
+            work.gallery &&
+            work.gallery?.map((img: any, imgIdx: number) => {
+              return (
+                <div key={imgIdx} className="overflow-hidden rounded-lg ">
+                  <Image
+                    width={1400}
+                    height={1400}
+                    className="w-full h-full object-cover"
+                    src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      img.image.id
+                    }`}
+                    quality={100}
+                    alt={""}
+                  />
+                </div>
+              );
+            })}
         </FrameGrid>
         <div className="grid md:grid-cols-3 gap-4 mt-7">
-          <div onClick={() => setDescription(!description)}>
+          <div onClick={() => setisDescriptionOpen(!isDescriptionOpen)}>
             <p> - Project Information</p>
           </div>
-          {description && (
+          {isDescriptionOpen && (
             <div className="col-span-2">
               <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
               <div className="pt-32 grid grid-cols-2 divide-x-0">
-                {work.Credits &&
+                {work &&
+                  work.Credits &&
                   work.Credits.map((credit: any, idx: number) => {
                     return (
                       <>

@@ -3,35 +3,36 @@ import {
   InMemoryCache,
   createHttpLink,
   DefaultOptions,
-} from '@apollo/client'
-import { setContext } from '@apollo/client/link/context'
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
-  }
-})
+  };
+});
+
 const httpLink = createHttpLink({
-  uri: `${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/graphql`,
-})
+  uri: `${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/graphql`,
+});
 const defaultOptions: DefaultOptions = {
   watchQuery: {
-    fetchPolicy: 'no-cache',
-    errorPolicy: 'ignore',
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
   },
   query: {
-    fetchPolicy: 'no-cache',
-    errorPolicy: 'all',
+    fetchPolicy: "no-cache",
+    errorPolicy: "all",
   },
-}
+};
 const client = new ApolloClient({
   ssrMode: true,
   link: httpLink,
   cache: new InMemoryCache(),
   defaultOptions,
-})
+});
 
-export default client
+export default client;

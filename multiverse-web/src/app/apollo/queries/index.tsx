@@ -35,7 +35,6 @@ const WORK_FRAG = gql`
   fragment fullWork on Works {
     id
     Name
-    SubTitle
     Type
     slug
     Body

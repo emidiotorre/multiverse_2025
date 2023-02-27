@@ -2,11 +2,9 @@ import client from "./apollo";
 import { GET_HOME } from "./apollo/queries";
 import HomeComponent from "./components/HomeComponent";
 
-type Props = {
-  home: string;
-};
+type Props = {};
 
-async function Home({ home }: Props) {
+async function Home({}: Props) {
   const { data, loading, error } = await client.query({ query: GET_HOME });
   if (loading || error) {
     return null;
