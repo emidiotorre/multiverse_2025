@@ -1,9 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-
-import { FrameGrid } from '@egjs/react-grid'
 import Image from 'next/image'
-
 import Container from '@/app/components/Container'
 import Up from '../../../public/materiale/UP.png'
 import AnimateHeight from 'react-animate-height'
@@ -28,7 +25,6 @@ const Personal = ({ work }: Props) => {
                 >
                   <Image
                     fill={true}
-                    unoptimized={true}
                     priority={idx < 3 ? true : false}
                     className={`object-cover `}
                     src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
@@ -168,22 +164,6 @@ const Personal = ({ work }: Props) => {
                 ></div>
               )
           }
-
-          /*      return (
-            <div key={imgIdx} className="overflow-hidden rounded-lg ">
-            
-              <Image
-                width={1400}
-                height={1400}
-                className="w-full h-full object-cover"
-                src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                  img.item.
-                }`}
-                quality={100}
-                alt={''}
-              />
-            </div>
-          ) */
         })}
         <div className="grid md:grid-cols-3 gap-4 mt-7 ">
           <div
@@ -192,7 +172,6 @@ const Personal = ({ work }: Props) => {
           >
             <p> - Project Information</p>
           </div>
-
           <AnimateHeight
             className={`col-span-2 overflow-hidden`}
             height={isDescriptionOpen ? 'auto' : 0}

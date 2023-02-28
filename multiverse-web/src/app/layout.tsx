@@ -1,4 +1,4 @@
-import client from './apollo'
+import { fetcher } from './apollo'
 import { GET_FOOTER } from './apollo/queries'
 import FooterComponent from './components/FooterComponent'
 import Header from './components/Header'
@@ -9,11 +9,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const { data, loading, error } = await client.query({ query: GET_FOOTER })
+  const { footer } = await fetcher({
+    query: GET_FOOTER,
+    variables: null,
+  })
 
-  if (loading || error) {
-    return null
-  }
   return (
     <html lang="en">
       {/*
@@ -25,7 +25,7 @@ export default async function RootLayout({
         <main className="pb-[15vh] pt-2 md:pt-0 md:pb-o flex flex-col w-full justify-start min-h-screen">
           <Header />
           {children}
-          {data.footer && <FooterComponent footer={data.footer} />}
+          {footer && <FooterComponent footer={footer} />}
         </main>
       </body>
     </html>

@@ -1,27 +1,37 @@
+'use client'
 import { motion, MotionValue } from 'framer-motion'
 import { ReactNode, RefObject, useRef } from 'react'
 
 type Props = {
-  children?: ReactNode | MotionValue<number> | MotionValue<string>
-  myRef?: RefObject<HTMLDivElement>
+  children?: ReactNode
 }
 
-const AnimationDiv = (props: Props) => {
-  const html = document.documentElement
+function Draggable(props: Props) {
+  const html = typeof document != 'undefined' ? document.documentElement : null
   const docRef = useRef(html)
-
+  if (typeof document === 'undefined') return <div>{props.children}</div>
+  const rect =
+    typeof window != 'undefined'
+      ? { height: window.innerHeight, width: window.innerWidth }
+      : { height: 0, width: 0 }
   return (
     <motion.div
       dragConstraints={docRef}
-      style={{ position: 'absolute', zIndex: 100, height: 200, width: 200 }}
-      drag
+      drag={true}
       onClick={(e) => e.stopPropagation()}
       whileHover={{
         scale: 1.2,
         transition: { duration: 0.5 },
+        cursor: 'grab',
       }}
       whileTap={{ scale: 0.9 }}
       initial={{
+        zIndex: 100,
+        height: 200,
+        width: 200,
+        position: 'absolute',
+        left: Math.random() * rect.width * 0.75,
+        top: Math.random() * rect.height * 0.75,
         opacity: 0,
       }}
       whileDrag={{ scale: 1.2 }}
@@ -39,4 +49,4 @@ const AnimationDiv = (props: Props) => {
   )
 }
 
-export default AnimationDiv
+export default Draggable

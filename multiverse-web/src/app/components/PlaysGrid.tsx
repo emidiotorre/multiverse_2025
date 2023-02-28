@@ -11,8 +11,6 @@ type Props = {
   plays: any[]
 }
 
-//const maxLetter = 'O'
-
 function PlaysGrid({ plays }: Props) {
   return (
     <>

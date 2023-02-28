@@ -7,12 +7,12 @@ type Props = {}
 function MenuSwitch({}: Props) {
   const pathname = usePathname()
   return (
-    <div className="flex ml-8 relative bg-[#d0d0d0] rounded-full ">
+    <div className="font-sans flex ml-8 relative bg-[#d0d0d0] rounded-full ">
       <Link href="/works" className="mx-6 my-1 py-2 z-10">
         work
       </Link>{' '}
       <div
-        className={` absolute z-0 drop-shadow-lg  bg-red-500 h-full w-1/2 rounded-full transform-gpu transition-colors transition-transform ${
+        className={` absolute z-0 drop-shadow-lg  bg-[#F40000] h-full w-1/2 rounded-full transform-gpu transition-colors transition-transform ${
           pathname?.split('/').includes('works')
             ? 'translate-x-0'
             : pathname?.split('/').includes('play')
