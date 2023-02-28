@@ -29,6 +29,16 @@ a {
     color-scheme: dark;
   }
 } */
+
+@font-face {
+  font-family: 'Monosten A';
+  src: url('/fonts/Monosten-A.woff2') format('woff2'),
+    url('/fonts/Monosten-A.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Sharp Grotesk';
   src: url('/fonts/SharpGrotesk-Book20.woff2') format('woff2'),

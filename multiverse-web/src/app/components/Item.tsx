@@ -15,10 +15,10 @@ type Props = {
 function Item(props: Props) {
   return (
     <div
-      className={`grid-item absolute block overflow-hidden mb-5`}
+      className={`grid-item absolute block  mb-5`}
       style={{
         ...props.style,
-        height: props.height / 3,
+        height: props.height / 3 + 20,
         width: props.width / 3,
       }}
     >
@@ -28,15 +28,16 @@ function Item(props: Props) {
           className={`rounded-lg `}
           alt={''}
           quality={100}
-          fill={true}
+          height={props.height / 3}
+          width={props.width / 3}
         />
-        <div className="flex justify-start">
-          <div
-            className="text-black text-[10px] "
-            dangerouslySetInnerHTML={{ __html: props.body }}
-          />
-        </div>
       </Link>
+      <div className="absolute -bottom-2 flex justify-start">
+        <div
+          className="text-black text-[10px] "
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        />
+      </div>
     </div>
   )
 }

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Sharp Grotesk'],
+        mono: ['Monosten A'],
       },
       transitionProperty: {
         height: 'height',
