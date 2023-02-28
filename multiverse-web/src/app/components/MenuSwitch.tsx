@@ -1,37 +1,32 @@
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 function MenuSwitch({}: Props) {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
-    <div className="flex ml-8 ">
-      <Link
-        href="/works"
-        className={`bg-[#d0d0d0] px-3 py-2  md:px-8 md:py-3 rounded-full transition-colors  ${
-          pathname?.split("/").includes("works")
-            ? "bg-red-500 z-10 drop-shadow-lg"
-            : pathname == "/" || pathname == "/about"
-            ? "z-10"
-            : "pr-8 md:pr-16 -mr-6 md:-mr-12 z-0"
-        }`}
-      >
+    <div className="flex ml-8 relative bg-[#d0d0d0] rounded-full ">
+      <Link href="/works" className="mx-6 my-1 py-2 z-10">
         work
-      </Link>{" "}
-      <Link
-        href="/play"
-        className={`bg-[#d0d0d0] px-3 py-2  md:px-8 md:py-3  transition-colors    rounded-full ${
-          pathname?.split("/").includes("play")
-            ? "bg-red-500 z-10 drop-shadow-lg"
-            : "pl-8 md:pl-16 -ml-6 md:-ml-12 z-0"
+      </Link>{' '}
+      <div
+        className={` absolute z-0 drop-shadow-lg  bg-red-500 h-full w-1/2 rounded-full transform-gpu transition-colors transition-transform ${
+          pathname?.split('/').includes('works')
+            ? 'translate-x-0'
+            : pathname?.split('/').includes('play')
+            ? 'translate-x-[100%]'
+            : pathname == '/' || pathname == '/about'
+            ? 'opacity-0'
+            : ''
         }`}
-      >
+      ></div>{' '}
+      <Link href="/play" className=" mx-6 my-1 py-2 z-10 ">
         play
       </Link>
     </div>
-  );
+  )
 }
 
-export default MenuSwitch;
+export default MenuSwitch

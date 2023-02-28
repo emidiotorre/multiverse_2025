@@ -19,6 +19,8 @@ export const GET_PLAYS = gql`
       id
       image {
         id
+        height
+        width
       }
       body
       url

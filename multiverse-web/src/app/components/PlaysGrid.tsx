@@ -17,30 +17,21 @@ function PlaysGrid({ plays }: Props) {
   return (
     <>
       {/* <div className="columns-2 gap-3 w-auto mx-auto space-y-3 pb-28"> */}
-      <Gallery style={{ 'column-width': '250px' }}>
+      <Gallery>
         {plays &&
-          plays.map((playsElement: any, idx: number) => {
+          plays.map((play: any, idx: number) => {
             return (
-              <div key={idx}>
-                {playsElement.map((play: any, indx: number) => {
-                  // const letterGridElement = getGridAreaFromIndex(
-                  //   indx,
-                  //   maxLetter,
-                  // )
-                  return (
-                    <li key={'subgrid_item_' + indx} className="photo-item">
-                      <Item
-                        id={play.id}
-                        image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          play.image.id
-                        }`}
-                        url={play.url}
-                        body={play.body}
-                      ></Item>
-                    </li>
-                  )
-                })}
-              </div>
+              <Item
+                id={play.id}
+                height={play.image.height}
+                width={play.image.width}
+                key={'subgrid_item_' + idx}
+                image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                  play.image.id
+                }`}
+                url={play.url}
+                body={play.body}
+              ></Item>
             )
           })}
       </Gallery>

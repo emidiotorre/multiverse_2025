@@ -27,6 +27,7 @@
     "next": "^13.1.4",
     "postcss": "^8.4.21",
     "react": "18.2.0",
+    "react-animate-height": "^3.1.1",
     "react-dom": "18.2.0",
     "react-masonry-component": "^6.3.0",
     "react-responsive-masonry": "^2.1.7",
