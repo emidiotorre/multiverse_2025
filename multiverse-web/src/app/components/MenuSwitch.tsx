@@ -8,7 +8,12 @@ function MenuSwitch({}: Props) {
   const pathname = usePathname()
   return (
     <div className="font-sans flex ml-8 relative bg-[#d0d0d0] rounded-full ">
-      <Link href="/works" className="mx-6 my-1 py-2 z-10">
+      <Link
+        prefetch={true}
+        replace={true}
+        href="/works"
+        className="mx-6 my-1 py-2 z-10"
+      >
         work
       </Link>{' '}
       <div
@@ -22,7 +27,12 @@ function MenuSwitch({}: Props) {
             : ''
         }`}
       ></div>{' '}
-      <Link href="/play" className=" mx-6 my-1 py-2 z-10 ">
+      <Link
+        prefetch={true}
+        replace={true}
+        href="/play"
+        className=" mx-6 my-1 py-2 z-10 "
+      >
         play
       </Link>
     </div>

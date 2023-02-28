@@ -15,7 +15,12 @@ function Header() {
           <Container>
             <div className="flex justify-between py-4 md:py-10 w-full ">
               <div className="flex justify-start max-w-screen-2xl items-center ">
-                <Link href="/" className="h-fit-content">
+                <Link
+                  href="/"
+                  prefetch={true}
+                  replace={true}
+                  className="h-fit-content"
+                >
                   <Image
                     className="object-contain object-left md:object-cover max-h-6 w-20 md:w-auto md:max-w-max md:max-h-12"
                     src={logoSmall}
@@ -27,6 +32,8 @@ function Header() {
               </div>
               <div className="flex justify-end">
                 <Link
+                  prefetch={true}
+                  replace={true}
                   href="/about"
                   className={`bg-[#d0d0d0] px-2 py-2  md:px-8 md:py-3  transition-colors  hover:z-10 hover:drop-shadow-lg rounded-full ${
                     pathname?.split('/').includes('about') ? '' : ' -ml-12 z-0'
