@@ -26,6 +26,7 @@ function Header() {
                     src={logoSmall}
                     width={200}
                     alt={''}
+                    priority={true}
                   />
                 </Link>
                 <MenuSwitch></MenuSwitch>
