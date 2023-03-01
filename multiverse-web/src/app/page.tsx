@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Logo from '../../public/materiale/mvs_logo.png'
 import Container from './components/Container'
 
-async function Home() {
+export default async function Home() {
   const { home } = await fetcher({ query: GET_HOME, variables: null })
   return (
     <>
@@ -27,4 +27,3 @@ async function Home() {
     </>
   )
 }
-export default Home

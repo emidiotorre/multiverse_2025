@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from '@/app/components/Container'
-
 import { GET_PLAYS } from '../apollo/queries'
 import PlaysGrid from '../components/PlaysGrid'
 import { fetcher } from '../apollo'

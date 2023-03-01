@@ -63,11 +63,29 @@ const WORK_FRAG = gql`
     }
   }
 `
-export const GET_ABOUT_PAGE = gql`
-  query getAboutPage {
+export const GET_ABOUT = gql`
+  query getAbout {
     about: About {
       id
-      body
+      blocks {
+        id
+        item {
+          type: __typename
+          ... on TextBlock {
+            id
+            Title
+            Body
+            columns
+          }
+          ... on ImageBlock {
+            image {
+              height
+              width
+              id
+            }
+          }
+        }
+      }
     }
   }
 `

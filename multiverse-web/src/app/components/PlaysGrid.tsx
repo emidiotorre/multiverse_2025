@@ -14,7 +14,6 @@ type Props = {
 function PlaysGrid({ plays }: Props) {
   return (
     <>
-      {/* <div className="columns-2 gap-3 w-auto mx-auto space-y-3 pb-28"> */}
       <Gallery>
         {plays &&
           plays.map((play: any, idx: number) => {
@@ -33,7 +32,6 @@ function PlaysGrid({ plays }: Props) {
             )
           })}
       </Gallery>
-      {/* </div> */}
       <div className="flex justify-end py-10">
         <Image
           onClick={() =>

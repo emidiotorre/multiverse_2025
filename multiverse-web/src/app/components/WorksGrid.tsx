@@ -12,7 +12,6 @@ type Props = {
 
 function WorksGrid({ works }: Props) {
   const matches = useMediaQuery('(max-width: 768px)')
-  console.log(works)
   return (
     <>
       <FrameGrid
