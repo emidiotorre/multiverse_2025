@@ -3,7 +3,7 @@ import * as React from 'react'
 import Masonry from 'react-masonry-component'
 
 const masonryOptions = {
-  fitWidth: false,
+  fitWidth: true,
   columnWidth: 60,
   rowHeight: 60,
   gutter: 20,
@@ -15,7 +15,7 @@ function Gallery(props: any) {
   return (
     <Masonry
       {...props}
-      className="pt-40 pl-32"
+      className="pt-40 pl-32 "
       elementType={'div'}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false

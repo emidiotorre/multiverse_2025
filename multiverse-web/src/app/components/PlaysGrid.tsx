@@ -15,7 +15,7 @@ function PlaysGrid({ plays }: Props) {
   return (
     <>
       {/* <div className="columns-2 gap-3 w-auto mx-auto space-y-3 pb-28"> */}
-      <Gallery style={{ 'column-width': '250px' }}>
+      <Gallery>
         {plays &&
           plays.map((play: any, idx: number) => {
             return (
