@@ -1,23 +1,23 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import Container from "./Container";
-import DateTime from "./DateTime";
-import Logo from "../../../public/materiale/mvs_logo.png";
-import { usePathname } from "next/navigation";
+'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import Container from './Container'
+import DateTime from './DateTime'
+import Logo from '../../../public/materiale/mvs_logo.png'
+import { usePathname } from 'next/navigation'
 
 type Props = {
-  footer: any;
-};
+  footer: any
+}
 
 function FooterComponent({ footer }: Props) {
-  const pathName = usePathname();
+  const pathName = usePathname()
 
   return (
     <footer className="relative flex-1 max-w-full pt-10 md:top-24 flex align-bottom font-Sharp_Grotesk_Medium20 ">
-      <Container style={{ alignSelf: "flex-end" }}>
-        <div className="md:flex md:justify-between md:items-end md:py-10 ">
+      <Container style={{ alignSelf: 'flex-end' }}>
+        <div className=" md:flex md:justify-between md:items-end md:py-10 ">
           <div className="md:col-span-1 pt-0 ">
             <small>
               <Link
@@ -43,7 +43,7 @@ function FooterComponent({ footer }: Props) {
         </div>
       </Container>
     </footer>
-  );
+  )
 }
 
-export default FooterComponent;
+export default FooterComponent
