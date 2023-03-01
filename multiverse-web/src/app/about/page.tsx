@@ -25,10 +25,10 @@ export default function About() {
             src={`${'../materiale/about/img_3.png'}`}
           ></img>
         </div>
-        <div className="rounded-lg overflow-hidden" style={{ gridArea: 'D' }}>
-          <div className="bg-gray-200 h-full w-full">
-            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6">studio</h3>
-            <div className="rounded-lg overflow-hidden mx-6 pt-8">
+        <div className="rounded-lg overflow-hidden " style={{ gridArea: 'D' }}>
+          <div className="bg-gray-200 h-full w-full flex justify-between flex-col">
+            <h3 className="font-extrabold text-3xl  mx-6 pt-6 ">studio</h3>
+            <div className=" mx-6 pt-8 mb-10">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               ac ornare sem. Morbi tristique nisl suscipit ante placerat auctor.
               Etiam dolor dolor, consectetur cursus nulla non, tincidunt mollis
@@ -45,9 +45,9 @@ export default function About() {
           ></img>
         </div>
         <div className="rounded-lg overflow-hidden" style={{ gridArea: 'F' }}>
-          <div className="bg-gray-200 h-full w-full">
-            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6 ">clients</h3>
-            <div className="font-medium rounded-lg overflow-hidden gap-x-10 mx-6 pt-8 grid grid-cols-2 divide-x-0">
+          <div className="bg-gray-200 h-full w-full  flex justify-between flex-col">
+            <h3 className="font-extrabold text-3xl mx-6  pt-6 ">clients</h3>
+            <div className="font-medium gap-x-10 mx-6 grid grid-cols-2 divide-x-0 mb-10">
               <div>Airbnb</div>
               <div>Apple</div>
               <div>Brooklyn Museum</div>
@@ -70,9 +70,9 @@ export default function About() {
           </div>
         </div>
         <div className="rounded-lg overflow-hidden" style={{ gridArea: 'H' }}>
-          <div className="bg-red-600 h-full w-full">
-            <h3 className="font-extrabold text-3xl mx-6 mb-6 pt-6">contact</h3>
-            <div className="rounded-lg overflow-hidden mx-6 pt-8">
+          <div className="bg-red-600 h-full w-full  flex justify-between flex-col">
+            <h3 className="font-extrabold text-3xl mx-6  pt-6 ">contact</h3>
+            <div className="flex align-text-bottom mx-6 mb-10">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               ac ornare sem. Morbi tristique nisl suscipit ante placerat auctor.
               Etiam dolor dolor, consectetur cursus nulla non, tincidunt mollis

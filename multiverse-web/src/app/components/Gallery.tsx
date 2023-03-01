@@ -15,7 +15,7 @@ function Gallery(props: any) {
   return (
     <Masonry
       {...props}
-      className="pt-40 px-5 mx-auto"
+      className="pt-40 pl-32"
       elementType={'div'}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false
