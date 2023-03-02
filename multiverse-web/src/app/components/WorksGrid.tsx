@@ -1,71 +1,125 @@
-'use client'
-import { FrameGrid } from '@egjs/react-grid'
-import React from 'react'
-import Card from './Card'
-import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
-import { useMediaQuery } from 'usehooks-ts'
+"use client";
+import React from "react";
+import Card from "./Card";
+import Image from "next/image";
+import Up from "../../../public/materiale/UP.png";
+import { useMediaQuery } from "usehooks-ts";
+import Marquee from "react-fast-marquee";
 
 type Props = {
-  works: any[]
-}
+  blocks: any[];
+};
 
-function WorksGrid({ works }: Props) {
-  const matches = useMediaQuery('(max-width: 768px)')
+function WorksGrid({ blocks }: Props) {
+  const matches = useMediaQuery("(max-width: 768px)");
   return (
     <>
-      <FrameGrid
-        gap={12}
-        defaultDirection={'end'}
-        frame={
-          matches
-            ? [[1], [2], [3], [4], [5]]
-            : [
-                [1, 1, 1, 2, 2, 2],
-                [1, 1, 1, 2, 2, 2],
-                [1, 1, 1, 3, 3, 3],
-                [1, 1, 1, 3, 3, 3],
-                [4, 4, 4, 5, 5, 5],
-                [4, 4, 4, 5, 5, 5],
-              ]
-        }
-        useResizeObserver={true}
-        observeChildren={true}
-        useFrameFill={true}
-      >
-        {works
-          ?.sort((a, b) => (a.date_created < b.date_created ? -1 : 1))
-          .map((work: any, idx: number) => {
-            return (
-              <Card
-                key={idx}
-                id={work.id}
-                image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                  work.image.id
-                }`}
-                slug={work.slug}
-                Name={work.Name}
-              ></Card>
-            )
+      <div className="my-10">
+        <Marquee gradient={false} speed={100} style={{ overflowY: "hidden" }}>
+          <h3 className="text-5xl">LOREM IPSUM</h3>
+        </Marquee>
+      </div>
+      {blocks &&
+        blocks
+          .sort((a, b) =>
+            a.item.work1.date_created < b.item.work1.date_created ? -1 : 1
+          )
+          .map((block: any, idx: number) => {
+            switch (block.item.tipologia) {
+              case "half-split":
+                return (
+                  <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                    <div className="row-span-2">
+                      <Card
+                        height={block.item.work1.image.height}
+                        width={block.item.work1.image.width}
+                        key={idx}
+                        id={block.item.work1.image.id}
+                        image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.work1.image.id
+                        }`}
+                        slug={block.item.work1.slug}
+                        Name={block.item.work1.Name}
+                      ></Card>
+                    </div>
+                    <div>
+                      <Card
+                        height={block.item.work1.image.height}
+                        width={block.item.work1.image.width}
+                        key={idx}
+                        id={block.item.work2.image.id}
+                        image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.work2.image.id
+                        }`}
+                        slug={block.item.work2.slug}
+                        Name={block.item.work2.Name}
+                      ></Card>
+                    </div>
+                    <div>
+                      <Card
+                        height={block.item.work1.image.height}
+                        width={block.item.work1.image.width}
+                        key={idx}
+                        id={block.item.work3.image.id}
+                        image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.work3.image.id
+                        }`}
+                        slug={block.item.work3.slug}
+                        Name={block.item.work3.Name}
+                      ></Card>
+                    </div>
+                  </div>
+                );
+              case "half-half":
+                return (
+                  <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                    <div className="row-span-2 my-2">
+                      <Card
+                        key={idx}
+                        id={block.item.work1.image.id}
+                        image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.work1.image.id
+                        }`}
+                        slug={block.item.work1.slug}
+                        Name={block.item.work1.Name}
+                        height={block.item.work1.image.height}
+                        width={block.item.work1.image.width}
+                      ></Card>
+                      <div className="row-span-2 my-2">
+                        <Card
+                          height={block.item.work1.image.height}
+                          width={block.item.work1.image.width}
+                          key={idx}
+                          id={block.item.work2.image.id}
+                          image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                            block.item.work2.image.id
+                          }`}
+                          slug={block.item.work2.slug}
+                          Name={block.item.work2.Name}
+                        ></Card>
+                      </div>
+                    </div>
+                  </div>
+                );
+            }
           })}
-      </FrameGrid>
       <div className=" flex justify-end py-10">
         <Image
           onClick={() =>
             document.documentElement.scrollTo({
               top: 0,
               left: 0,
-              behavior: 'smooth',
+              behavior: "smooth",
             })
           }
           className="object-cover h-[18vh] w-[10vh] "
           src={Up}
-          alt={''}
+          alt={""}
           quality={100}
         />
       </div>
     </>
-  )
+  );
 }
 
-export default WorksGrid
+export default WorksGrid;

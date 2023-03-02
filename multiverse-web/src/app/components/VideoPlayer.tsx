@@ -62,7 +62,8 @@ export function VideoAutoPlayer({ src }: { src: string }) {
           autoplay
           playsinline
           preload="metadata"
-          style="width: 100vw; height: 100vh; object-fit: cover; position: absolute; top: 0; left: 0; z-index: -1;"
+          style=" width: 100vw; height: 100vh; object-fit: cover; top: 0; left: 0; z-index: -1; border-radius: 0.5rem; margin-top: 0.5rem;
+          margin-bottom: 0.5rem; "
         >
         <source src="${src}" type="video/mp4" />
         </video>`,
