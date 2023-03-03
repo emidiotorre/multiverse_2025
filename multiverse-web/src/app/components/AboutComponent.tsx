@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Up from "../../../public/materiale/UP.png";
-import Item from "./Item";
+import Container from "./Container";
 
 type Props = {
   blocks: any[];
@@ -11,70 +11,63 @@ type Props = {
 const AboutComponent = ({ blocks }: Props) => {
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 ">
-        {blocks &&
-          blocks.map((block: any, idx: number) => {
-            switch (block.item.type) {
-              case "TextBlock":
-                if (block.item.column <= 2) {
-                  return (
-                    <div className="bg-gray-200 h-full w-full flex justify-between flex-col  rounded-lg ">
-                      <h3 className="font-extrabold text-3xl mx-6  pt-6">
-                        {block.item.Title}
-                      </h3>
-                      <div
-                        key={idx}
-                        className="font-medium gap-x-10 mx-6 grid grid-cols-2 divide-x-0 mb-10"
-                      >
-                        <p
-                          className="mx-6 pt-8 mb-10 text-2xl"
+      <Container>
+        <div className="grid grid-cols-2 gap-3 nth-child-2:col-span-2 nth-child-3:row-span-2 nth-child-7:row-span-2">
+          {blocks &&
+            blocks.map((block: any, idx: number) => {
+              switch (block.item.type) {
+                case "TextBlock":
+                  if (block.item.columns === 2) {
+                    return (
+                      <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg ">
+                        <h3 className="font-extrabold text-3xl mx-6 pt-6">
+                          {block.item.Title}
+                        </h3>
+                        <div
+                          key={idx}
+                          className="pt-8 font-medium md:gap-x-10 mx-6 grid grid-cols-1 md:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
                           }}
-                        ></p>
+                        ></div>
                       </div>
-                    </div>
-                  );
-                } else {
-                  return (
-                    <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg">
-                      <div key={idx}>
+                    );
+                  } else if (block.item.columns === 1) {
+                    return (
+                      <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg">
                         <h3 className="font-extrabold text-3xl mx-6  pt-6">
                           {block.item.Title}
                         </h3>
                         <div>
-                          <p
-                            className="mx-6 pt-8 mb-10 text-2xl"
+                          <div
+                            className="mx-6 pt-8 mb-10 md:text-2xl"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
                             }}
-                          ></p>
+                          ></div>
                         </div>
                       </div>
+                    );
+                  }
+                case "ImageBlock":
+                  return (
+                    <div className="" key={idx}>
+                      <Image
+                        className="object-cover w-full h-full rounded-lg overflow-hidden"
+                        src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.image.id
+                        }`}
+                        alt={""}
+                        quality={100}
+                        height={block.item.image.height}
+                        width={block.item.image.width}
+                      />
                     </div>
                   );
-                }
-              case "ImageBlock":
-                return (
-                  <div
-                    className="object-cover rounded-lg overflow-hidden"
-                    key={idx}
-                  >
-                    <Image
-                      className=""
-                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        block.item.image.id
-                      }`}
-                      alt={""}
-                      quality={100}
-                      height={block.item.image.height}
-                      width={block.item.image.width}
-                    />
-                  </div>
-                );
-            }
-          })}
-      </div>
+              }
+            })}
+        </div>
+      </Container>
       <div className="flex justify-end py-10">
         <Image
           onClick={() =>
@@ -84,7 +77,7 @@ const AboutComponent = ({ blocks }: Props) => {
               behavior: "smooth",
             })
           }
-          className="object-cover h-[18vh] w-[10vh] "
+          className="object- h-[18vh] w-[10vh] "
           src={Up}
           alt={""}
           quality={100}

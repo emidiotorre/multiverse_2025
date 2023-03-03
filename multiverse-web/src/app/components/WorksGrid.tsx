@@ -85,19 +85,19 @@ function WorksGrid({ blocks }: Props) {
                         height={block.item.work1.image.height}
                         width={block.item.work1.image.width}
                       ></Card>
-                      <div className="row-span-2 my-2">
-                        <Card
-                          height={block.item.work1.image.height}
-                          width={block.item.work1.image.width}
-                          key={idx}
-                          id={block.item.work2.image.id}
-                          image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                            block.item.work2.image.id
-                          }`}
-                          slug={block.item.work2.slug}
-                          Name={block.item.work2.Name}
-                        ></Card>
-                      </div>
+                    </div>
+                    <div className="row-span-2 my-2">
+                      <Card
+                        height={block.item.work1.image.height}
+                        width={block.item.work1.image.width}
+                        key={idx}
+                        id={block.item.work2.image.id}
+                        image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                          block.item.work2.image.id
+                        }`}
+                        slug={block.item.work2.slug}
+                        Name={block.item.work2.Name}
+                      ></Card>
                     </div>
                   </div>
                 );
