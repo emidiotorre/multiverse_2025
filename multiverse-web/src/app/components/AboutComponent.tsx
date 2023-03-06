@@ -12,7 +12,7 @@ const AboutComponent = ({ blocks }: Props) => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-2 gap-3 nth-child-2:col-span-2 nth-child-3:row-span-2 nth-child-7:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-7:row-span-2">
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
@@ -20,12 +20,12 @@ const AboutComponent = ({ blocks }: Props) => {
                   if (block.item.columns === 2) {
                     return (
                       <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg ">
-                        <h3 className="font-extrabold text-3xl mx-6 pt-6">
+                        <h3 className="font-extrabold text-xl md:text-3xl mx-6 pt-6">
                           {block.item.Title}
                         </h3>
                         <div
                           key={idx}
-                          className="pt-8 font-medium md:gap-x-10 mx-6 grid grid-cols-1 md:grid-cols-2 md:divide-x-0 mb-10"
+                          className="pt-8 lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
                           }}
@@ -35,12 +35,12 @@ const AboutComponent = ({ blocks }: Props) => {
                   } else if (block.item.columns === 1) {
                     return (
                       <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg">
-                        <h3 className="font-extrabold text-3xl mx-6  pt-6">
+                        <h3 className="font-extrabold text-xl md:text-3xl mx-6  pt-6">
                           {block.item.Title}
                         </h3>
                         <div>
                           <div
-                            className="mx-6 pt-8 mb-10 md:text-2xl"
+                            className="mx-6 pt-8 mb-10 lg:text-2xl"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
                             }}

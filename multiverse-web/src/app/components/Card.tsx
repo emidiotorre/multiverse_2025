@@ -14,10 +14,7 @@ type Props = {
 
 const Card = (props: Props) => {
   return (
-    <div
-      className="relative overflow-hidden self-stretch rounded-lg"
-      style={props.style}
-    >
+    <div className="relative overflow-hidden" style={props.style}>
       <Link
         href={props.slug ? `/works/${props.slug}` : "/"}
         key={props.id}
@@ -29,6 +26,7 @@ const Card = (props: Props) => {
           </div>
         </div>
         <Image
+          className="w-full h-full object-cover rounded-lg"
           height={props.height}
           width={props.width}
           src={props.image_url}

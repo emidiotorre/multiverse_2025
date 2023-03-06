@@ -17,7 +17,7 @@ const Personal = ({ work }: Props) => {
       <Container>
         <VideoAutoPlayer
           src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-            work.video.id
+            work?.video?.id
           }`}
         ></VideoAutoPlayer>
         {work.gallery?.map((img: any, idx: number) => {
@@ -44,7 +44,7 @@ const Personal = ({ work }: Props) => {
               );
             case "half-split":
               return (
-                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
                   <div className="row-span-2">
                     <Image
                       width={1400}
@@ -90,7 +90,7 @@ const Personal = ({ work }: Props) => {
               return <div></div>;
             case "half-half":
               return (
-                <div className="grid grid-cols-2 gap-x-2 gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
                   <div className="row-span-2 my-2">
                     <Image
                       width={1400}
@@ -104,7 +104,7 @@ const Personal = ({ work }: Props) => {
                       alt={""}
                     />
                   </div>
-                  <div className="row-span-2 my-2">
+                  <div className="row-span-2 mb-2 md:my-2">
                     <Image
                       width={1400}
                       height={1400}
@@ -121,7 +121,7 @@ const Personal = ({ work }: Props) => {
               );
             case "third-third-third":
               return (
-                <div className="grid grid-cols-3 gap-x-2 gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2">
                   <div>
                     <Image
                       width={1400}
@@ -186,13 +186,13 @@ const Personal = ({ work }: Props) => {
           >
             <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
             <div className="pt-32 grid grid-cols-2 divide-x-0">
-              {work.Credits.map((credit: any, idx: number) => {
+              {work?.Credits?.map((credit: any, idx: number) => {
                 return (
                   <>
-                    <div key={idx}>
+                    <div className="border-none" key={idx}>
                       <p>{credit.Credit_Category}</p>
                     </div>
-                    <div>
+                    <div className="border-none">
                       <p>{credit.Credit_Value}</p>
                     </div>
                   </>
