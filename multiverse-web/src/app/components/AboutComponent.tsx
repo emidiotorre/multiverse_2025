@@ -12,7 +12,7 @@ const AboutComponent = ({ blocks }: Props) => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-7:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2  md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-7:row-span-2">
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
@@ -25,7 +25,7 @@ const AboutComponent = ({ blocks }: Props) => {
                         </h3>
                         <div
                           key={idx}
-                          className="pt-8 lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
+                          className="pt-8 text-xl lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
                           }}
@@ -33,13 +33,17 @@ const AboutComponent = ({ blocks }: Props) => {
                       </div>
                     );
                   } else if (block.item.columns === 1) {
+                    const BgPostIt = `${
+                      idx === 7 ? "bg-[#F40000]" : "bg-gray-200"
+                    }  h-full w-full flex justify-between flex-col rounded-lg`;
                     return (
-                      <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg">
+                      <div className={BgPostIt}>
                         <h3 className="font-extrabold text-xl md:text-3xl mx-6  pt-6">
                           {block.item.Title}
                         </h3>
                         <div>
                           <div
+                            key={idx}
                             className="mx-6 pt-8 mb-10 lg:text-2xl"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
