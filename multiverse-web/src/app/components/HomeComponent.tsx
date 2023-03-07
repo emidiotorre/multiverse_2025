@@ -1,7 +1,4 @@
 import Image from 'next/image'
-import Logo from '../../../public/materiale/mvs_logo.png'
-import Container from './Container'
-
 import ImgU from '../../../public/materiale/home/img1.png'
 import ImgD from '../../../public/materiale/home/img2.png'
 import ImgT from '../../../public/materiale/home/img3.png'

@@ -27,8 +27,8 @@ function Draggable(props: Props) {
       whileTap={{ scale: 0.9 }}
       initial={{
         zIndex: 100,
-        height: 200,
-        width: 200,
+        height: 100,
+        width: 100,
         position: 'absolute',
         left: Math.random() * rect.width * 0.75,
         top: Math.random() * rect.height * 0.75,
