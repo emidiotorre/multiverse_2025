@@ -13,7 +13,7 @@ function HomeComponent() {
           style={{
             pointerEvents: 'none',
           }}
-          className="object-cover w-[8vh] md:w-[15vh]"
+          className="object-cover w-[8vh] md:w-[16vh]"
           quality={100}
           src={ImgU}
           alt={''}
@@ -24,7 +24,7 @@ function HomeComponent() {
           style={{
             pointerEvents: 'none',
           }}
-          className="object-cover w-[8vh] md:w-[15vh]"
+          className="object-cover w-[8vh] md:w-[16vh]"
           src={ImgD}
           quality={100}
           alt={''}
@@ -35,7 +35,7 @@ function HomeComponent() {
           style={{
             pointerEvents: 'none',
           }}
-          className="object-cover  w-[8vh] md:w-[15vh]"
+          className="object-cover  w-[8vh] md:w-[16vh]"
           src={ImgT}
           alt={''}
           quality={100}
@@ -46,7 +46,7 @@ function HomeComponent() {
           style={{
             pointerEvents: 'none',
           }}
-          className="object-cover w-[8vh] md:w-[15vh] "
+          className="object-cover w-[8vh] md:w-[16vh] "
           src={ImgQ}
           quality={100}
           alt={''}

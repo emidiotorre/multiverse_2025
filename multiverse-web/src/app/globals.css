@@ -133,10 +133,3 @@ a {
                         'H H H G G G'
                         'H H H G G G';
 }
-.photo-list {
-  list-style: none;
-  margin: 20px auto;
-}
-.photo-item {
-  margin: 20px auto;
-}

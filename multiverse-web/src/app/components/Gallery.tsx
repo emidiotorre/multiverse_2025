@@ -3,19 +3,20 @@ import * as React from 'react'
 import Masonry from 'react-masonry-component'
 
 const masonryOptions = {
+  //percentPosition: true,
   fitWidth: true,
-  columnWidth: 60,
+  columnWidth: 100,
   rowHeight: 60,
-  gutter: 20,
+  gutter: 30,
   draggable: true,
-  itemSelector: '.grid-item',
 }
 
 function Gallery(props: any) {
   return (
     <Masonry
+      //onLayoutComplete={}
       {...props}
-      className="pt-40 pl-12"
+      className="pt-[40rem] pl-12"
       elementType={'div'}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false

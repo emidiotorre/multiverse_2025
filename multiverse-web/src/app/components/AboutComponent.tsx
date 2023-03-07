@@ -54,10 +54,16 @@ const AboutComponent = ({ blocks }: Props) => {
                     )
                   }
                 case 'ImageBlock':
+                  const firstImg = `${
+                    idx === 0
+                      ? 'md:object-contain md:h-[80vh] '
+                      : 'object-cover h-full'
+                  }
+                  w-full  rounded-lg overflow-hidden`
                   return (
                     <div className="" key={idx}>
                       <Image
-                        className="object-cover w-full h-full rounded-lg overflow-hidden"
+                        className={firstImg}
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           block.item.image.id
                         }`}

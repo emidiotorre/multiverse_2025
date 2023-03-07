@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 import Container from './Container'
 import DateTime from './DateTime'
@@ -10,11 +10,15 @@ type Props = {
 }
 
 function FooterComponent({ footer }: Props) {
+  const pathname = usePathname()
+  const borderTop = `${
+    pathname === '/' ? 'border-none ' : 'border-black border-t'
+  } md:border-none pb-2`
   return (
     <>
       <footer className=" relative flex-1 max-w-full pt-10 md:top-24 flex align-bottom font-Sharp_Grotesk_Medium20 ">
         <Container style={{ alignSelf: 'flex-end' }}>
-          <hr className="border-black border-t md:border-none pb-2" />
+          <hr className={borderTop} />
           <div className=" md:flex md:justify-between md:items-end md:py-10 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
