@@ -14,9 +14,14 @@ function WorksGrid({ blocks }: Props) {
   const matches = useMediaQuery('(max-width: 768px)')
   return (
     <>
-      <div className="my-10">
+      <div className="my-5">
         <Marquee gradient={false} speed={100} style={{ overflowY: 'hidden' }}>
-          <h3 className="text-5xl">LOREM IPSUM</h3>
+          <h3 className="marque-title text-6xl font-bold uppercase">
+            &nbsp;discover another universe
+          </h3>
+          <h3 className="marque-title text-6xl font-bold uppercase">
+            &nbsp;discover another universe
+          </h3>
         </Marquee>
       </div>
       {blocks &&
