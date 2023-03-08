@@ -177,7 +177,11 @@ const Personal = ({ work }: Props) => {
             className="cursor-pointer"
             onClick={() => setisDescriptionOpen(!isDescriptionOpen)}
           >
-            <p> - Project Information</p>
+            {isDescriptionOpen ? (
+              <p> - Project Information</p>
+            ) : (
+              <p> + Project Information</p>
+            )}
           </div>
           <AnimateHeight
             className={`col-span-2 overflow-hidden`}

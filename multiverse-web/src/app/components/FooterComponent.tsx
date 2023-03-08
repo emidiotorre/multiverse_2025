@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import { useMediaQuery } from 'usehooks-ts'
 import Container from './Container'
 import DateTime from './DateTime'
 
@@ -10,16 +11,19 @@ type Props = {
 }
 
 function FooterComponent({ footer }: Props) {
+  const matches = useMediaQuery('(max-width: 1085px)')
+
   const pathname = usePathname()
   const borderTop = `${
     pathname === '/' ? 'border-none ' : 'border-black border-t'
   } md:border-none pb-2`
+  const s = `${matches ? ' flex flex-col' : ''}  `
   return (
     <>
-      <footer className=" relative flex-1 max-w-full pt-10 md:top-24 flex align-bottom font-Sharp_Grotesk_Medium20 ">
+      <footer className=" relative flex-1 max-w-full  md:top-24 flex align-bottom font-sans text-xs ">
         <Container style={{ alignSelf: 'flex-end' }}>
           <hr className={borderTop} />
-          <div className=" md:flex md:justify-between md:items-end md:py-10 ">
+          <div className=" columns-2 flex justify-between text-[10px] md:text-sm items-end md:py-10 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
@@ -35,11 +39,14 @@ function FooterComponent({ footer }: Props) {
                 >
                   Facebook
                 </Link>
+                <span className="sm:mr-4">|</span>
               </small>
 
-              <small key={footer.id}>{footer.col1}</small>
+              <small className={s} key={footer.id}>
+                {footer.col1}
+              </small>
             </div>
-            <div className="flex flex-col-reverse">
+            <div>
               <DateTime />
             </div>
           </div>

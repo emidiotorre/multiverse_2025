@@ -14,19 +14,17 @@ function PlaysGrid({ plays }: Props) {
   return (
     <>
       <div className="flex justify-center">
-        <div className="font-sans text-5xl font-semibold text-center">
-          <h1 className="">all work</h1>
-          <h1>and no play</h1>
-          <h1>makes</h1>
-          <h1>multiverse</h1>
-          <h1>a bad agency</h1>
+        <div className="font-sans text-3xl md:text-5xl font-semibold text-center max-w-[60%] md:max-w-[19.5%]">
+          <h1>all work and no play makes multiverse a bad agency</h1>
         </div>
       </div>
-
-      <div className="font-sans text-xl font-light my-10 text-center">
-        <h1 className="">In this page you will find </h1>
-        <h1>experiments with new forms</h1>
-        <h1>makes</h1>
+      <div className="flex justify-center">
+        <div className="font-sans text-[1vh] max-w-[80%] md:max-w-[21%] md:text-xs font-light my-10 text-center">
+          <h1>
+            In this page you will find experiments with new forms of design
+            technology & moving image
+          </h1>
+        </div>
       </div>
       <Gallery>
         {plays &&

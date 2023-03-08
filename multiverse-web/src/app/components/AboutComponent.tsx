@@ -38,13 +38,13 @@ const AboutComponent = ({ blocks }: Props) => {
                     }  h-full w-full flex justify-between flex-col rounded-lg`
                     return (
                       <div className={BgPostIt}>
-                        <h3 className="font-extrabold text-xl md:text-3xl mx-6  pt-6">
+                        <h3 className="font-extrabold text-xl md:text-3xl mx-6 pt-6">
                           {block.item.Title}
                         </h3>
                         <div>
                           <div
                             key={idx}
-                            className="mx-6 pt-8 mb-10 lg:text-2xl"
+                            className="mx-6 pt-8 mb-10 text-xl"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
                             }}

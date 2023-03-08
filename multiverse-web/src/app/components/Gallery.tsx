@@ -16,7 +16,7 @@ function Gallery(props: any) {
     <Masonry
       //onLayoutComplete={}
       {...props}
-      className="pt-[40rem] pl-12"
+      className="pt-[20rem] md:pt-[40rem] pl-12"
       elementType={'div'}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false

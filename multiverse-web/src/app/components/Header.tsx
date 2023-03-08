@@ -11,7 +11,7 @@ function Header() {
   const pathname = usePathname()
   return (
     <>
-      <div className="fixed bottom-0 w-full md:static md:top-0 text-xs md:text-base z-50 bg-white flex-col-reverse">
+      <div className="fixed bottom-0 w-full md:static md:top-0 text-sm z-50 bg-white flex-col-reverse">
         <header>
           <Container>
             <div className="flex justify-between py-4 md:py-10 w-full ">
@@ -23,7 +23,7 @@ function Header() {
                   className="h-fit-content"
                 >
                   <Image
-                    className="object-contain object-left md:object-cover max-h-6 w-20 md:w-auto md:max-w-max md:max-h-12"
+                    className="object-contain object-left md:object-cover max-h-6 w-20 md:w-auto md:max-w-max md:max-h-10"
                     src={logoSmall}
                     width={200}
                     alt={''}
@@ -32,13 +32,15 @@ function Header() {
                 </Link>
                 <MenuSwitch></MenuSwitch>
               </div>
-              <div className="flex justify-end">
+              <div className="flex justify-end ">
                 <Link
                   prefetch={true}
                   replace={true}
                   href="/about"
-                  className={`bg-[#d0d0d0] px-6 py-3 md:px-8 md:py-3  transition-colors  hover:z-10 rounded-full ${
-                    pathname?.split('/').includes('about') ? '' : ' -ml-12 z-0'
+                  className={`mx-6 pt-[.6rem] my-0 md:px-10 md:-pb-[1rem] transition-colors  rounded-full ${
+                    pathname?.split('/').includes('about')
+                      ? ' bg-[#F40000] z-10'
+                      : ' -ml-12 z-0 bg-[#d0d0d0]'
                   }`}
                 >
                   about
