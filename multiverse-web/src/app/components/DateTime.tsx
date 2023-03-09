@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 
 const DateTime = () => {
-  //const matches = useMediaQuery('(max-width: 768px)')
+  const isMobile = useMediaQuery('(max-width: 1200px)')
   var [date, setDate] = useState(new Date())
   var [timerText, setTimerText] = useState('')
   let str = '\u00B7'
@@ -22,8 +22,7 @@ const DateTime = () => {
         ' ' +
         date.getUTCDate() +
         ' ' +
-        str +
-        ' ' +
+        (!isMobile ? str + ' ' : '') +
         (date.getUTCHours() + 1).toString().padStart(2, '0') +
         ':' +
         date.getUTCMinutes().toString().padStart(2, '0') +
@@ -32,9 +31,9 @@ const DateTime = () => {
         ':' +
         date.getUTCMilliseconds().toString().padStart(3, '0'),
     )
-  }, [date])
+  }, [date, isMobile])
   return (
-    <div className="flex text-red-500 font-mono">
+    <div className="flex text-red-500 font-mono text-right">
       <small className="px-0 md:px-2">{timerText}</small>
     </div>
   )

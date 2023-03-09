@@ -7,12 +7,12 @@ type Props = {}
 function MenuSwitch({}: Props) {
   const pathname = usePathname()
   return (
-    <div className="font-sans font text-sm flex ml-4 relative bg-[#d0d0d0] rounded-full ">
+    <div className="font-sans text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] rounded-full  ">
       <Link
         prefetch={true}
         replace={true}
         href="/works"
-        className="mx-6 my-0 py-2 z-10"
+        className="	 mx-4 md:mx-6 my-0 py-1 md:py-2 z-10"
       >
         work
       </Link>{' '}
@@ -32,7 +32,7 @@ function MenuSwitch({}: Props) {
         prefetch={true}
         replace={true}
         href="/play"
-        className=" mx-6 my-0 py-2 z-10 "
+        className=" mx-4 md:mx-6 my-0 py-1 md:py-2 z-10 "
       >
         play
       </Link>

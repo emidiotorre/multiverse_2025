@@ -11,19 +11,17 @@ type Props = {
 }
 
 function FooterComponent({ footer }: Props) {
-  const matches = useMediaQuery('(max-width: 1085px)')
-
   const pathname = usePathname()
   const borderTop = `${
     pathname === '/' ? 'border-none ' : 'border-black border-t'
   } md:border-none pb-2`
-  const s = `${matches ? ' flex flex-col' : ''}  `
+
   return (
     <>
-      <footer className=" relative flex-1 max-w-full  md:top-24 flex align-bottom font-sans text-xs ">
+      <footer className=" absolute bottom-16 md:bottom-0 flex-1 w-full max-w-full  md:top-24 flex align-bottom font-sans md:text-xs ">
         <Container style={{ alignSelf: 'flex-end' }}>
           <hr className={borderTop} />
-          <div className=" columns-2 flex justify-between text-[10px] md:text-sm items-end md:py-10 ">
+          <div className=" columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-10 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
@@ -42,7 +40,10 @@ function FooterComponent({ footer }: Props) {
                 <span className="sm:mr-4">|</span>
               </small>
 
-              <small className={s} key={footer.id}>
+              <small
+                className="max-[1098px]:flex max-[1098px]:flex-col "
+                key={footer.id}
+              >
                 {footer.col1}
               </small>
             </div>

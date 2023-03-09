@@ -22,7 +22,7 @@ export default async function RootLayout({
       */}
       <head />
       <body>
-        <main className="pb-[8vh] md:pb-[11vh] pt-2 md:pt-0 md:pb-o flex flex-col w-full justify-start min-h-screen">
+        <main className="relative pb-[10vh] pt-0 md:pb-0 flex flex-col w-full justify-start min-h-[100svh] min-h-[100vh]">
           <Header />
           {children}
           {footer && <FooterComponent footer={footer} />}
