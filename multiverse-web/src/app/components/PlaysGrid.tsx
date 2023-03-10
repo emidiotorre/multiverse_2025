@@ -31,7 +31,7 @@ function PlaysGrid({ plays }: Props) {
           plays.map((play: any, idx: number) => {
             return (
               <Item
-                id={play.id}
+                id={idx}
                 height={play.image.height}
                 width={play.image.width}
                 key={'subgrid_item_' + idx}

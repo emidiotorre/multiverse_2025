@@ -11,7 +11,7 @@ export default async function Home() {
     <>
       <Container>
         <div>
-          <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-10 break-words leading-[1.2] overflow-visible pt-4">
+          <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-20 break-words leading-[1.2] overflow-visible pt-4">
             <Image
               className="object-contain w-auto object-left inline-block h-6 -mt-4 md:h-12 md:-mt-9 "
               src={Logo}

@@ -21,6 +21,7 @@ const Personal = ({ work }: Props) => {
           }`}
         ></VideoAutoPlayer>
         {work.gallery?.map((img: any, idx: number) => {
+          console.log(img.item.tipologia)
           switch (img.item.tipologia) {
             case 'full-width':
               return (
@@ -87,7 +88,49 @@ const Personal = ({ work }: Props) => {
                 </div>
               )
             case 'split-half':
-              return <div></div>
+              return (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      priority={idx < 3 ? true : false}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      priority={idx < 3 ? true : false}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                  <div>
+                    <Image
+                      width={1400}
+                      height={1400}
+                      priority={idx < 3 ? true : false}
+                      className="w-full h-full object-cover rounded-lg"
+                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      quality={100}
+                      alt={''}
+                    />
+                  </div>
+                </div>
+              )
             case 'half-half':
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
@@ -205,7 +248,7 @@ const Personal = ({ work }: Props) => {
             </div>
           </AnimateHeight>
         </div>
-        <div className="flex justify-end py-10 md:py-20">
+        <div className="flex justify-end py-16 md:py-20">
           <Image
             onClick={() =>
               document.documentElement.scrollTo({

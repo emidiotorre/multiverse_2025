@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import Image from "next/image";
-import Up from "../../../public/materiale/UP.png";
-import Container from "./Container";
+'use client'
+import React from 'react'
+import Image from 'next/image'
+import Up from '../../../public/materiale/UP.png'
+import Container from './Container'
 
 type Props = {
-  blocks: any[];
-};
+  blocks: any[]
+}
 
 const AboutComponent = ({ blocks }: Props) => {
   return (
@@ -16,7 +16,7 @@ const AboutComponent = ({ blocks }: Props) => {
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
-                case "TextBlock":
+                case 'TextBlock':
                   if (block.item.columns === 2) {
                     return (
                       <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg ">
@@ -31,11 +31,11 @@ const AboutComponent = ({ blocks }: Props) => {
                           }}
                         ></div>
                       </div>
-                    );
+                    )
                   } else if (block.item.columns === 1) {
                     const BgPostIt = `${
-                      idx === 7 ? "bg-[#F40000]" : "bg-gray-200"
-                    }  h-full w-full flex justify-between flex-col rounded-lg`;
+                      idx === 7 ? 'bg-[#F40000]' : 'bg-gray-200'
+                    }  h-full w-full flex justify-between flex-col rounded-lg`
                     return (
                       <div className={BgPostIt}>
                         <h3 className="font-extrabold text-xl md:text-3xl mx-6 pt-6">
@@ -51,52 +51,52 @@ const AboutComponent = ({ blocks }: Props) => {
                           ></div>
                         </div>
                       </div>
-                    );
+                    )
                   }
-                case "ImageBlock":
+                case 'ImageBlock':
                   const firstImg = `${
                     idx === 0
-                      ? "md:object-contain md:h-[80vh] "
-                      : "object-cover h-full"
+                      ? 'md:object-contain md:h-[80vh] '
+                      : 'object-cover h-full'
                   }
-                  w-full  rounded-lg overflow-hidden`;
+                  w-full  rounded-lg overflow-hidden`
                   return (
                     <div className="" key={idx}>
                       <Image
                         className={firstImg}
-                        src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           block.item.image.id
                         }`}
-                        alt={""}
+                        alt={''}
                         quality={100}
                         height={block.item.image.height}
                         width={block.item.image.width}
                       />
                     </div>
-                  );
+                  )
               }
             })}
         </div>
 
-        <div className="flex justify-end py-10 md:py-20">
+        <div className="flex justify-end py-16 md:py-20">
           <Image
             onClick={() =>
               document.documentElement.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: "smooth",
+                behavior: 'smooth',
               })
             }
             className="object- h-[18vh] w-[10vh] "
             src={Up}
-            alt={""}
+            alt={''}
             quality={100}
             height="100"
           />
         </div>
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default AboutComponent;
+export default AboutComponent
