@@ -14,12 +14,12 @@ function PlaysGrid({ plays }: Props) {
   return (
     <>
       <div className="flex justify-center mt-6">
-        <div className="font-sans max-w-[62%] lg:max-w-[38%] text-3xl md:text-5xl break-words font-semibold text-center">
+        <div className="font-sans max-w-[62%] md:max-w-[41%] lg:max-w-[20%] text-3xl md:text-5xl break-words font-semibold text-center">
           <h1>all work and no play makes multiverse a bad agency</h1>
         </div>
       </div>
       <div className="flex justify-center">
-        <div className="font-sans break-words max-w-[62%] md:max-w-[32%] text-[1vh] md:text-xs font-light my-10 text-center">
+        <div className="font-sans break-words max-w-[70%] md:max-w-[32%] text-[1vh] md:text-xs font-light my-10 text-center">
           <h1>
             In this page you will find experiments with new forms of design
             technology & moving image

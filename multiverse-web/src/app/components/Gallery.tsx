@@ -28,7 +28,7 @@ function Gallery(props: any) {
     })
   }, [width])
   return (
-    <div className="relative flex justify-center mt-8">
+    <div className="relative flex justify-center md:mt-8">
       <Masonry
         //onLayoutComplete={}
         {...props}

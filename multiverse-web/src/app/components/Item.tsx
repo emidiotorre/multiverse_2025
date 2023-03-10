@@ -31,7 +31,7 @@ function Item(props: Props) {
           width={props.width / 3}
         />
       </Link>
-      <div className="absolute -bottom-5 flex justify-start">
+      <div className="absolute -bottom-4 flex justify-start">
         <div
           className="text-black text-[10px] "
           dangerouslySetInnerHTML={{ __html: props.body }}
