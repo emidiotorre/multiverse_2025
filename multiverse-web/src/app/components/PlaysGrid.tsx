@@ -1,20 +1,20 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import Up from "../../../public/materiale/UP.png";
-import Item from "./Item";
+'use client'
+import React, { useState } from 'react'
+import Image from 'next/image'
+import Up from '../../../public/materiale/UP.png'
+import Item from './Item'
 
-import Gallery from "./Gallery";
+import Gallery from './Gallery'
 
 type Props = {
-  plays: any[];
-};
+  plays: any[]
+}
 
 function PlaysGrid({ plays }: Props) {
   return (
     <>
-      <div className="flex justify-center mt-6 md:mt-0">
-        <div className="font-sans max-w-[62%] md:max-w-[31%] text-3xl md:text-5xl break-words font-semibold text-center">
+      <div className="flex justify-center mt-6">
+        <div className="font-sans max-w-[62%] lg:max-w-[38%] text-3xl md:text-5xl break-words font-semibold text-center">
           <h1>all work and no play makes multiverse a bad agency</h1>
         </div>
       </div>
@@ -34,14 +34,14 @@ function PlaysGrid({ plays }: Props) {
                 id={play.id}
                 height={play.image.height}
                 width={play.image.width}
-                key={"subgrid_item_" + idx}
-                image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                key={'subgrid_item_' + idx}
+                image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                   play.image.id
                 }`}
                 url={play.url}
                 body={play.body}
               ></Item>
-            );
+            )
           })}
       </Gallery>
       <div className="flex justify-end py-10 md:py-20">
@@ -50,16 +50,16 @@ function PlaysGrid({ plays }: Props) {
             document.documentElement.scrollTo({
               top: 0,
               left: 0,
-              behavior: "smooth",
+              behavior: 'smooth',
             })
           }
           className="object-cover h-[18vh] w-[10vh] "
           src={Up}
-          alt={""}
+          alt={''}
           quality={100}
         />
       </div>
     </>
-  );
+  )
 }
-export default PlaysGrid;
+export default PlaysGrid

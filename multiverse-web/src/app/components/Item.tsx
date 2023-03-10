@@ -15,7 +15,7 @@ type Props = {
 function Item(props: Props) {
   return (
     <div
-      className={`grid-item absolute block  mb-5`}
+      className={`grid-item absolute block max-w-[80vw] mb-5`}
       style={{
         ...props.style,
         height: props.height / 3 + 20,

@@ -9,6 +9,7 @@ const masonryOptions = {
   rowHeight: 60,
   gutter: 30,
   draggable: true,
+  resize: true,
 }
 
 function Gallery(props: any) {
@@ -16,11 +17,12 @@ function Gallery(props: any) {
     <Masonry
       //onLayoutComplete={}
       {...props}
-      className="pt-[20rem] md:pt-[40rem] pl-12"
+      className="pt-[23rem] md:pt-[30rem] pl-16"
       elementType={'div'}
       options={masonryOptions} // default {}
       disableImagesLoaded={false} // default false
       updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+      enableResizableChildren={true}
     >
       {props.children}
     </Masonry>

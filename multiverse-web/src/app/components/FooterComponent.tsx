@@ -1,27 +1,27 @@
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
-import { useMediaQuery } from "usehooks-ts";
-import Container from "./Container";
-import DateTime from "./DateTime";
+'use client'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
+import { useMediaQuery } from 'usehooks-ts'
+import Container from './Container'
+import DateTime from './DateTime'
 
 type Props = {
-  footer: any;
-};
+  footer: any
+}
 
 function FooterComponent({ footer }: Props) {
-  const pathname = usePathname();
+  const pathname = usePathname()
   const borderTop = `${
-    pathname === "/" ? "border-none " : "border-black border-t"
-  } md:border-none pb-2`;
+    pathname === '/' ? 'border-none ' : 'border-black border-t'
+  } md:border-none pb-2`
 
   return (
     <>
-      <footer className="absolute bottom-16 md:bottom-0 flex-1 w-full max-w-full  md:top-24 flex align-bottom font-sans md:text-xs ">
-        <Container style={{ alignSelf: "flex-end" }}>
+      <footer className="absolute h-max bottom-16 md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-sans md:text-xs ">
+        <Container style={{ alignSelf: 'flex-end' }}>
           <hr className={borderTop} />
-          <div className=" columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-10 ">
+          <div className=" columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-5 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
@@ -54,7 +54,7 @@ function FooterComponent({ footer }: Props) {
         </Container>
       </footer>
     </>
-  );
+  )
 }
 
-export default FooterComponent;
+export default FooterComponent
