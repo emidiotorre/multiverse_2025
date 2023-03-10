@@ -59,7 +59,7 @@ const Personal = ({ work }: Props) => {
                       alt={''}
                     />
                   </div>
-                  <div>
+                  <div className="row-span-2">
                     <Image
                       width={1400}
                       height={1400}
