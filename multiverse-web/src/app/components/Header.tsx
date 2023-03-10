@@ -19,7 +19,6 @@ function Header() {
                 <Link
                   href="/"
                   prefetch={true}
-                  replace={true}
                   className="h-fit-content"
                 >
                   <Image
@@ -35,7 +34,6 @@ function Header() {
               <div className="flex justify-end ">
                 <Link
                   prefetch={true}
-                  replace={true}
                   href="/about"
                   className={`px-5 pt-[.25rem] md:pt-[.5rem] md:px-8 md:-pb-[1rem] transition-colors rounded-full ${
                     pathname?.split("/").includes("about")
