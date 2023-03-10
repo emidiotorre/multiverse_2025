@@ -1,31 +1,47 @@
 'use client'
 import * as React from 'react'
-import Masonry from 'react-masonry-component'
-
-const masonryOptions = {
-  //percentPosition: true,
-  fitWidth: true,
-  columnWidth: 100,
-  rowHeight: 60,
-  gutter: 30,
-  draggable: true,
-  resize: true,
-}
+import Masonry, {
+  MasonryOptions,
+  MasonryPropTypes,
+} from 'react-masonry-component'
+import { useWindowSize } from 'usehooks-ts'
 
 function Gallery(props: any) {
+  const { width, height } = useWindowSize()
+  const [masonryOptions, setMasonryOprions] = React.useState<MasonryOptions>({
+    //percentPosition: true,
+    fitWidth: true,
+    columnWidth: 100,
+    gutter: 20,
+    resize: true,
+    transitionDuration: 0,
+  })
+
+  React.useLayoutEffect(() => {
+    setMasonryOprions({
+      //percentPosition: true,
+      fitWidth: true,
+      columnWidth: width > 1000 ? 50 : width,
+      gutter: 20,
+      resize: true,
+      transitionDuration: 0,
+    })
+  }, [width])
   return (
-    <Masonry
-      //onLayoutComplete={}
-      {...props}
-      className="pt-[23rem] md:pt-[30rem] pl-16"
-      elementType={'div'}
-      options={masonryOptions} // default {}
-      disableImagesLoaded={false} // default false
-      updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
-      enableResizableChildren={true}
-    >
-      {props.children}
-    </Masonry>
+    <div className="relative flex justify-center mt-8">
+      <Masonry
+        //onLayoutComplete={}
+        {...props}
+        className="relative h-auto"
+        elementType={'div'}
+        options={masonryOptions} // default {}
+        disableImagesLoaded={false} // default false
+        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        enableResizableChildren={true}
+      >
+        {props.children}
+      </Masonry>
+    </div>
   )
 }
 
