@@ -12,7 +12,7 @@ type Props = {
 }
 
 function WorksGrid({ blocks }: Props) {
-  const matches = useMediaQuery('(max-width: 768px)')
+  const matches = useMediaQuery('(min-width: 768px)')
   return (
     <>
       <div className="my-5">
@@ -77,19 +77,65 @@ function WorksGrid({ blocks }: Props) {
                   )
                 case 'split-half':
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2  gap-x-2 gap-y-2 mt-2 ">
-                      <Card
-                        height={block.item.work1.image.height}
-                        width={block.item.work1.image.width}
-                        key={idx}
-                        id={block.item.work1.image.id}
-                        image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          block.item.work1.image.id
-                        }`}
-                        slug={block.item.work1.slug}
-                        Name={block.item.work1.Name}
-                      ></Card>
-                      <div className="row-span-2">
+                    <div
+                      style={
+                        matches
+                          ? {
+                              display: 'grid',
+                              gridTemplateColumns: '1fr 1fr',
+                              gridTemplateRows: '1fr 1fr',
+                              gap: '0.5rem',
+                            }
+                          : {
+                              display: 'grid',
+                              gridTemplateColumns: '1fr',
+                              gridTemplateRows: '1fr 1fr 1fr',
+                              gap: '0.5rem',
+                            }
+                      }
+                    >
+                      <div
+                        style={
+                          matches
+                            ? {
+                                gridRowStart: 1,
+                                gridColumnStart: 1,
+                                gridRowEnd: 'auto',
+                                gridColumnEnd: 'auto',
+                              }
+                            : {
+                                gridRowStart: 1,
+                                gridRowEnd: 'auto',
+                              }
+                        }
+                      >
+                        <Card
+                          height={block.item.work1.image.height}
+                          width={block.item.work1.image.width}
+                          key={idx}
+                          id={block.item.work1.image.id}
+                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                            block.item.work1.image.id
+                          }`}
+                          slug={block.item.work1.slug}
+                          Name={block.item.work1.Name}
+                        ></Card>
+                      </div>
+                      <div
+                        style={
+                          matches
+                            ? {
+                                gridRowStart: 2,
+                                gridColumnStart: 1,
+                                gridRowEnd: 2,
+                                gridColumnEnd: 2,
+                              }
+                            : {
+                                gridRowStart: 2,
+                                gridRowEnd: 'auto',
+                              }
+                        }
+                      >
                         <Card
                           height={block.item.work1.image.height}
                           width={block.item.work1.image.width}
@@ -102,17 +148,34 @@ function WorksGrid({ blocks }: Props) {
                           Name={block.item.work2.Name}
                         ></Card>
                       </div>
-                      <Card
-                        height={block.item.work1.image.height}
-                        width={block.item.work1.image.width}
-                        key={idx}
-                        id={block.item.work3.image.id}
-                        image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          block.item.work3.image.id
-                        }`}
-                        slug={block.item.work3.slug}
-                        Name={block.item.work3.Name}
-                      ></Card>
+                      <div
+                        className="mb-2"
+                        style={
+                          matches
+                            ? {
+                                gridRowStart: 1,
+                                gridColumnStart: 2,
+                                gridRowEnd: 'none',
+                                gridColumnEnd: 2,
+                              }
+                            : {
+                                gridRowStart: 3,
+                                gridRowEnd: 'auto',
+                              }
+                        }
+                      >
+                        <Card
+                          height={block.item.work1.image.height}
+                          width={block.item.work1.image.width}
+                          key={idx}
+                          id={block.item.work3.image.id}
+                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                            block.item.work3.image.id
+                          }`}
+                          slug={block.item.work3.slug}
+                          Name={block.item.work3.Name}
+                        ></Card>
+                      </div>
                     </div>
                   )
                 case 'half-half':

@@ -5,13 +5,16 @@ import Container from '@/app/components/Container'
 import Up from '../../../public/materiale/UP.png'
 import AnimateHeight from 'react-animate-height'
 import { VideoAutoPlayer } from './VideoPlayer'
+import { useMediaQuery } from 'usehooks-ts'
 
 type Props = {
   work: any
 }
 
 const Personal = ({ work }: Props) => {
+  const matches = useMediaQuery('(min-width: 768px)')
   const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
+
   return (
     <>
       <Container>
@@ -89,8 +92,38 @@ const Personal = ({ work }: Props) => {
               )
             case 'split-half':
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
-                  <div>
+                <div
+                  style={
+                    matches
+                      ? {
+                          display: 'grid',
+                          gridTemplateColumns: '1fr 1fr',
+                          gridTemplateRows: '1fr 1fr',
+                          gap: '0.5rem',
+                        }
+                      : {
+                          display: 'grid',
+                          gridTemplateColumns: '1fr',
+                          gridTemplateRows: '1fr 1fr 1fr',
+                          gap: '0.5rem',
+                        }
+                  }
+                >
+                  <div
+                    style={
+                      matches
+                        ? {
+                            gridRowStart: 1,
+                            gridColumnStart: 1,
+                            gridRowEnd: 'auto',
+                            gridColumnEnd: 'auto',
+                          }
+                        : {
+                            gridRowStart: 1,
+                            gridRowEnd: 'auto',
+                          }
+                    }
+                  >
                     <Image
                       width={1400}
                       height={1400}
@@ -103,7 +136,21 @@ const Personal = ({ work }: Props) => {
                       alt={''}
                     />
                   </div>
-                  <div>
+                  <div
+                    style={
+                      matches
+                        ? {
+                            gridRowStart: 2,
+                            gridColumnStart: 1,
+                            gridRowEnd: 2,
+                            gridColumnEnd: 2,
+                          }
+                        : {
+                            gridRowStart: 2,
+                            gridRowEnd: 'auto',
+                          }
+                    }
+                  >
                     <Image
                       width={1400}
                       height={1400}
@@ -116,7 +163,23 @@ const Personal = ({ work }: Props) => {
                       alt={''}
                     />
                   </div>
-                  <div>
+
+                  <div
+                    className="mb-2"
+                    style={
+                      matches
+                        ? {
+                            gridRowStart: 1,
+                            gridColumnStart: 2,
+                            gridRowEnd: 'none',
+                            gridColumnEnd: 2,
+                          }
+                        : {
+                            gridRowStart: 3,
+                            gridRowEnd: 'auto',
+                          }
+                    }
+                  >
                     <Image
                       width={1400}
                       height={1400}

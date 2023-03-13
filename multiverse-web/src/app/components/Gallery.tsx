@@ -1,9 +1,6 @@
 'use client'
 import * as React from 'react'
-import Masonry, {
-  MasonryOptions,
-  MasonryPropTypes,
-} from 'react-masonry-component'
+import Masonry, { MasonryOptions } from 'react-masonry-component'
 import { useWindowSize } from 'usehooks-ts'
 
 function Gallery(props: any) {
@@ -27,6 +24,7 @@ function Gallery(props: any) {
       transitionDuration: 0,
     })
   }, [width])
+  console.log(width)
   return (
     <div className="relative flex justify-center ml-8 md:ml-0 md:mt-8">
       <Masonry

@@ -107,17 +107,12 @@ a {
 }
 
 /* prettier-ignore */
-.grid-play-area {
-  grid-template-areas:  'A A B B B'
-                        'A A B B B'
-                        'C C B B B'
-                        'C C D D F'
-                        'E E D D F'
-                        'E E G H H'
-                        'I I K J J'
-                        'I I K L L'
-                        /* 'M N N O O'
-                        'M N N O O' */;
+.grid-split-half {
+  grid-template-areas:  'A A A C C'
+                        'A A A C C C'
+                        'B B B C C C'
+                        'B B B C C C'
+                       
 }
 
 /* prettier-ignore */
