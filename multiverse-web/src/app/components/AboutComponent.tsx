@@ -19,7 +19,10 @@ const AboutComponent = ({ blocks }: Props) => {
                 case 'TextBlock':
                   if (block.item.columns === 2) {
                     return (
-                      <div className="bg-gray-200 h-full w-full flex justify-between flex-col rounded-lg ">
+                      <div
+                        style={{ background: block.item.background_color }}
+                        className=" h-full w-full flex justify-between flex-col rounded-lg "
+                      >
                         <h3 className="font-extrabold text-xl md:text-3xl mx-6 pt-6">
                           {block.item.Title}
                         </h3>
@@ -33,11 +36,11 @@ const AboutComponent = ({ blocks }: Props) => {
                       </div>
                     )
                   } else if (block.item.columns === 1) {
-                    const BgPostIt = `${
-                      idx === 7 ? 'bg-[#F40000]' : 'bg-gray-200'
-                    }  h-full w-full flex justify-between flex-col rounded-lg`
                     return (
-                      <div className={BgPostIt}>
+                      <div
+                        style={{ background: block.item.background_color }}
+                        className=" h-full w-full flex justify-between flex-col rounded-lg"
+                      >
                         <h3 className="font-extrabold text-xl md:text-3xl mx-6 pt-6">
                           {block.item.Title}
                         </h3>
