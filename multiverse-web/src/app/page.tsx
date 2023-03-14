@@ -2,7 +2,7 @@ import { fetcher } from './apollo'
 import { GET_HOME } from './apollo/queries'
 import HomeComponent from './components/HomeComponent'
 import Image from 'next/image'
-import Logo from '../../public/materiale/mvs_logo.png'
+import Logo from './components/Logo'
 import Container from './components/Container'
 
 export default async function Home() {
@@ -12,13 +12,9 @@ export default async function Home() {
       <Container>
         <div>
           <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-20 break-words leading-[1.2] overflow-visible pt-4">
-            <Image
-              className="object-contain w-auto object-left inline-block h-6 -mt-4 md:h-12 md:-mt-9 "
-              src={Logo}
-              height={500}
-              quality={100}
-              alt={'logo'}
-            />
+            <div className="inline-flex self-baseline mr-2">
+              <Logo height=".95em" width="auto" />
+            </div>
             <span>{home.header}</span>
           </h1>
         </div>

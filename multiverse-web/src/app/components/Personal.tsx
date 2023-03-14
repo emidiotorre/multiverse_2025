@@ -28,7 +28,7 @@ const Personal = ({ work }: Props) => {
             case 'full-width':
               return (
                 <div
-                  className={`overflow-hidden rounded-lg mb-2 w-full relative`}
+                  className="w-full relative"
                   style={{
                     aspectRatio: img.item.aspect_ratio.replace('-', '/'),
                   }}
@@ -36,7 +36,7 @@ const Personal = ({ work }: Props) => {
                   <Image
                     fill={true}
                     priority={idx < 3 ? true : false}
-                    className={`object-cover rounded-lg`}
+                    className={`object-cover rounded-lg overflow-hidden`}
                     src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                       img.item.image_1.id
                     }`}
@@ -162,7 +162,7 @@ const Personal = ({ work }: Props) => {
                   </div>
 
                   <div
-                    className="relative  md:aspect-[5/8] w-full h-[50vh] md:h-full overflow-hidden"
+                    className="relative md:aspect-[5/8] md:w-[99.4%] h-[50vh] md:h-full "
                     style={
                       matches
                         ? {
