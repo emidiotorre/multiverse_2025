@@ -1,9 +1,9 @@
-import Image from 'next/image'
-import ImgU from '../../../public/materiale/home/img1.png'
-import ImgD from '../../../public/materiale/home/img2.png'
-import ImgT from '../../../public/materiale/home/img3.png'
-import ImgQ from '../../../public/materiale/home/img4.png'
-import Draggable from './Draggable'
+import Image from "next/image";
+import ImgU from "../../../public/materiale/home/img1.png";
+import ImgD from "../../../public/materiale/home/img2.png";
+import ImgT from "../../../public/materiale/home/img3.png";
+import ImgQ from "../../../public/materiale/home/img4.png";
+import Draggable from "./Draggable";
 
 function HomeComponent() {
   return (
@@ -11,48 +11,48 @@ function HomeComponent() {
       <Draggable>
         <Image
           style={{
-            pointerEvents: 'none',
+            pointerEvents: "none",
           }}
           className="object-cover w-[8vh] md:w-[16vh]"
           quality={100}
           src={ImgU}
-          alt={''}
+          alt={""}
         />
       </Draggable>
       <Draggable>
         <Image
           style={{
-            pointerEvents: 'none',
+            pointerEvents: "none",
           }}
           className="object-cover w-[8vh] md:w-[16vh]"
           src={ImgD}
           quality={100}
-          alt={''}
+          alt={""}
         />
       </Draggable>
       <Draggable>
         <Image
           style={{
-            pointerEvents: 'none',
+            pointerEvents: "none",
           }}
           className="object-cover  w-[8vh] md:w-[16vh]"
           src={ImgT}
-          alt={''}
+          alt={""}
           quality={100}
         />
       </Draggable>
       <Draggable>
         <Image
           style={{
-            pointerEvents: 'none',
+            pointerEvents: "none",
           }}
           className="object-cover w-[8vh] md:w-[16vh] "
           src={ImgQ}
           quality={100}
-          alt={''}
+          alt={""}
         />
       </Draggable>
     </>
-  )
+  );
 }
-export default HomeComponent
+export default HomeComponent;

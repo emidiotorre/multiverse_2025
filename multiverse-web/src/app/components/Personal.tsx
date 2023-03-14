@@ -1,108 +1,126 @@
-'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Container from '@/app/components/Container'
-import Up from '../../../public/materiale/UP.png'
-import AnimateHeight from 'react-animate-height'
-import { VideoAutoPlayer } from './VideoPlayer'
-import { useMediaQuery } from 'usehooks-ts'
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Container from "@/app/components/Container";
+import Up from "../../../public/materiale/UP.png";
+import AnimateHeight from "react-animate-height";
+import { VideoAutoPlayer } from "./VideoPlayer";
+import { useMediaQuery } from "usehooks-ts";
+import GifPlayer from "react-gif-player";
 
 type Props = {
-  work: any
-}
+  work: any;
+};
 
 const Personal = ({ work }: Props) => {
-  const matches = useMediaQuery('(min-width: 768px)')
-  const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
+  const matches = useMediaQuery("(min-width: 768px)");
+  const [isDescriptionOpen, setisDescriptionOpen] = useState(false);
 
   return (
     <>
       <Container>
         <VideoAutoPlayer
-          src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+          src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
             work?.video?.id
           }`}
         ></VideoAutoPlayer>
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
-            case 'full-width':
+            case "full-width":
               return (
                 <div
+                  key={idx}
                   className="w-full relative"
                   style={{
-                    aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                    aspectRatio: img.item.aspect_ratio.replace("-", "/"),
                   }}
                 >
-                  <Image
+                  <GifPlayer
                     fill={true}
                     priority={idx < 3 ? true : false}
                     className={`object-cover rounded-lg overflow-hidden`}
-                    src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                    src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                       img.item.image_1.id
                     }`}
+                    still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      img.item.image_1.id
+                    }`}
+                    autoplay={true}
                     quality={70}
-                    alt={''}
+                    alt={""}
                   />
                 </div>
-              )
-            case 'half-split':
+              );
+            case "half-split":
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
                   <div className="row-span-2 h-[50vh] md:h-full w-full md:aspect-[4/5]">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
-            case 'split-half':
+              );
+            case "split-half":
               return (
                 <div
                   className="mb-2"
                   style={
                     matches
                       ? {
-                          display: 'grid',
-                          gridTemplateColumns: '1fr 1fr',
-                          gridTemplateRows: '1fr 1fr',
-                          gap: '0.5rem',
+                          display: "grid",
+                          gridTemplateColumns: "1fr 1fr",
+                          gridTemplateRows: "1fr 1fr",
+                          gap: "0.5rem",
                         }
                       : {
-                          display: 'grid',
-                          gridTemplateColumns: '1fr',
-                          gridTemplateRows: '1fr 1fr 1fr',
-                          gap: '0.5rem',
+                          display: "grid",
+                          gridTemplateColumns: "1fr",
+                          gridTemplateRows: "1fr 1fr 1fr",
+                          gap: "0.5rem",
                         }
                   }
                 >
@@ -112,29 +130,33 @@ const Personal = ({ work }: Props) => {
                         ? {
                             gridRowStart: 1,
                             gridColumnStart: 1,
-                            gridRowEnd: 'auto',
-                            gridColumnEnd: 'auto',
+                            gridRowEnd: "auto",
+                            gridColumnEnd: "auto",
                           }
                         : {
                             gridRowStart: 1,
-                            gridRowEnd: 'auto',
+                            gridRowEnd: "auto",
                           }
                     }
-                    className="relative h-[50vh] md:h-full w-full md:aspect-[5/4]"
+                    className="relative  w-full md:aspect-[5/4]"
                   >
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div
-                    className="relative h-[50vh] md:h-full w-full md:aspect-[5/4]"
+                    className="relative  w-full md:aspect-[5/4]"
                     style={
                       matches
                         ? {
@@ -145,24 +167,28 @@ const Personal = ({ work }: Props) => {
                           }
                         : {
                             gridRowStart: 2,
-                            gridRowEnd: 'auto',
+                            gridRowEnd: "auto",
                           }
                     }
                   >
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
 
                   <div
-                    className="relative md:aspect-[5/8] md:w-[99.4%] h-[50vh] md:h-full "
+                    className="relative md:aspect-[5/8] md:w-[99.4%]  "
                     style={
                       matches
                         ? {
@@ -173,110 +199,129 @@ const Personal = ({ work }: Props) => {
                           }
                         : {
                             gridRowStart: 3,
-                            gridRowEnd: 'auto',
+                            gridRowEnd: "auto",
                           }
                     }
                   >
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
-            case 'half-half':
+              );
+            case "half-half":
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
                   <div
                     style={{
-                      aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                      aspectRatio: img.item.aspect_ratio.replace("-", "/"),
                     }}
                     className="row-span-2 my-2 relative"
                   >
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div
                     style={{
-                      aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                      aspectRatio: img.item.aspect_ratio.replace("-", "/"),
                     }}
                     className="row-span-2 mb-2 md:my-2 relative"
                   >
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
-            case 'third-third-third':
+              );
+            case "third-third-third":
               return (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2">
                   <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover  rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_1.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_2.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                   <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <Image
+                    <GifPlayer
+                      autoplay={true}
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                        img.item.image_3.id
+                      }`}
+                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
-                      alt={''}
+                      alt={""}
                     />
                   </div>
                 </div>
-              )
+              );
             default:
-              return (
-                <div
-                  key={idx}
-                  className="overflow-hidden rounded-lg my-2"
-                ></div>
-              )
+              return <div className="overflow-hidden rounded-lg my-2"></div>;
           }
         })}
         <div className="grid md:grid-cols-3 gap-4 mt-7 z-30">
@@ -292,7 +337,7 @@ const Personal = ({ work }: Props) => {
           </div>
           <AnimateHeight
             className={`col-span-2 overflow-hidden`}
-            height={isDescriptionOpen ? 'auto' : 0}
+            height={isDescriptionOpen ? "auto" : 0}
             duration={600}
           >
             <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
@@ -307,7 +352,7 @@ const Personal = ({ work }: Props) => {
                       <p>{credit.Credit_Value}</p>
                     </div>
                   </>
-                )
+                );
               })}
             </div>
           </AnimateHeight>
@@ -318,18 +363,18 @@ const Personal = ({ work }: Props) => {
               document.documentElement.scrollTo({
                 top: 0,
                 left: 0,
-                behavior: 'smooth', // Optional if you want to skip the scrolling animation
+                behavior: "smooth", // Optional if you want to skip the scrolling animation
               })
             }
             className="object-cover h-[18vh] w-[10vh] "
             src={Up}
-            alt={''}
+            alt={""}
             quality={70}
           />
         </div>
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Personal
+export default Personal;
