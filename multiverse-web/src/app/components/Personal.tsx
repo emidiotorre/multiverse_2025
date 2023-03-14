@@ -24,7 +24,6 @@ const Personal = ({ work }: Props) => {
           }`}
         ></VideoAutoPlayer>
         {work.gallery?.map((img: any, idx: number) => {
-          console.log(img.item.tipologia)
           switch (img.item.tipologia) {
             case 'full-width':
               return (
@@ -41,7 +40,7 @@ const Personal = ({ work }: Props) => {
                     src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                       img.item.image_1.id
                     }`}
-                    quality={100}
+                    quality={70}
                     alt={''}
                   />
                 </div>
@@ -49,42 +48,39 @@ const Personal = ({ work }: Props) => {
             case 'half-split':
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
-                  <div className="row-span-2">
+                  <div className="row-span-2 h-[50vh] md:h-full w-full md:aspect-[4/5]">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_1.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
-                  <div className="row-span-2">
+                  <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_2.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
-                  <div>
+                  <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_3.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
@@ -93,6 +89,7 @@ const Personal = ({ work }: Props) => {
             case 'split-half':
               return (
                 <div
+                  className="mb-2"
                   style={
                     matches
                       ? {
@@ -123,20 +120,21 @@ const Personal = ({ work }: Props) => {
                             gridRowEnd: 'auto',
                           }
                     }
+                    className="relative h-[50vh] md:h-full w-full md:aspect-[5/4]"
                   >
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_1.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
                   <div
+                    className="relative h-[50vh] md:h-full w-full md:aspect-[5/4]"
                     style={
                       matches
                         ? {
@@ -152,26 +150,25 @@ const Personal = ({ work }: Props) => {
                     }
                   >
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_2.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
 
                   <div
-                    className="mb-2"
+                    className="relative  md:aspect-[5/8] w-full h-[50vh] md:h-full overflow-hidden"
                     style={
                       matches
                         ? {
                             gridRowStart: 1,
                             gridColumnStart: 2,
-                            gridRowEnd: 'none',
+                            gridRowEnd: 3,
                             gridColumnEnd: 2,
                           }
                         : {
@@ -181,14 +178,13 @@ const Personal = ({ work }: Props) => {
                     }
                   >
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg"
+                      className="w-full h-full object-cover rounded-lg overflow-hidden"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_3.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
@@ -197,29 +193,37 @@ const Personal = ({ work }: Props) => {
             case 'half-half':
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
-                  <div className="row-span-2 my-2">
+                  <div
+                    style={{
+                      aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                    }}
+                    className="row-span-2 my-2 relative"
+                  >
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_1.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
-                  <div className="row-span-2 mb-2 md:my-2">
+                  <div
+                    style={{
+                      aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                    }}
+                    className="row-span-2 mb-2 md:my-2 relative"
+                  >
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_2.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
@@ -228,42 +232,39 @@ const Personal = ({ work }: Props) => {
             case 'third-third-third':
               return (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2">
-                  <div>
+                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover  rounded-lg"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_1.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
-                  <div>
+                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_2.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
-                  <div>
+                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
                     <Image
-                      width={1400}
-                      height={1400}
+                      fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img.item.image_3.id
                       }`}
-                      quality={100}
+                      quality={70}
                       alt={''}
                     />
                   </div>
@@ -323,7 +324,7 @@ const Personal = ({ work }: Props) => {
             className="object-cover h-[18vh] w-[10vh] "
             src={Up}
             alt={''}
-            quality={100}
+            quality={70}
           />
         </div>
       </Container>
