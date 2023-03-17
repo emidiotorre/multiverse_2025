@@ -6,7 +6,6 @@ import Up from "../../../public/materiale/UP.png";
 import AnimateHeight from "react-animate-height";
 import { VideoAutoPlayer } from "./VideoPlayer";
 import { useMediaQuery } from "usehooks-ts";
-import GifPlayer from "react-gif-player";
 
 type Props = {
   work: any;
@@ -29,23 +28,19 @@ const Personal = ({ work }: Props) => {
             case "full-width":
               return (
                 <div
-                  key={idx}
-                  className="w-full relative"
+                  key={img.item.id}
+                  className="w-full relative mb-2"
                   style={{
                     aspectRatio: img.item.aspect_ratio.replace("-", "/"),
                   }}
                 >
-                  <GifPlayer
+                  <Image
                     fill={true}
                     priority={idx < 3 ? true : false}
                     className={`object-cover rounded-lg overflow-hidden`}
                     src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                       img.item.image_1.id
                     }`}
-                    still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                      img.item.image_1.id
-                    }`}
-                    autoplay={true}
                     quality={70}
                     alt={""}
                   />
@@ -53,49 +48,43 @@ const Personal = ({ work }: Props) => {
               );
             case "half-split":
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2">
-                  <div className="row-span-2 h-[50vh] md:h-full w-full md:aspect-[4/5]">
-                    <GifPlayer
-                      autoplay={true}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-b-2">
+                  <div key={img.item.id} className="row-span-2 ">
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg overflow-hidden"
+                      className=" object-cover rounded-lg overflow-hidden"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_1.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
                       alt={""}
                     />
                   </div>
-                  <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
-                    <GifPlayer
-                      autoplay={true}
+                  <div
+                    key={img.item.id}
+                    className="h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                  >
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg overflow-hidden"
+                      className=" object-cover rounded-lg overflow-hidden"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_2.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
                       alt={""}
                     />
                   </div>
-                  <div className="h-[50vh] md:h-full w-full md:aspect-[8/5]">
-                    <GifPlayer
-                      autoplay={true}
+                  <div
+                    key={img.item.id}
+                    className="h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                  >
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
-                      className="w-full h-full object-cover rounded-lg overflow-hidden"
+                      className=" object-cover rounded-lg overflow-hidden"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_3.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
@@ -125,6 +114,7 @@ const Personal = ({ work }: Props) => {
                   }
                 >
                   <div
+                    key={img.item.id}
                     style={
                       matches
                         ? {
@@ -140,15 +130,11 @@ const Personal = ({ work }: Props) => {
                     }
                     className="relative  w-full md:aspect-[5/4]"
                   >
-                    <GifPlayer
-                      autoplay={true}
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_1.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
@@ -156,7 +142,8 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
-                    className="relative  w-full md:aspect-[5/4]"
+                    key={img.item.id}
+                    className="relative w-full md:aspect-[5/4]"
                     style={
                       matches
                         ? {
@@ -171,24 +158,20 @@ const Personal = ({ work }: Props) => {
                           }
                     }
                   >
-                    <GifPlayer
-                      autoplay={true}
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_2.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
                       alt={""}
                     />
                   </div>
-
                   <div
-                    className="relative md:aspect-[5/8] md:w-[99.4%]  "
+                    key={img.item.id}
+                    className="relative md:aspect-[5/8]"
                     style={
                       matches
                         ? {
@@ -203,15 +186,11 @@ const Personal = ({ work }: Props) => {
                           }
                     }
                   >
-                    <GifPlayer
-                      autoplay={true}
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg overflow-hidden"
-                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_3.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
@@ -221,23 +200,21 @@ const Personal = ({ work }: Props) => {
                 </div>
               );
             case "half-half":
+              console.log(img.item.aspect_ratio);
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-b-2">
                   <div
+                    key={img.item.id}
                     style={{
-                      aspectRatio: img.item.aspect_ratio.replace("-", "/"),
+                      aspectRatio: img.item.aspect_ratio?.replace("-", "/"),
                     }}
-                    className="row-span-2 my-2 relative"
+                    className="row-span-2 mb-2 relative"
                   >
-                    <GifPlayer
-                      autoplay={true}
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_1.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
                       quality={70}
@@ -245,20 +222,17 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
+                    key={img.item.id}
                     style={{
-                      aspectRatio: img.item.aspect_ratio.replace("-", "/"),
+                      aspectRatio: img.item.aspect_ratio?.replace("-", "/"),
                     }}
-                    className="row-span-2 mb-2 md:my-2 relative"
+                    className="row-span-2 mb-2 md:mb-2 relative"
                   >
-                    <GifPlayer
-                      autoplay={true}
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
-                      gif={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_2.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                      src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
                       quality={70}
@@ -269,49 +243,46 @@ const Personal = ({ work }: Props) => {
               );
             case "third-third-third":
               return (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2">
-                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <GifPlayer
-                      autoplay={true}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 mb-2">
+                  <div
+                    key={img.item.id}
+                    className="relative h-[50vh] md:h-full w-full mb-2 md:mb-2 md:aspect-square"
+                  >
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover  rounded-lg"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_1.id
                       }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_1.id
-                      }`}
                       quality={70}
                       alt={""}
                     />
                   </div>
-                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <GifPlayer
-                      autoplay={true}
+                  <div
+                    key={img.item.id}
+                    className="relative h-[50vh] md:h-full mb-2 md:mb-2 w-full md:aspect-square"
+                  >
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_2.id
                       }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_2.id
-                      }`}
                       quality={70}
                       alt={""}
                     />
                   </div>
-                  <div className="relative h-[50vh] md:h-full w-full md:aspect-square">
-                    <GifPlayer
-                      autoplay={true}
+                  <div
+                    key={img.item.id}
+                    className="relative h-[50vh] md:h-full w-full md:mb-2 md:aspect-square"
+                  >
+                    <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className="w-full h-full object-cover rounded-lg"
                       src={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
-                        img.item.image_3.id
-                      }`}
-                      still={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                         img.item.image_3.id
                       }`}
                       quality={70}
