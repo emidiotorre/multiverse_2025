@@ -48,8 +48,14 @@ const Personal = ({ work }: Props) => {
               );
             case "half-split":
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-b-2">
-                  <div key={img.item.id} className="row-span-2 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
+                  <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
+                    key={img.item.id}
+                    className="relative h-[50vh] md:h-full w-full row-span-2 "
+                  >
                     <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
@@ -62,8 +68,11 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
                     key={img.item.id}
-                    className="h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                    className="relative h-[50vh] md:h-full w-full md:aspect-[8/5]"
                   >
                     <Image
                       fill={true}
@@ -77,8 +86,11 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
                     key={img.item.id}
-                    className="h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                    className=" relative h-[50vh] md:h-full w-full md:aspect-[8/5]"
                   >
                     <Image
                       fill={true}
@@ -200,7 +212,6 @@ const Personal = ({ work }: Props) => {
                 </div>
               );
             case "half-half":
-              console.log(img.item.aspect_ratio);
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-b-2">
                   <div
@@ -245,6 +256,9 @@ const Personal = ({ work }: Props) => {
               return (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 mb-2">
                   <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
                     key={img.item.id}
                     className="relative h-[50vh] md:h-full w-full mb-2 md:mb-2 md:aspect-square"
                   >
@@ -260,6 +274,9 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
                     key={img.item.id}
                     className="relative h-[50vh] md:h-full mb-2 md:mb-2 w-full md:aspect-square"
                   >
@@ -275,6 +292,9 @@ const Personal = ({ work }: Props) => {
                     />
                   </div>
                   <div
+                    style={{
+                      aspectRatio: img?.item?.aspect_ratio?.replace("-", "/"),
+                    }}
                     key={img.item.id}
                     className="relative h-[50vh] md:h-full w-full md:mb-2 md:aspect-square"
                   >
