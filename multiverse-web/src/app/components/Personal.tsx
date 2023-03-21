@@ -6,6 +6,7 @@ import Up from "../../../public/materiale/UP.png";
 import AnimateHeight from "react-animate-height";
 import { VideoAutoPlayer } from "./VideoPlayer";
 import { useMediaQuery } from "usehooks-ts";
+import ReactPlayer from "react-player";
 
 type Props = {
   work: any;
@@ -23,6 +24,23 @@ const Personal = ({ work }: Props) => {
             work?.video?.id
           }`}
         ></VideoAutoPlayer>
+        <div
+          className="overflow-hidden aspect-video
+         rounded-lg mb-2 w-full h-full"
+        >
+          <ReactPlayer
+            style={{
+              overflow: "hidden",
+              position: "relative",
+              marginBottom: "0.5rem",
+            }}
+            height={"100%"}
+            width={"100%"}
+            loop
+            playing={true}
+            url="https://vimeo.com/516640714"
+          ></ReactPlayer>
+        </div>
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
             case "full-width":

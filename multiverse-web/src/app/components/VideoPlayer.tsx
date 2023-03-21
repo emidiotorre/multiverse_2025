@@ -66,6 +66,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
     // ) :
     <div ref={ref}>
       <ReactPlayer
+        loop={true}
         style={{
           overflow: "hidden",
           position: "relative",
