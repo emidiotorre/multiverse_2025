@@ -1,29 +1,22 @@
 import React from 'react'
 import Container from '@/app/components/Container'
-import client from '../apollo'
-import { GET_PLAYS } from '../apollo/queries'
+import { GET_PLAYS_IMAGE, GET_PLAYS_TITLES } from '../apollo/queries'
 import PlaysGrid from '../components/PlaysGrid'
+import { fetcher } from '../apollo'
 
-function spliceIntoChunks(arr: any[], chunkSize: number) {
-  const res = []
-  while (arr.length > 0) {
-    const chunk = arr.splice(0, chunkSize)
-
-    res.push(chunk)
-  }
-  return res
-}
 export default async function Play() {
-  const { data, loading, error } = await client.query({ query: GET_PLAYS })
-
-  if (loading || error) {
-    return null
-  }
-
+  const { play_page } = await fetcher({
+    query: GET_PLAYS_TITLES,
+    variables: null,
+  })
+  const { plays } = await fetcher({
+    query: GET_PLAYS_IMAGE,
+    variables: null,
+  })
   return (
     <>
       <Container>
-        <PlaysGrid plays={spliceIntoChunks(data.plays, 10)} />
+        <PlaysGrid play_page={play_page} plays={plays} />
       </Container>
     </>
   )

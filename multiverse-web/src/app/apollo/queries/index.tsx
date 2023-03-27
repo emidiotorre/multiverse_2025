@@ -1,27 +1,74 @@
 import { gql } from '@apollo/client'
 
 export const GET_WORKS_IMG = gql`
-  query getWorkImg {
-    works: Works {
-      id
-      date_created
-      slug
-      Name
-      image {
+  query GetWorkPage {
+    works: works_page {
+      blocks {
         id
+        item {
+          ... on WorkBlocks {
+            id
+            tipologia
+            work1 {
+              id
+              date_created
+              slug
+              Name
+              image {
+                id
+                height
+                width
+              }
+            }
+            work2 {
+              id
+              date_created
+              slug
+              Name
+              image {
+                id
+                height
+
+                width
+              }
+            }
+            work3 {
+              id
+              date_created
+              slug
+              Name
+              image {
+                id
+                height
+                width
+              }
+            }
+          }
+        }
       }
     }
   }
 `
-export const GET_PLAYS = gql`
+export const GET_PLAYS_TITLES = gql`
+  query GetPlays {
+    play_page {
+      id
+      title
+      subtitle
+    }
+  }
+`
+export const GET_PLAYS_IMAGE = gql`
   query GetPlays {
     plays: Play {
       id
-      image {
-        id
-      }
       body
       url
+      image {
+        id
+        height
+        width
+      }
     }
   }
 `
@@ -61,11 +108,30 @@ const WORK_FRAG = gql`
     }
   }
 `
-export const GET_ABOUT_PAGE = gql`
-  query getAboutPage {
+export const GET_ABOUT = gql`
+  query getAbout {
     about: About {
       id
-      body
+      blocks {
+        id
+        item {
+          type: __typename
+          ... on TextBlock {
+            id
+            Title
+            Body
+            columns
+            background_color
+          }
+          ... on ImageBlock {
+            image {
+              height
+              width
+              id
+            }
+          }
+        }
+      }
     }
   }
 `

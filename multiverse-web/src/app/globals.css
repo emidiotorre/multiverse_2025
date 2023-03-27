@@ -8,12 +8,11 @@
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border: none;
 }
 
 html,
 body {
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
@@ -24,11 +23,26 @@ a {
   text-decoration: none;
 }
 
+.marque-title {
+  -webkit-text-stroke-color: gray;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+}
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 } */
+
+@font-face {
+  font-family: 'Monosten A';
+  src: url('/fonts/Monosten-A.woff2') format('woff2'),
+    url('/fonts/Monosten-A.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Sharp Grotesk';
   src: url('/fonts/SharpGrotesk-Book20.woff2') format('woff2'),
@@ -93,17 +107,12 @@ a {
 }
 
 /* prettier-ignore */
-.grid-play-area {
-  grid-template-areas:  'A A B B B'
-                        'A A B B B'
-                        'C C B B B'
-                        'C C D D F'
-                        'E E D D F'
-                        'E E G H H'
-                        'I I K J J'
-                        'I I K L L'
-                        /* 'M N N O O'
-                        'M N N O O' */;
+.grid-split-half {
+  grid-template-areas:  'A A A C C'
+                        'A A A C C C'
+                        'B B B C C C'
+                        'B B B C C C'
+                       
 }
 
 /* prettier-ignore */
@@ -119,11 +128,4 @@ a {
                         'F F F G G G'
                         'H H H G G G'
                         'H H H G G G';
-}
-.photo-list {
-  list-style: none;
-  margin: 20px auto;
-}
-.photo-item {
-  margin: 20px auto;
 }

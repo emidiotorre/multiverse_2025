@@ -1,18 +1,25 @@
-import client from "./apollo";
+import { fetcher } from "./apollo";
 import { GET_HOME } from "./apollo/queries";
 import HomeComponent from "./components/HomeComponent";
+import Image from "next/image";
+import Logo from "./components/Logo";
+import Container from "./components/Container";
 
-type Props = {};
-
-async function Home({}: Props) {
-  const { data, loading, error } = await client.query({ query: GET_HOME });
-  if (loading || error) {
-    return null;
-  }
+export default async function Home() {
+  const { home } = await fetcher({ query: GET_HOME, variables: null });
   return (
     <>
-      <HomeComponent home={data.home} />
+      <Container>
+        <div>
+          <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-20 break-words leading-[1.2] overflow-visible pt-4">
+            <div className="inline-flex self-baseline mr-2">
+              <Logo height=".95em" width="100%" />
+            </div>
+            <span>{home.header}</span>
+          </h1>
+        </div>
+      </Container>
+      <HomeComponent />
     </>
   );
 }
-export default Home;

@@ -1,83 +1,59 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import Container from './Container'
-import DateTime from './DateTime'
-import Logo from '../../../public/materiale/mvs_logo.png'
-import { usePathname } from 'next/navigation'
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { useMediaQuery } from "usehooks-ts";
+import Container from "./Container";
+import DateTime from "./DateTime";
 
 type Props = {
-  footer: any
-}
+  footer: any;
+};
 
 function FooterComponent({ footer }: Props) {
-  const pathName = usePathname()
+  const pathname = usePathname();
+  const borderTop = `${
+    pathname === "/" ? "border-none " : "border-black border-t"
+  } md:border-none pb-2`;
 
   return (
-    <footer className="relative flex-1 max-w-full pt-10 md:top-24 flex align-bottom font-Sharp_Grotesk_Medium20 ">
-      <Container style={{ alignSelf: 'flex-end' }}>
-        {pathName === '/' ? (
-          <div className=" flex justify-between items-end py-10 ">
-            <div className="flex flex-col pt-0 ">
+    <>
+      <footer className="absolute h-max bottom-16 md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-sans md:text-xs ">
+        <Container style={{ alignSelf: "flex-end" }}>
+          <hr className={borderTop} />
+          <div className=" columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-5 ">
+            <div className="md:col-span-1 pt-0 ">
               <small>
-                <Link href="https://instagram.com" className="underline mr-4">
+                <Link
+                  href="https://instagram.com"
+                  className="hover:underline mr-4 hover:text-[#F40000]"
+                >
                   Instagram
                 </Link>
                 |
-                <Link href="https://instagram.com" className="underline mx-4">
-                  Behance
-                </Link>
-                |
-                <Link href="https://instagram.com" className="underline mx-4">
+                <Link
+                  href="https://instagram.com"
+                  className="hover:underline mx-4 hover:text-[#F40000]"
+                >
                   Facebook
                 </Link>
+                <span className="sm:mr-4">|</span>
               </small>
-              <div key={footer.id}>
-                <small>{footer.col1}</small>
-              </div>
+
+              <small
+                className="max-[1098px]:flex max-[1098px]:flex-col "
+                key={footer.id}
+                dangerouslySetInnerHTML={{ __html: footer.col1 }}
+              ></small>
             </div>
-            <div className="flex flex-col-reverse ">
+            <div>
               <DateTime />
             </div>
           </div>
-        ) : (
-          <>
-            <div className=" flex flex-col md:flex-row justify-start md:justify-between	 py-10">
-              <div>
-                <Image
-                  className="object-contain max-h-5 md:w-full w-24 mb-4 "
-                  src={Logo}
-                  alt={''}
-                  height={500}
-                  width={500}
-                  quality={100}
-                />
-              </div>
-              <div className="flex flex-col pt-0 md:items-end">
-                <small>
-                  <Link href="https://instagram.com" className="underline mr-4">
-                    Instagram
-                  </Link>
-                  |
-                  <Link href="https://instagram.com" className="underline mx-4">
-                    Behance
-                  </Link>
-                  |
-                  <Link href="https://instagram.com" className="underline mx-4">
-                    Facebook
-                  </Link>
-                </small>
-                <div key={footer.id}>
-                  <small>{footer.col1}</small>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-      </Container>
-    </footer>
-  )
+        </Container>
+      </footer>
+    </>
+  );
 }
 
-export default FooterComponent
+export default FooterComponent;

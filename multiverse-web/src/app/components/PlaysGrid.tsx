@@ -1,66 +1,62 @@
-'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
-import Item from './Item'
-import getGridAreaFromIndex from '../utils/getGridAreaFromIndex'
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Up from "../../../public/materiale/UP.png";
+import Item from "./Item";
 
-import Gallery from './Gallery'
+import Gallery from "./Gallery";
 
 type Props = {
-  plays: any[]
-}
+  play_page: any;
+  plays: any[];
+};
 
-//const maxLetter = 'O'
-
-function PlaysGrid({ plays }: Props) {
+function PlaysGrid(props: Props) {
   return (
     <>
-      {/* <div className="columns-2 gap-3 w-auto mx-auto space-y-3 pb-28"> */}
-      <Gallery style={{ 'column-width': '250px' }}>
-        {plays &&
-          plays.map((playsElement: any, idx: number) => {
-            return (
-              <div key={idx}>
-                {playsElement.map((play: any, indx: number) => {
-                  // const letterGridElement = getGridAreaFromIndex(
-                  //   indx,
-                  //   maxLetter,
-                  // )
-                  return (
-                    <li key={'subgrid_item_' + indx} className="photo-item">
-                      <Item
-                        id={play.id}
-                        image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          play.image.id
-                        }`}
-                        url={play.url}
-                        body={play.body}
-                      ></Item>
-                    </li>
-                  )
-                })}
-              </div>
-            )
-          })}
+      <div key={props.play_page.id} className="flex justify-center mt-6">
+        <div className="font-sans max-w-[62%] md:max-w-[41%] lg:max-w-[38%] text-3xl md:text-6xl break-words font-semibold text-center">
+          <h1 dangerouslySetInnerHTML={{ __html: props.play_page.title }} />
+        </div>
+      </div>
+      <div className="flex justify-center">
+        <div className="font-mono break-words max-w-[70%] md:max-w-[32%] text-xs md:text-sm font-light my-10 text-center">
+          <h1 dangerouslySetInnerHTML={{ __html: props.play_page.subtitle }} />
+        </div>
+      </div>
+      <Gallery>
+        {props?.plays?.map((play: any, idx: number) => {
+          return (
+            <Item
+              id={idx}
+              height={play.image.height}
+              width={play.image.width}
+              key={"subgrid_item_" + idx}
+              image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
+                play.image.id
+              }`}
+              url={play.url}
+              body={play.body}
+            ></Item>
+          );
+        })}
       </Gallery>
-      {/* </div> */}
-      <div className="flex justify-end py-10">
+      <div className="flex justify-end py-10 md:py-20">
         <Image
           onClick={() =>
             document.documentElement.scrollTo({
               top: 0,
               left: 0,
-              behavior: 'smooth',
+              behavior: "smooth",
             })
           }
           className="object-cover h-[18vh] w-[10vh] "
           src={Up}
-          alt={''}
+          alt={""}
           quality={100}
         />
       </div>
     </>
-  )
+  );
 }
-export default PlaysGrid
+export default PlaysGrid;

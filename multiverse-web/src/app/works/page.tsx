@@ -1,19 +1,11 @@
-import React from "react";
-import Container from "@/app/components/Container";
-import client from "@/app/apollo";
-import { GET_WORKS_IMG } from "../apollo/queries";
-import WorksGrid from "../components/WorksGrid";
+import React from 'react'
+import Container from '@/app/components/Container'
+import { fetcher } from '@/app/apollo'
+import { GET_WORKS_IMG } from '../apollo/queries'
+import WorksGrid from '../components/WorksGrid'
 
 export default async function Work() {
-  const { data, loading, error } = await client.query({ query: GET_WORKS_IMG });
-  if (loading || error || !data || !data.works) {
-    return null;
-  }
-  return (
-    <>
-      <Container>
-        <WorksGrid works={data.works} />
-      </Container>
-    </>
-  );
+  const { works } = await fetcher({ query: GET_WORKS_IMG, variables: null })
+
+  return <WorksGrid blocks={works.blocks} />
 }
