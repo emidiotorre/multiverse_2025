@@ -1,21 +1,62 @@
-import type { EntryContext } from "@remix-run/node";
-import { RemixServer } from "@remix-run/react";
-import { renderToString } from "react-dom/server";
+import type { EntryContext } from '@remix-run/node'
+import { RemixServer } from '@remix-run/react'
+import { renderToString } from 'react-dom/server'
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from '@apollo/client'
+import { getDataFromTree } from '@apollo/client/react/ssr'
 
 export default function handleRequest(
-  request: Request,
+  request: Request, // Request type from the Fetch API
   responseStatusCode: number,
-  responseHeaders: Headers,
-  remixContext: EntryContext
+  responseHeaders: Headers, // Headers type from the Fetch API
+  remixContext: EntryContext,
 ) {
-  const markup = renderToString(
-    <RemixServer context={remixContext} url={request.url} />
-  );
+  const httpLink = createHttpLink({
+    uri: `${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/graphql`,
 
-  responseHeaders.set("Content-Type", "text/html");
+    /* headers: request.headers,
+    credentials: request.credentials ?? "include", */
+  })
 
-  return new Response("<!DOCTYPE html>" + markup, {
-    headers: responseHeaders,
-    status: responseStatusCode,
-  });
+  const client = new ApolloClient({
+    ssrMode: true,
+    cache: new InMemoryCache(),
+    link: httpLink,
+  })
+
+  const App = (
+    <ApolloProvider client={client}>
+      <RemixServer context={remixContext} url={request.url} />
+    </ApolloProvider>
+  )
+
+  return getDataFromTree(App).then(() => {
+    // Extract the entirety of the Apollo Client cache's current state
+    const initialState = client.extract()
+
+    const markup = renderToString(
+      <>
+        {App}
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__APOLLO_STATE__=${JSON.stringify(
+              initialState,
+            ).replace(/</g, '\\u003c')}`, // The replace call escapes the < character to prevent cross-site scripting attacks that are possible via the presence of </script> in a string literal
+          }}
+        />
+      </>,
+    )
+
+    responseHeaders.set('Content-Type', 'text/html')
+
+    return new Response('<!DOCTYPE html>' + markup, {
+      status: responseStatusCode,
+      headers: responseHeaders,
+    })
+  })
 }

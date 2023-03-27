@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { usePathname } from 'next/navigation'
+import { useLocation } from '@remix-run/react'
 
 export default function ScrollToTop() {
-  const pathname = usePathname()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     // "document.documentElement.scrollTo" is the magic for React Router Dom v6

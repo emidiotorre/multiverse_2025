@@ -1,12 +1,12 @@
-import { fetcher } from "./apollo";
-import { GET_HOME } from "./apollo/queries";
-import HomeComponent from "./components/HomeComponent";
-import Image from "next/image";
-import Logo from "./components/Logo";
-import Container from "./components/Container";
+import { fetcher } from './apollo'
+import { GET_HOME } from './apollo/queries'
+import HomeComponent from './components/HomeComponent'
+import Image from 'next/image'
+import Logo from './components/Logo'
+import Container from './components/Container'
 
 export default async function Home() {
-  const { home } = await fetcher({ query: GET_HOME, variables: null });
+  const { home } = await fetcher({ query: GET_HOME, variables: null })
   return (
     <>
       <Container>
@@ -15,11 +15,11 @@ export default async function Home() {
             <div className="inline-flex self-baseline mr-2">
               <Logo height=".95em" width="100%" />
             </div>
-            <span>{home.header}</span>
+            <span>{home?.header}</span>
           </h1>
         </div>
       </Container>
       <HomeComponent />
     </>
-  );
+  )
 }

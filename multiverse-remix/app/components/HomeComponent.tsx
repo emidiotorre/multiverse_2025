@@ -1,104 +1,99 @@
-"use client";
+import { useQuery } from '@apollo/client'
+import { motion } from 'framer-motion'
+import { useRef } from 'react'
+import { GET_HOME } from '~/apollo/queries'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useRef } from "react";
+import ImgU from '../assets/home/img1.png'
+import ImgD from '../assets/home/img2.png'
+import ImgT from '../assets/home/img3.png'
+import ImgQ from '../assets/home/img4.png'
+import Logo from '../assets/mvs_logo.png'
+import AnimationDiv from './AnimationDiv'
+import Container from './Container'
 
-import ImgU from "../../../public/materiale/home/img1.png";
-import ImgD from "../../../public/materiale/home/img2.png";
-import ImgT from "../../../public/materiale/home/img3.png";
-import ImgQ from "../../../public/materiale/home/img4.png";
-import Logo from "../../../public/materiale/mvs_logo.png";
-import AnimationDiv from "./AnimationDiv";
-import Container from "./Container";
+function HomeComponent() {
+  const { data: home, loading, error } = useQuery(GET_HOME, {
+    fetchPolicy: 'no-cache',
+  })
 
-type Props = {
-  home: any;
-};
-
-function HomeComponent({ home }: Props) {
-  const constraintsRef = useRef(null);
+  if (error) return <div>error: {error.message}</div>
+  if (loading) return <div>loading</div>
+  const constraintsRef = useRef(null)
   return (
     <>
       <motion.div ref={constraintsRef}>
         <div className="relative top-3 left-7">
           <AnimationDiv myRef={constraintsRef}>
             <div>
-              <Image
+              {/*  <ImgU
                 style={{
-                  pointerEvents: "none",
+                  pointerEvents: 'none',
                 }}
                 className="object-cover w-[8vh] md:w-[15vh]"
                 quality={100}
-                src={ImgU}
-                alt={""}
-              />
+                alt={''}
+              /> */}
             </div>
           </AnimationDiv>
         </div>
         <div className="flex justify-center">
           <AnimationDiv myRef={constraintsRef}>
             <div>
-              <Image
+              {/*  <ImgD
                 style={{
-                  pointerEvents: "none",
+                  pointerEvents: 'none',
                 }}
                 className="object-cover w-[8vh] md:w-[15vh]"
-                src={ImgD}
                 quality={100}
-                alt={""}
-              />
+                alt={''}
+              /> */}
             </div>
           </AnimationDiv>
         </div>
 
         <Container>
           <div>
-            <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-10 break-words leading-[1.2] overflow-visible pt-4">
-              <Image
-                className="object-contain w-auto  object-left inline-block h-6 -mt-2 md:h-12 md:-mt-5 "
-                src={Logo}
-                height={500}
-                quality={100}
-                alt={""}
-              />
-              <span>{home.header}</span>
-            </h1>
-          </div>
-
-          <div className="relative left-20 bottom-44">
-            <AnimationDiv myRef={constraintsRef}>
-              <div>
-                <Image
-                  style={{
-                    pointerEvents: "none",
-                  }}
-                  className="object-cover  w-[8vh] md:w-[15vh]"
-                  src={ImgT}
-                  alt={""}
-                  quality={100}
-                />
-              </div>
-            </AnimationDiv>
-          </div>
-          <div className="relative flex justify-end bottom-20 left-36 ">
-            <AnimationDiv myRef={constraintsRef}>
-              <div>
-                <Image
-                  style={{
-                    pointerEvents: "none",
-                  }}
-                  className="object-cover w-[8vh] md:w-[15vh] "
-                  src={ImgQ}
-                  quality={100}
-                  alt={""}
-                />
-              </div>
-            </AnimationDiv>
+            <div>
+              <h1 className="font-sans font-semibold w-full text-2xl md:text-5xl pb-20 break-words leading-[1.2] overflow-visible pt-4">
+                <div className="inline-flex self-baseline mr-2">
+                  {/*                 <Logo height=".95em" width="100%" />
+                   */}{' '}
+                </div>
+                <span>{home.header}</span>
+              </h1>
+            </div>
           </div>
         </Container>
+        <div className="relative left-20 bottom-44">
+          <AnimationDiv myRef={constraintsRef}>
+            <div>
+              {/* <ImgT
+                  style={{
+                    pointerEvents: 'none',
+                  }}
+                  className="object-cover  w-[8vh] md:w-[15vh]"
+                  alt={''}
+                  quality={100}
+                /> */}
+            </div>
+          </AnimationDiv>
+        </div>
+        <div className="relative flex justify-end bottom-20 left-36 ">
+          <AnimationDiv myRef={constraintsRef}>
+            <div>
+              {/* <ImgQ
+                  style={{
+                    pointerEvents: 'none',
+                  }}
+                  className="object-cover w-[8vh] md:w-[15vh] "
+                  quality={100}
+                  alt={''}
+                /> */}
+            </div>
+          </AnimationDiv>
+        </div>
       </motion.div>
     </>
-  );
+  )
 }
-export default HomeComponent;
+export default HomeComponent
