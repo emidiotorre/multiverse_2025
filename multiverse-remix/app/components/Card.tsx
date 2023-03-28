@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@remix-run/react";
 import React from "react";
 
 type Props = {
@@ -17,7 +16,7 @@ const Card = (props: Props) => {
       style={props.style}
     >
       <Link
-        href={props.slug ? `/works/${props.slug}` : "/"}
+        to={props.slug ? `/works/${props.slug}` : "/"}
         key={props.id}
         className="contents"
       >
@@ -26,13 +25,7 @@ const Card = (props: Props) => {
             <h1 className="absolute">{props.Name}</h1>
           </div>
         </div>
-        <Image
-          width={1400}
-          height={1400}
-          src={props.image_url}
-          alt={""}
-          quality={100}
-        />
+        <img src={props.image_url} alt={""} />
       </Link>
     </div>
   );
