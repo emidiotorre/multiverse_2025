@@ -16,13 +16,19 @@ function Header() {
           <Container>
             <div className="flex justify-between py-4 md:py-10 w-full ">
               <div className="flex justify-start max-w-screen-2xl items-center ">
-                <Link href="/" prefetch={true} className="h-fit-content">
+                <Link
+                  as={"/"}
+                  href="/"
+                  prefetch={true}
+                  className="h-fit-content"
+                >
                   <LogoSmall height="2em" width="100%" />
                 </Link>
                 <MenuSwitch></MenuSwitch>
               </div>
               <div className="flex justify-end ">
                 <Link
+                  as={"/about"}
                   prefetch={true}
                   href="/about"
                   className={`px-5 pt-[.25rem] md:pt-[.5rem] md:px-8 md:-pb-[1rem] transition-colors rounded-full ${

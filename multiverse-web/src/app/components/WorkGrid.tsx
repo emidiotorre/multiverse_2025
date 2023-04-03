@@ -35,7 +35,7 @@ function WorksGrid({ blocks }: Props) {
               switch (block.item.tipologia) {
                 case "half-split":
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2 mb-2 md:mb-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2">
                       <div className="row-span-2">
                         <Card
                           height={block.item.work1.image.height}
@@ -180,8 +180,8 @@ function WorksGrid({ blocks }: Props) {
                   );
                 case "half-half":
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 md:gap-y-2">
-                      <div className="row-span-2 my-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      <div className="row-span-2">
                         <Card
                           key={idx}
                           id={block.item.work1.image.id}
@@ -194,7 +194,7 @@ function WorksGrid({ blocks }: Props) {
                           width={block.item.work1.image.width}
                         ></Card>
                       </div>
-                      <div className="row-span-2 mb-2 md:my-2">
+                      <div className="row-span-2 mb-2 ">
                         <Card
                           height={block.item.work1.image.height}
                           width={block.item.work1.image.width}

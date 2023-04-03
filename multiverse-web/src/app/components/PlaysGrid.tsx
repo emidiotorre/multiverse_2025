@@ -35,7 +35,6 @@ function PlaysGrid(props: Props) {
               image_url={`${"https://multiverse-dev-directus.ov3mip.easypanel.host"}/assets/${
                 play.image.id
               }`}
-              url={play.url}
               body={play.body}
             ></Item>
           );
