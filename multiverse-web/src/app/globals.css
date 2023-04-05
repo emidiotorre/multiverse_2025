@@ -40,70 +40,70 @@ a {
     url('/fonts/Monosten-A.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Book20';
   src: url('/fonts/SharpGrotesk-Book20.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Book20.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Light20';
   src: url('/fonts/SharpGrotesk-Light20.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Light20.woff') format('woff');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Medium20';
   src: url('/fonts/SharpGrotesk-Medium20.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Medium20.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_SemiBold25';
   src: url('/fonts/SharpGrotesk-SemiBold25.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-SemiBold25.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Light25';
   src: url('/fonts/SharpGrotesk-Light25.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Light25.woff') format('woff');
   font-weight: 300;
-  font-style: expanded;
-  font-display: swap;
+  font-style: normal;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Book25';
   src: url('/fonts/SharpGrotesk-Book25.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Book25.woff') format('woff');
   font-weight: normal;
-  font-style: expanded;
-  font-display: swap;
+  font-style: normal;
+  font-display: block;
 }
 
 @font-face {
-  font-family: 'Sharp Grotesk';
+  font-family: 'Sharp_Grotesk_Medium25';
   src: url('/fonts/SharpGrotesk-Medium25.woff2') format('woff2'),
     url('/fonts/SharpGrotesk-Medium25.woff') format('woff');
   font-weight: 500;
-  font-style: expanded;
-  font-display: swap;
+  font-style: normal;
+  font-display: block;
 }
 
 /* prettier-ignore */

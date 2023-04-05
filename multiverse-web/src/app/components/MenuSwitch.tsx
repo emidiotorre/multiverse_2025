@@ -1,35 +1,35 @@
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 function MenuSwitch({}: Props) {
-  const pathname = usePathname();
+  const pathname = usePathname()
   return (
-    <div className="font-sans text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] rounded-full  ">
+    <div className="font-Sharp_Grotesk_Book20 text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] rounded-full  ">
       <Link
         prefetch={true}
         href="/works"
-        as={"/works"}
+        as={'/works'}
         className="	 mx-4 md:mx-6 my-0 py-1 md:py-2 z-10"
       >
         work
-      </Link>{" "}
+      </Link>{' '}
       <div
         className={` absolute z-0 drop-shadow-lg  bg-[#F40000] h-full w-1/2 rounded-full transform-gpu transition-colors
          transition-transform ${
-           pathname?.split("/").includes("works")
-             ? "translate-x-0"
-             : pathname?.split("/").includes("play")
-             ? "translate-x-[100%]"
-             : pathname == "/" || pathname == "/about"
-             ? "opacity-0"
-             : ""
+           pathname?.split('/').includes('works')
+             ? 'translate-x-0'
+             : pathname?.split('/').includes('play')
+             ? 'translate-x-[100%]'
+             : pathname == '/' || pathname == '/about'
+             ? 'opacity-0'
+             : ''
          }`}
       ></div>
       <Link
-        as={"/play"}
+        as={'/play'}
         prefetch={true}
         href="/play"
         className=" mx-4 md:mx-6 my-0 py-1 md:py-2 z-10 "
@@ -37,7 +37,7 @@ function MenuSwitch({}: Props) {
         play
       </Link>
     </div>
-  );
+  )
 }
 
-export default MenuSwitch;
+export default MenuSwitch

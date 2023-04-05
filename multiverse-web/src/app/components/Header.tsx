@@ -22,7 +22,7 @@ function Header() {
                   prefetch={true}
                   className="h-fit-content"
                 >
-                  <LogoSmall height="2em" width="auto" />
+                  <LogoSmall className="h-[2em] md:h-[2.5em]  w-auto" />
                 </Link>
                 <MenuSwitch></MenuSwitch>
               </div>
@@ -31,7 +31,7 @@ function Header() {
                   as={'/about'}
                   prefetch={true}
                   href="/about"
-                  className={`px-5 pt-[.25rem] md:pt-[.5rem] md:px-8 md:-pb-[1rem] transition-colors rounded-full ${
+                  className={`px-5 pt-[.25rem] md:pt-[.5rem] md:px-8 md:-pb-[1rem] transition-colors rounded-full font-Sharp_Grotesk_Book20 ${
                     pathname?.split('/').includes('about')
                       ? ' bg-[#F40000] z-10'
                       : ' -ml-12 z-0 bg-[#d0d0d0]'

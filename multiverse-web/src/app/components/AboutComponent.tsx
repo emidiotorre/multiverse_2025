@@ -1,16 +1,38 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
 import Container from './Container'
+import Hand from './Hand'
+import Marquee from 'react-fast-marquee'
+import { useMediaQuery } from 'usehooks-ts'
 
 type Props = {
   blocks: any[]
 }
 
 const AboutComponent = ({ blocks }: Props) => {
+  const matches = useMediaQuery('(min-width: 768px)')
+
   return (
     <>
+      {!matches ? (
+        <div className="my-5 decoration-[#F40000]">
+          <Marquee
+            gradient={false}
+            speed={100}
+            style={{ overflowY: 'hidden', color: '#F40000' }}
+          >
+            <h3 className="  text-6xl font-bold uppercase ">
+              &nbsp;Enter The Dungeon
+            </h3>
+            <h3 className="  text-6xl font-bold uppercase">
+              &nbsp;Enter The Dungeon
+            </h3>
+          </Marquee>
+        </div>
+      ) : (
+        <></>
+      )}
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-7:row-span-2">
           {blocks &&
@@ -28,7 +50,7 @@ const AboutComponent = ({ blocks }: Props) => {
                         </h3>
                         <div
                           key={idx}
-                          className="pt-8 text-xl lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
+                          className="font-Sharp_Grotesk_Medium20 pt-8 text-xl lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
                           }}
@@ -47,7 +69,7 @@ const AboutComponent = ({ blocks }: Props) => {
                         <div>
                           <div
                             key={idx}
-                            className="mx-6 pt-8 mb-10 text-xl"
+                            className="font-Sharp_Grotesk_Medium20 mx-6 pt-8 mb-10 text-xl"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
                             }}
@@ -57,32 +79,47 @@ const AboutComponent = ({ blocks }: Props) => {
                     )
                   }
                 case 'ImageBlock':
-                  const firstImg = `${
-                    idx === 0
-                      ? 'md:object-contain md:h-[80vh] '
-                      : 'object-cover h-full'
-                  }
-                  w-full  rounded-lg overflow-hidden`
                   return (
-                    <div className="" key={idx}>
-                      <Image
-                        className={firstImg}
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          block.item.image.id
-                        }`}
-                        alt={''}
-                        quality={100}
-                        height={block.item.image.height}
-                        width={block.item.image.width}
-                      />
-                    </div>
+                    <>
+                      {!matches ? (
+                        <div key={idx}>
+                          <Image
+                            className={
+                              'object-cover h-full w-full  rounded-lg overflow-hidden'
+                            }
+                            src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                              block.item.image.id
+                            }`}
+                            alt={''}
+                            quality={100}
+                            height={block.item.image.height}
+                            width={block.item.image.width}
+                          />
+                        </div>
+                      ) : (
+                        <div className="" key={idx + 1}>
+                          <Image
+                            className={
+                              'object-cover h-full w-full  rounded-lg overflow-hidden'
+                            }
+                            src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                              block.item.image.id
+                            }`}
+                            alt={''}
+                            quality={100}
+                            height={block.item.image.height}
+                            width={block.item.image.width}
+                          />
+                        </div>
+                      )}
+                    </>
                   )
               }
             })}
         </div>
 
         <div className="flex justify-end py-16 md:py-20">
-          <Image
+          <Hand
             onClick={() =>
               document.documentElement.scrollTo({
                 top: 0,
@@ -90,10 +127,7 @@ const AboutComponent = ({ blocks }: Props) => {
                 behavior: 'smooth',
               })
             }
-            className="object- h-[18vh] w-[10vh] "
-            src={Up}
-            alt={''}
-            quality={100}
+            className="object- h-[18vh] w-[10vh] cursor-pointer"
             height="100"
           />
         </div>

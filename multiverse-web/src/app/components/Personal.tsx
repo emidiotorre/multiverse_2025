@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Container from '@/app/components/Container'
-import Up from '../../../public/materiale/UP.png'
 import AnimateHeight from 'react-animate-height'
 import { VideoAutoPlayer } from './VideoPlayer'
 import { useMediaQuery } from 'usehooks-ts'
 import ReactPlayer from 'react-player'
+import Hand from './Hand'
 
 type Props = {
   work: any
@@ -18,7 +18,7 @@ const Personal = ({ work }: Props) => {
 
   return (
     <>
-      <Container>
+      <Container className="font-Sharp_Grotesk_Book25">
         <VideoAutoPlayer
           src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
             work?.video?.id
@@ -52,6 +52,7 @@ const Personal = ({ work }: Props) => {
                         height={'100%'}
                         width={'100%'}
                         loop
+                        muted={true}
                         playing={true}
                         url={img?.item?.vimeoUrl1}
                       ></ReactPlayer>
@@ -86,6 +87,7 @@ const Personal = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                         }}
+                        muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -126,6 +128,7 @@ const Personal = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                         }}
+                        muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -166,6 +169,7 @@ const Personal = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                         }}
+                        muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -225,6 +229,7 @@ const Personal = ({ work }: Props) => {
                       className=" overflow-hidden aspect-cover  rounded-lg w-full h-full"
                     >
                       <ReactPlayer
+                        muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
@@ -292,6 +297,7 @@ const Personal = ({ work }: Props) => {
                         className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                       >
                         <ReactPlayer
+                          muted={true}
                           style={{
                             overflow: 'hidden',
                             position: 'relative',
@@ -348,6 +354,7 @@ const Personal = ({ work }: Props) => {
                             position: 'relative',
                             marginBottom: '0.5rem',
                           }}
+                          muted={true}
                           height={'100%'}
                           width={'100%'}
                           loop
@@ -386,6 +393,7 @@ const Personal = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                         }}
+                        muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -426,6 +434,7 @@ const Personal = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                         }}
+                        muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -466,6 +475,7 @@ const Personal = ({ work }: Props) => {
                       className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                     >
                       <ReactPlayer
+                        muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
@@ -506,6 +516,7 @@ const Personal = ({ work }: Props) => {
                       className=" overflow-hidden aspect-cover mb-2 md:mb-2 rounded-lg w-full h-full"
                     >
                       <ReactPlayer
+                        muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
@@ -546,6 +557,7 @@ const Personal = ({ work }: Props) => {
                       className=" overflow-hidden aspect-cover  mb-2 md:mb-2 rounded-lg w-full h-full"
                     >
                       <ReactPlayer
+                        muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
@@ -618,7 +630,7 @@ const Personal = ({ work }: Props) => {
           </AnimateHeight>
         </div>
         <div className="flex justify-end py-16 md:py-20">
-          <Image
+          <Hand
             onClick={() =>
               document.documentElement.scrollTo({
                 top: 0,
@@ -626,10 +638,7 @@ const Personal = ({ work }: Props) => {
                 behavior: 'smooth', // Optional if you want to skip the scrolling animation
               })
             }
-            className="object-cover h-[18vh] w-[10vh] "
-            src={Up}
-            alt={''}
-            quality={70}
+            className="object-cover h-[18vh] w-[10vh] cursor-pointer"
           />
         </div>
       </Container>

@@ -9,15 +9,15 @@ module.exports = {
     extend: {
       borderWidth: ['nth-child-7', 'nth-child-3', 'nth-child-2'],
       fontFamily: {
-        sans: ['Sharp Grotesk'],
+        sans: ['Sharp_Grotesk_SemiBold25'],
         mono: ['Monosten A'],
-        /*  Sharp_Grotesk_Book20: ['Sharp_Grotesk_Book20'],
+        Sharp_Grotesk_Book20: ['Sharp_Grotesk_Book20'],
         Sharp_Grotesk_Light20: ['Sharp_Grotesk_Light20'],
         Sharp_Grotesk_Medium20: ['Sharp_Grotesk_Medium20'],
         Sharp_Grotesk_SemiBold25: ['Sharp_Grotesk_SemiBold25'],
         Sharp_Grotesk_Light25: ['Sharp_Grotesk_Light25'],
-        Sharp_Grotesk_Book25: [' Sharp_Grotesk_Book25'],
-        Sharp_Grotesk_Medium25: ['Sharp_Grotesk_Medium25'], */
+        Sharp_Grotesk_Book25: ['Sharp_Grotesk_Book25'],
+        Sharp_Grotesk_Medium25: ['Sharp_Grotesk_Medium25'],
       },
       transitionProperty: {
         height: 'height',

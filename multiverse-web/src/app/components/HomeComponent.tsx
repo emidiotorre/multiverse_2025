@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import ImgU from '../../../public/materiale/home/img1.png'
-import ImgD from '../../../public/materiale/home/img2.png'
-import ImgT from '../../../public/materiale/home/img3.png'
-import ImgQ from '../../../public/materiale/home/img4.png'
+import Astronauta from '../../../public/materiale/home/img1.png'
+import Cane from '../../../public/materiale/home/img2.png'
+import Mano from '../../../public/materiale/home/img3.png'
+import Castello from '../../../public/materiale/home/img4.png'
 import Draggable from './Draggable'
 
 function HomeComponent() {
@@ -12,14 +12,14 @@ function HomeComponent() {
         <Image
           className="object-cover w-[8vh] md:w-[16vh] select-none pointer-events-none"
           quality={100}
-          src={ImgU}
+          src={Astronauta}
           alt={''}
         />
       </Draggable>
       <Draggable>
         <Image
           className="object-cover w-[8vh] md:w-[16vh]  select-none pointer-events-none"
-          src={ImgD}
+          src={Cane}
           quality={100}
           alt={''}
         />
@@ -27,7 +27,7 @@ function HomeComponent() {
       <Draggable>
         <Image
           className="object-cover  w-[8vh] md:w-[16vh] select-none pointer-events-none"
-          src={ImgT}
+          src={Mano}
           alt={''}
           quality={100}
         />
@@ -35,7 +35,7 @@ function HomeComponent() {
       <Draggable>
         <Image
           className="object-cover w-[8vh] md:w-[16vh]  select-none pointer-events-none"
-          src={ImgQ}
+          src={Castello}
           quality={100}
           alt={''}
         />

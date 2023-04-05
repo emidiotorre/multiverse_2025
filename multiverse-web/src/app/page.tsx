@@ -10,7 +10,7 @@ export default async function Home() {
     <>
       <Container>
         <div>
-          <h1 className="font-sans font-semibold w-full text-[1.8rem] md:text-5xl lg:text-7xl pb-20 break-words leading-[1.1] overflow-visible pt-4">
+          <h1 className="font-sans font-semibold w-full text-[1.8rem] md:text-5xl  pb-20 break-words leading-[1.1] overflow-visible pt-4">
             <div className="inline-flex self-baseline mr-2">
               <Logo height=".95em" width="100%" />
             </div>
