@@ -91,6 +91,8 @@ const WORK_FRAG = gql`
       id
       item {
         ... on GalleryBlocks {
+          vimeoUrl
+          videoPosition
           __typename
           tipologia
           aspect_ratio

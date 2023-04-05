@@ -91,6 +91,9 @@ const WORK_FRAG = gql`
       id
       item {
         ... on GalleryBlocks {
+          vimeoUrl1
+          vimeoUrl2
+          vimeoUrl3
           __typename
           tipologia
           aspect_ratio

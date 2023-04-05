@@ -1,9 +1,9 @@
-"use client";
-import React, { useRef, useState, useEffect } from "react";
-import ReactPlayer from "react-player";
-import { PlayerPause, PlayerPlay, Volume3 } from "tabler-icons-react";
-import { Volume } from "tabler-icons-react";
-import { useIntersectionObserver } from "usehooks-ts";
+'use client'
+import React, { useRef, useState, useEffect } from 'react'
+import ReactPlayer from 'react-player'
+import { PlayerPause, PlayerPlay, Volume3 } from 'tabler-icons-react'
+import { Volume } from 'tabler-icons-react'
+import { useIntersectionObserver } from 'usehooks-ts'
 
 // const isSafari = () => {
 //   const ua = navigator.userAgent.toLowerCase();
@@ -11,17 +11,17 @@ import { useIntersectionObserver } from "usehooks-ts";
 // };
 
 export function VideoAutoPlayer({ src }: { src: string }) {
-  const [playing, setPlaying] = useState(false);
-  const [mute, setMute] = useState(false);
-  const [show, setShow] = useState(false);
+  const [playing, setPlaying] = useState(false)
+  const [mute, setMute] = useState(false)
+  const [show, setShow] = useState(false)
   // const initialRef: any = null;
   // const videoParentRef = useRef(initialRef);
-  const ref = useRef<HTMLDivElement | null>(null);
-  const entry = useIntersectionObserver(ref, {});
+  const ref = useRef<HTMLDivElement | null>(null)
+  const entry = useIntersectionObserver(ref, {})
   //const [shouldUseImage, setShouldUseImage] = useState(false);
-  const isVisible = !!entry?.isIntersecting;
+  const isVisible = !!entry?.isIntersecting
   useEffect(() => {
-    setPlaying(isVisible);
+    setPlaying(isVisible)
     // check if user agent is safari and we have the ref to the container <div />
     // if (
     //   isSafari() &&
@@ -58,7 +58,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
     //     }, 0);
     //   }
     // }
-  }, [isVisible]);
+  }, [isVisible])
 
   return (
     //  shouldUseImage ? (
@@ -68,15 +68,15 @@ export function VideoAutoPlayer({ src }: { src: string }) {
       <ReactPlayer
         loop={true}
         style={{
-          overflow: "hidden",
-          position: "relative",
-          marginTop: "0.5rem",
-          marginBottom: "0.5rem",
+          overflow: 'hidden',
+          position: 'relative',
+          marginTop: '0.5rem',
+          marginBottom: '0.5rem',
           zIndex: 10,
-          borderRadius: "0.5rem",
+          borderRadius: '0.5rem',
         }}
-        height={"auto"}
-        width={"auto"}
+        height={'100%'}
+        width={'100%'}
         muted={mute}
         playing={playing}
         url={src}
@@ -107,5 +107,5 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         )}
       </div>
     </div>
-  );
+  )
 }
