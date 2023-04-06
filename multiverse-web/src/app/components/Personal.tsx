@@ -33,7 +33,7 @@ const Personal = ({ work }: Props) => {
                   key={img.item.id}
                   className="w-full relative mb-2"
                   style={{
-                    aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                    aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                   }}
                 >
                   {img.item.vimeoUrl1 !== null ? (
@@ -77,7 +77,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl1 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
                     >
@@ -118,7 +118,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl2 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                     >
@@ -159,7 +159,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl3 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                     >
@@ -224,7 +224,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl1 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover  rounded-lg w-full h-full"
                     >
@@ -292,7 +292,10 @@ const Personal = ({ work }: Props) => {
                     {img.item.vimeoUrl2 !== null ? (
                       <div
                         style={{
-                          aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                          aspectRatio: img?.item.aspect_ratio?.replace(
+                            '-',
+                            '/',
+                          ),
                         }}
                         className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                       >
@@ -344,7 +347,10 @@ const Personal = ({ work }: Props) => {
                     {img.item.vimeoUrl3 !== null ? (
                       <div
                         style={{
-                          aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                          aspectRatio: img?.item.aspect_ratio?.replace(
+                            '-',
+                            '/',
+                          ),
                         }}
                         className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
                       >
@@ -383,7 +389,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl1 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
                     >
@@ -424,7 +430,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl2 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
                     >
@@ -470,7 +476,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl1 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
                     >
@@ -511,7 +517,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl2 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover mb-2 md:mb-2 rounded-lg w-full h-full"
                     >
@@ -552,7 +558,7 @@ const Personal = ({ work }: Props) => {
                   {img.item.vimeoUrl3 !== null ? (
                     <div
                       style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
+                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
                       className=" overflow-hidden aspect-cover  mb-2 md:mb-2 rounded-lg w-full h-full"
                     >
