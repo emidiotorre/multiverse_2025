@@ -19,8 +19,11 @@ const Project = ({ work }: Props) => {
   return (
     <>
       <Container className="font-Sharp_Grotesk_Book25">
-        <VideoAutoPlayer src={work?.vimeoUrl}></VideoAutoPlayer>
-
+        {work?.vimeoUrl !== null ? (
+          <VideoAutoPlayer src={work?.vimeoUrl}></VideoAutoPlayer>
+        ) : (
+          <></>
+        )}
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
             case 'full-width':
@@ -58,9 +61,9 @@ const Project = ({ work }: Props) => {
                     <Image
                       fill={true}
                       priority={idx < 3 ? true : false}
-                      className={`object-cover rounded-lg overflow-hidden`}
+                      className={`object-cover  w-full h-full rounded-lg overflow-hidden`}
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                        img.item.image_1.id
+                        img?.item?.image_1?.id
                       }`}
                       quality={70}
                       alt={''}
@@ -91,12 +94,12 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="relative  aspect-[5/8] md:h-full w-full row-span-2 "
+                      className="relative aspect-[5/8] h-full w-full row-span-2 "
                     >
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
-                        className=" object-cover rounded-lg overflow-hidden"
+                        className=" object-cover rounded-lg  w-full h-full overflow-hidden"
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img?.item?.image_1?.id
                         }`}
@@ -125,12 +128,12 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="relative  md:h-full w-full md:aspect-[5/4]"
+                      className="relative  h-full w-full md:aspect-[5/4]"
                     >
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
-                        className=" object-cover rounded-lg overflow-hidden"
+                        className=" object-cover  w-full h-full rounded-lg overflow-hidden"
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_2.id
                         }`}
@@ -159,12 +162,12 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className=" relative md:h-full w-full md:aspect-[5/4]"
+                      className=" relative h-full w-full aspect-[5/4]"
                     >
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
-                        className=" object-cover rounded-lg overflow-hidden"
+                        className=" object-cover  w-full h-full rounded-lg overflow-hidden"
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_3.id
                         }`}
@@ -230,7 +233,7 @@ const Project = ({ work }: Props) => {
                               gridRowEnd: 'auto',
                             }
                       }
-                      className="relative  w-full aspect-[5/4]"
+                      className="relative   w-full h-full aspect-[5/4]"
                     >
                       <Image
                         fill={true}
@@ -246,7 +249,7 @@ const Project = ({ work }: Props) => {
                   )}
                   <div
                     key={img.item.id}
-                    className="relative w-full md:aspect-[5/4]"
+                    className="relative  w-full h-full md:aspect-[5/4]"
                     style={
                       matches
                         ? {
@@ -292,7 +295,7 @@ const Project = ({ work }: Props) => {
                   </div>
                   <div
                     key={img.item.id}
-                    className="relative md:aspect-[5/8]"
+                    className="relative  w-full h-full md:aspect-[5/8]"
                     style={
                       matches
                         ? {
@@ -362,7 +365,7 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="row-span-2 mb-2 relative aspect-[5/8]"
+                      className="row-span-2 mb-2 w-full h-full relative aspect-[5/8]"
                     >
                       <Image
                         fill={true}
@@ -396,7 +399,7 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="row-span-2 mb-2 md:mb-2 relative aspect-[5/8]"
+                      className="row-span-2 mb-2 md:mb-2  w-full h-full relative aspect-[5/8]"
                     >
                       <Image
                         fill={true}
@@ -435,7 +438,7 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="relative  md:h-full w-full mb-2 md:mb-2 md:aspect-square"
+                      className="relative  h-full w-full mb-2 md:mb-2 md:aspect-square"
                     >
                       <Image
                         fill={true}
@@ -450,12 +453,7 @@ const Project = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl2 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-square mb-2 md:mb-2 rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-square mb-2 md:mb-2 rounded-lg w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
@@ -474,7 +472,7 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="relative md:h-full mb-2 md:mb-2 w-full md:aspect-square"
+                      className="relative h-full mb-2 md:mb-2 w-full md:aspect-square"
                     >
                       <Image
                         fill={true}
@@ -508,7 +506,7 @@ const Project = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      className="relative md:h-full w-full md:mb-2 md:aspect-square"
+                      className="relative h-full w-full md:mb-2 md:aspect-square"
                     >
                       <Image
                         fill={true}
