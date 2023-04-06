@@ -1,8 +1,8 @@
 import React from 'react'
 import { fetcher } from '@/app/apollo'
 import { GET_WORK_BY_SLUG } from '@/app/apollo/queries'
-import Personal from '@/app/components/Personal'
 import { NextRequest } from 'next/server'
+import Project from '@/app/components/Personal'
 
 export default async function Work({ params }: { params: { slug: string } }) {
   const { work } = await fetcher({
@@ -12,5 +12,5 @@ export default async function Work({ params }: { params: { slug: string } }) {
     },
   })
 
-  return <Personal work={work[0]} />
+  return <Project work={work[0]} />
 }

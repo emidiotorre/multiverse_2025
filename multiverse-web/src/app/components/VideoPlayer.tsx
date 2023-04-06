@@ -74,9 +74,10 @@ export function VideoAutoPlayer({ src }: { src: string }) {
           marginBottom: '0.5rem',
           zIndex: 10,
           borderRadius: '0.5rem',
+          aspectRatio: '16/9',
         }}
-        height={'100%'}
-        width={'100%'}
+        width={'auto'}
+        height={'auto'}
         muted={mute}
         playing={playing}
         url={src}

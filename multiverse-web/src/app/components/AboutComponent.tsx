@@ -81,14 +81,14 @@ const AboutComponent = ({ blocks }: Props) => {
                 case 'ImageBlock':
                   return (
                     <>
-                      {!matches ? (
+                      {!matches && idx === 0 ? (
                         <div key={idx}>
                           <Image
                             className={
-                              'object-cover h-full w-full  rounded-lg overflow-hidden'
+                              'object-cover h-full w-full rounded-lg overflow-hidden'
                             }
                             src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                              block.item.image.id
+                              block?.item?.image_mobile?.id
                             }`}
                             alt={''}
                             quality={100}
@@ -97,7 +97,7 @@ const AboutComponent = ({ blocks }: Props) => {
                           />
                         </div>
                       ) : (
-                        <div className="" key={idx + 1}>
+                        <div className="" key={idx}>
                           <Image
                             className={
                               'object-cover h-full w-full  rounded-lg overflow-hidden'

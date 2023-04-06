@@ -84,9 +84,7 @@ const WORK_FRAG = gql`
     image {
       id
     }
-    video {
-      id
-    }
+    vimeoUrl
     gallery {
       id
       item {
@@ -127,6 +125,9 @@ export const GET_ABOUT = gql`
             background_color
           }
           ... on ImageBlock {
+            image_mobile {
+              id
+            }
             image {
               height
               width

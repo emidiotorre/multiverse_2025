@@ -7,6 +7,7 @@ import { useMediaQuery } from 'usehooks-ts'
 import Marquee from 'react-fast-marquee'
 import Container from './Container'
 import Hand from './Hand'
+import { AspectRatio } from 'tabler-icons-react'
 
 type Props = {
   blocks: any[]
@@ -182,7 +183,7 @@ function WorksGrid({ blocks }: Props) {
                 case 'half-half':
                   return (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                      <div className="row-span-2">
+                      <div className="row-span-2 md:mb-2">
                         <Card
                           key={idx}
                           id={block.item.work1.image.id}

@@ -12,18 +12,14 @@ type Props = {
   work: any
 }
 
-const Personal = ({ work }: Props) => {
+const Project = ({ work }: Props) => {
   const matches = useMediaQuery('(min-width: 768px)')
   const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
 
   return (
     <>
       <Container className="font-Sharp_Grotesk_Book25">
-        {/*  <VideoAutoPlayer
-          src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-            work?.video?.id
-          }`}
-        ></VideoAutoPlayer> */}
+        <VideoAutoPlayer src={work?.vimeoUrl}></VideoAutoPlayer>
 
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
@@ -48,6 +44,7 @@ const Personal = ({ work }: Props) => {
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         height={'100%'}
                         width={'100%'}
@@ -75,17 +72,13 @@ const Personal = ({ work }: Props) => {
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 ">
                   {img.item.vimeoUrl1 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/8] row-span-2 rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         muted={true}
                         height={'100%'}
@@ -97,11 +90,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className="relative h-[50vh] md:h-full w-full row-span-2 "
+                      className="relative  aspect-[5/8] md:h-full w-full row-span-2 "
                     >
                       <Image
                         fill={true}
@@ -116,17 +106,13 @@ const Personal = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl2 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/4] rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         muted={true}
                         height={'100%'}
@@ -138,11 +124,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className="relative h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                      className="relative  md:h-full w-full md:aspect-[5/4]"
                     >
                       <Image
                         fill={true}
@@ -157,17 +140,13 @@ const Personal = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl3 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/4] rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         muted={true}
                         height={'100%'}
@@ -179,11 +158,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className=" relative h-[50vh] md:h-full w-full md:aspect-[8/5]"
+                      className=" relative md:h-full w-full md:aspect-[5/4]"
                     >
                       <Image
                         fill={true}
@@ -222,18 +198,14 @@ const Personal = ({ work }: Props) => {
                 >
                   {' '}
                   {img.item.vimeoUrl1 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover  rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/4]  rounded-lg w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         height={'100%'}
                         width={'100%'}
@@ -258,7 +230,7 @@ const Personal = ({ work }: Props) => {
                               gridRowEnd: 'auto',
                             }
                       }
-                      className="relative  w-full md:aspect-[5/4]"
+                      className="relative  w-full aspect-[5/4]"
                     >
                       <Image
                         fill={true}
@@ -290,15 +262,7 @@ const Personal = ({ work }: Props) => {
                     }
                   >
                     {img.item.vimeoUrl2 !== null ? (
-                      <div
-                        style={{
-                          aspectRatio: img?.item.aspect_ratio?.replace(
-                            '-',
-                            '/',
-                          ),
-                        }}
-                        className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
-                      >
+                      <div className=" overflow-hidden aspect-[5/4] rounded-lg w-full h-full">
                         <ReactPlayer
                           muted={true}
                           style={{
@@ -345,15 +309,7 @@ const Personal = ({ work }: Props) => {
                   >
                     {' '}
                     {img.item.vimeoUrl3 !== null ? (
-                      <div
-                        style={{
-                          aspectRatio: img?.item.aspect_ratio?.replace(
-                            '-',
-                            '/',
-                          ),
-                        }}
-                        className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
-                      >
+                      <div className=" overflow-hidden aspect-[5/8] row-span-2 rounded-lg w-full h-full">
                         <ReactPlayer
                           style={{
                             overflow: 'hidden',
@@ -387,17 +343,13 @@ const Personal = ({ work }: Props) => {
               return (
                 <div className="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
                   {img.item.vimeoUrl1 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/8] row-span-2 rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         muted={true}
                         height={'100%'}
@@ -410,10 +362,7 @@ const Personal = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      style={{
-                        aspectRatio: img.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className="row-span-2 mb-2 relative"
+                      className="row-span-2 mb-2 relative aspect-[5/8]"
                     >
                       <Image
                         fill={true}
@@ -428,17 +377,13 @@ const Personal = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl2 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover row-span-2 rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-[5/8] row-span-2 rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         muted={true}
                         height={'100%'}
@@ -451,10 +396,7 @@ const Personal = ({ work }: Props) => {
                   ) : (
                     <div
                       key={img.item.id}
-                      style={{
-                        aspectRatio: img.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className="row-span-2 mb-2 md:mb-2 relative"
+                      className="row-span-2 mb-2 md:mb-2 relative aspect-[5/8]"
                     >
                       <Image
                         fill={true}
@@ -474,18 +416,14 @@ const Personal = ({ work }: Props) => {
               return (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-2 gap-y-2 mb-2 md:mb-2">
                   {img.item.vimeoUrl1 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-square rounded-lg w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         height={'100%'}
                         width={'100%'}
@@ -496,11 +434,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className="relative h-[50vh] md:h-full w-full mb-2 md:mb-2 md:aspect-square"
+                      className="relative  md:h-full w-full mb-2 md:mb-2 md:aspect-square"
                     >
                       <Image
                         fill={true}
@@ -519,7 +454,7 @@ const Personal = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
                       }}
-                      className=" overflow-hidden aspect-cover mb-2 md:mb-2 rounded-lg w-full h-full"
+                      className=" overflow-hidden aspect-square mb-2 md:mb-2 rounded-lg w-full h-full"
                     >
                       <ReactPlayer
                         muted={true}
@@ -527,6 +462,7 @@ const Personal = ({ work }: Props) => {
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         height={'100%'}
                         width={'100%'}
@@ -537,11 +473,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className="relative h-[50vh] md:h-full mb-2 md:mb-2 w-full md:aspect-square"
+                      className="relative md:h-full mb-2 md:mb-2 w-full md:aspect-square"
                     >
                       <Image
                         fill={true}
@@ -556,18 +489,14 @@ const Personal = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl3 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img?.item.aspect_ratio?.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover  mb-2 md:mb-2 rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden aspect-square  mb-2 md:mb-2 rounded-lg w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
+                          objectFit: 'cover',
                         }}
                         height={'100%'}
                         width={'100%'}
@@ -578,11 +507,8 @@ const Personal = ({ work }: Props) => {
                     </div>
                   ) : (
                     <div
-                      style={{
-                        aspectRatio: img?.item?.aspect_ratio?.replace('-', '/'),
-                      }}
                       key={img.item.id}
-                      className="relative h-[50vh] md:h-full w-full md:mb-2 md:aspect-square"
+                      className="relative md:h-full w-full md:mb-2 md:aspect-square"
                     >
                       <Image
                         fill={true}
@@ -652,4 +578,4 @@ const Personal = ({ work }: Props) => {
   )
 }
 
-export default Personal
+export default Project
