@@ -19,11 +19,11 @@ const Personal = ({ work }: Props) => {
   return (
     <>
       <Container className="font-Sharp_Grotesk_Book25">
-        <VideoAutoPlayer
+        {/*  <VideoAutoPlayer
           src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
             work?.video?.id
           }`}
-        ></VideoAutoPlayer>
+        ></VideoAutoPlayer> */}
 
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
