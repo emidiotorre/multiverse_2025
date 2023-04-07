@@ -76,6 +76,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
           borderRadius: '0.5rem',
           aspectRatio: '16/9',
         }}
+        playsinline={true}
         width={'auto'}
         height={'auto'}
         muted={mute}
@@ -83,7 +84,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         url={src}
       />
       <div
-        className="absolute top-0 pl-5 pt-6 pr-10 md:pr-[7.5rem] md:pl-10 md:top-32 h-[50%]  w-full flex justify-between z-20"
+        className="absolute top-0 pl-5 pt-6 pr-10 md:pr-[7.5rem] md:pl-10 md:top-16 h-[2%]  w-full flex justify-between z-20"
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >
