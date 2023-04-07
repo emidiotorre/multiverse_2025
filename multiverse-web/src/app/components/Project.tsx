@@ -36,22 +36,18 @@ const Project = ({ work }: Props) => {
                   }}
                 >
                   {img.item.vimeoUrl1 !== null ? (
-                    <div
-                      style={{
-                        aspectRatio: img.item.aspect_ratio.replace('-', '/'),
-                      }}
-                      className=" overflow-hidden aspect-cover  rounded-lg w-full h-full"
-                    >
+                    <div className=" overflow-hidden rounded-lg w-full h-full">
                       <ReactPlayer
                         style={{
                           overflow: 'hidden',
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '16/9',
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         muted={true}
                         playing={true}
@@ -83,11 +79,12 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/8',
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -118,10 +115,12 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/4',
                         }}
+                        playsinline={true}
                         muted={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -152,10 +151,12 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/4',
                         }}
+                        playsinline={true}
                         muted={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl3}
@@ -201,9 +202,8 @@ const Project = ({ work }: Props) => {
                         }
                   }
                 >
-                  {' '}
                   {img.item.vimeoUrl1 !== null ? (
-                    <div className=" overflow-hidden aspect-[5/4]  rounded-lg w-full h-full">
+                    <div className=" overflow-hidden aspect-[5/4] rounded-lg w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
@@ -211,10 +211,11 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/4',
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -236,7 +237,7 @@ const Project = ({ work }: Props) => {
                               gridRowEnd: 'auto',
                             }
                       }
-                      className="relative   w-full h-full aspect-[5/4]"
+                      className="relative w-full h-full aspect-[5/4]"
                     >
                       <Image
                         fill={true}
@@ -275,10 +276,11 @@ const Project = ({ work }: Props) => {
                             overflow: 'hidden',
                             position: 'relative',
                             marginBottom: '0.5rem',
+                            aspectRatio: '5/4',
                           }}
                           playsinline={true}
-                          height={'100%'}
-                          width={'100%'}
+                          height={'auto'}
+                          width={'auto'}
                           loop
                           playing={true}
                           url={img?.item?.vimeoUrl2}
@@ -322,11 +324,12 @@ const Project = ({ work }: Props) => {
                             overflow: 'hidden',
                             position: 'relative',
                             marginBottom: '0.5rem',
+                            aspectRatio: '5/8',
                           }}
                           playsinline={true}
                           muted={true}
-                          height={'100%'}
-                          width={'100%'}
+                          height={'auto'}
+                          width={'auto'}
                           loop
                           playing={true}
                           url={img?.item?.vimeoUrl3}
@@ -358,12 +361,18 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/8',
                         }}
                         playsinline={true}
                         muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
+                        config={{
+                          vimeo: {
+                            playerOptions: {},
+                          },
+                        }}
                         playing={true}
                         url={img?.item?.vimeoUrl1}
                       ></ReactPlayer>
@@ -393,11 +402,12 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '5/4',
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -434,10 +444,11 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '1/1',
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -469,10 +480,11 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '1/1',
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -504,10 +516,11 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
+                          aspectRatio: '1/1',
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={'auto'}
+                        width={'auto'}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl3}
