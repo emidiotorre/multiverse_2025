@@ -1,7 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
 import Item from './Item'
 
 import Gallery from './Gallery'
@@ -34,7 +32,7 @@ function PlaysGrid(props: Props) {
               width={play.image.width}
               key={'subgrid_item_' + idx}
               image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                play.image.id
+                play?.image?.id
               }`}
               body={play.body}
             ></Item>
