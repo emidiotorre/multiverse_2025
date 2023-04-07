@@ -49,6 +49,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -83,6 +84,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         muted={true}
                         height={'100%'}
                         width={'100%'}
@@ -210,6 +212,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -273,6 +276,7 @@ const Project = ({ work }: Props) => {
                             position: 'relative',
                             marginBottom: '0.5rem',
                           }}
+                          playsinline={true}
                           height={'100%'}
                           width={'100%'}
                           loop
@@ -319,6 +323,7 @@ const Project = ({ work }: Props) => {
                             position: 'relative',
                             marginBottom: '0.5rem',
                           }}
+                          playsinline={true}
                           muted={true}
                           height={'100%'}
                           width={'100%'}
@@ -354,6 +359,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         muted={true}
                         height={'100%'}
                         width={'100%'}
@@ -388,6 +394,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         muted={true}
                         height={'100%'}
                         width={'100%'}
@@ -428,6 +435,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -462,6 +470,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         height={'100%'}
                         width={'100%'}
                         loop
@@ -496,6 +505,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                         }}
+                        playsinline={true}
                         height={'100%'}
                         width={'100%'}
                         loop
