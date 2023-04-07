@@ -12,7 +12,7 @@ import { useIntersectionObserver } from 'usehooks-ts'
 
 export function VideoAutoPlayer({ src }: { src: string }) {
   const [playing, setPlaying] = useState(false)
-  const [mute, setMute] = useState(false)
+  const [mute, setMute] = useState(true)
   const [show, setShow] = useState(false)
   // const initialRef: any = null;
   // const videoParentRef = useRef(initialRef);
