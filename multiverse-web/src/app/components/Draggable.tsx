@@ -10,15 +10,16 @@ type Props = {
 function Draggable(props: Props) {
   const html = typeof document != 'undefined' ? document.documentElement : null
   const docRef = useRef(html)
-
+  const size = useWindowSize()
   if (typeof document === 'undefined') return <div>{props.children}</div>
-  const rect =
+  /* const rect =
     typeof window != 'undefined'
       ? { height: window.innerHeight, width: window.innerWidth }
-      : { height: 0, width: 0 }
+      : { height: 0, width: 0 } */
 
   return (
     <motion.div
+      key={JSON.stringify(size)}
       style={{ userSelect: 'none' }}
       dragConstraints={docRef}
       drag={true}
@@ -30,8 +31,8 @@ function Draggable(props: Props) {
       initial={{
         zIndex: 100,
         position: 'absolute',
-        left: Math.random() * rect.width * 0.75,
-        top: Math.random() * rect.height * 0.75,
+        left: Math.random() * size.width * 0.75,
+        top: Math.random() * size.height * 0.75,
         opacity: 0,
       }}
       animate={{

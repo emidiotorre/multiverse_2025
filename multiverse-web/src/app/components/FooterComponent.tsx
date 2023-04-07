@@ -45,6 +45,10 @@ function FooterComponent({ footer }: Props) {
                 key={footer.id}
                 dangerouslySetInnerHTML={{ __html: footer.col1 }}
               ></small>
+              <small
+                className="max-[1098px]:flex max-[1098px]:flex-col "
+                dangerouslySetInnerHTML={{ __html: footer.col2 }}
+              ></small>
             </div>
             <div>
               <DateTime />

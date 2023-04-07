@@ -11,7 +11,7 @@ function HomeComponent() {
       <Draggable>
         <Image
           className="object-cover w-[9vh] md:w-[16vh] select-none pointer-events-none"
-          quality={100}
+          quality={80}
           src={Astronauta}
           alt={''}
         />
@@ -20,7 +20,7 @@ function HomeComponent() {
         <Image
           className="object-cover w-[9vh] md:w-[16vh]  select-none pointer-events-none"
           src={Cane}
-          quality={100}
+          quality={80}
           alt={''}
         />
       </Draggable>
@@ -29,14 +29,14 @@ function HomeComponent() {
           className="object-cover  w-[9vh] md:w-[16vh] select-none pointer-events-none"
           src={Mano}
           alt={''}
-          quality={100}
+          quality={80}
         />
       </Draggable>
       <Draggable>
         <Image
           className="object-cover w-[9vh] md:w-[16vh]  select-none pointer-events-none"
           src={Castello}
-          quality={100}
+          quality={80}
           alt={''}
         />
       </Draggable>

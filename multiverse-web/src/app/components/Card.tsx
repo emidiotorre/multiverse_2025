@@ -35,7 +35,7 @@ const Card = (props: Props) => {
           width={props.width}
           src={props.image_url}
           alt={''}
-          quality={100}
+          quality={80}
         />
       </Link>
     </div>

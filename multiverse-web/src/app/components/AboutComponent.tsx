@@ -19,7 +19,7 @@ const AboutComponent = ({ blocks }: Props) => {
         <div className="my-5 decoration-[#F40000]">
           <Marquee
             gradient={false}
-            speed={100}
+            speed={80}
             style={{ overflowY: 'hidden', color: '#F40000' }}
           >
             <h3 className="  text-6xl font-bold uppercase ">
@@ -91,7 +91,7 @@ const AboutComponent = ({ blocks }: Props) => {
                               block?.item?.image_mobile?.id
                             }`}
                             alt={''}
-                            quality={100}
+                            quality={80}
                             height={block.item.image.height}
                             width={block.item.image.width}
                           />
@@ -106,7 +106,7 @@ const AboutComponent = ({ blocks }: Props) => {
                               block.item.image.id
                             }`}
                             alt={''}
-                            quality={100}
+                            quality={80}
                             height={block.item.image.height}
                             width={block.item.image.width}
                           />
@@ -128,7 +128,7 @@ const AboutComponent = ({ blocks }: Props) => {
               })
             }
             className="object- h-[18vh] w-[10vh] cursor-pointer"
-            height="100"
+            height="80"
           />
         </div>
       </Container>

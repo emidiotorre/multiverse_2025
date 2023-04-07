@@ -24,7 +24,7 @@ function Item(props: Props) {
         src={props.image_url}
         className={`rounded-lg `}
         alt={''}
-        quality={100}
+        quality={80}
         height={props.height / 3}
         width={props.width / 3}
       />

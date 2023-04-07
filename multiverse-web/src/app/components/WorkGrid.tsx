@@ -1,13 +1,10 @@
 'use client'
 import React from 'react'
 import Card from './Card'
-import Image from 'next/image'
-import Up from '../../../public/materiale/UP.png'
 import { useMediaQuery } from 'usehooks-ts'
 import Marquee from 'react-fast-marquee'
 import Container from './Container'
 import Hand from './Hand'
-import { AspectRatio } from 'tabler-icons-react'
 
 type Props = {
   blocks: any[]

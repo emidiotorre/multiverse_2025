@@ -66,7 +66,7 @@ const Project = ({ work }: Props) => {
                       src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                         img?.item?.image_1?.id
                       }`}
-                      quality={70}
+                      quality={80}
                       alt={''}
                     />
                   )}
@@ -107,7 +107,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img?.item?.image_1?.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -143,7 +143,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_2.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -180,7 +180,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_3.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -222,7 +222,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_1.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -258,7 +258,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_2.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     )}
@@ -307,7 +307,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_3.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     )}
@@ -364,7 +364,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_1.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -411,7 +411,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_2.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -453,7 +453,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_1.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -490,7 +490,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_2.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
@@ -527,7 +527,7 @@ const Project = ({ work }: Props) => {
                         src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                           img.item.image_3.id
                         }`}
-                        quality={70}
+                        quality={80}
                         alt={''}
                       />
                     </div>
