@@ -40,7 +40,7 @@ function WorksGrid({ blocks }: Props) {
                           height={block.item.work1.image.height}
                           width={block.item.work1.image.width}
                           key={idx}
-                          id={block.item.work1.image.id}
+                          id={block.item.work1.id}
                           image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                             block.item.work1.image.id
                           }`}
@@ -50,24 +50,24 @@ function WorksGrid({ blocks }: Props) {
                       </div>
 
                       <Card
-                        height={block.item.work1.image.height}
-                        width={block.item.work1.image.width}
+                        height={block.item.work2.image?.height}
+                        width={block.item.work2.image?.width}
                         key={idx}
-                        id={block.item.work2.image.id}
+                        id={block.item.work2.id}
                         image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          block.item.work2.image.id
+                          block.item.work2.image?.id
                         }`}
                         slug={block.item.work2.slug}
                         Name={block.item.work2.Name}
                       ></Card>
 
                       <Card
-                        height={block.item.work1.image.height}
-                        width={block.item.work1.image.width}
-                        key={idx}
-                        id={block.item.work3.image.id}
+                        height={block.item.work3.image?.height}
+                        width={block.item.work3.image?.width}
+                        key={block.item.work3.id}
+                        id={block.item.work3.id}
                         image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                          block.item.work3.image.id
+                          block.item.work3.image?.id
                         }`}
                         slug={block.item.work3.slug}
                         Name={block.item.work3.Name}
@@ -109,10 +109,10 @@ function WorksGrid({ blocks }: Props) {
                         }
                       >
                         <Card
-                          height={block.item.work1.image.height}
-                          width={block.item.work1.image.width}
+                          height={block.item.work1.image?.height}
+                          width={block.item.work1.image?.width}
                           key={idx}
-                          id={block.item.work1.image.id}
+                          id={block.item.work1.id}
                           image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                             block.item.work1.image.id
                           }`}
