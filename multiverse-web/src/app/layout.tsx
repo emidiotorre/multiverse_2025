@@ -21,6 +21,16 @@ export default async function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
+      <script src="/lubenda.js" />
+      <script
+        type="text/javascript"
+        src="//cdn.iubenda.com/cs/gpp/stub.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="//cdn.iubenda.com/cs/iubenda_cs.js"
+        async
+      ></script>
       <body>
         <main className="relative pb-[5vh] pt-0 md:pb-0 flex flex-col w-full justify-start min-h-[100svh] ">
           <Header />
