@@ -1,36 +1,33 @@
-'use client'
-import { motion } from 'framer-motion'
-import { ReactNode, useEffect, useRef } from 'react'
-import { useWindowSize } from 'usehooks-ts'
+"use client";
+import { motion } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import { useWindowSize } from "usehooks-ts";
 
 type Props = {
-  children?: ReactNode
-}
+  children?: ReactNode;
+};
 
 function Draggable(props: Props) {
-  const html = typeof document != 'undefined' ? document.documentElement : null
-  const docRef = useRef(html)
-  const size = useWindowSize()
-  if (typeof document === 'undefined') return <div>{props.children}</div>
-  /* const rect =
-    typeof window != 'undefined'
-      ? { height: window.innerHeight, width: window.innerWidth }
-      : { height: 0, width: 0 } */
+  const html = typeof document != "undefined" ? document.documentElement : null;
+  const docRef = useRef(html);
+  const size = useWindowSize();
+  if (typeof document === "undefined") return <div>{props.children}</div>;
 
   return (
     <motion.div
       key={JSON.stringify(size)}
-      style={{ userSelect: 'none' }}
+      style={{ userSelect: "none" }}
       dragConstraints={docRef}
+      draggable={false}
       drag={true}
       onClick={(e) => e.stopPropagation()}
       whileHover={{
         transition: { duration: 0.5 },
-        cursor: 'grab',
+        cursor: "grab",
       }}
       initial={{
         zIndex: 100,
-        position: 'absolute',
+        position: "absolute",
         left: Math.random() * size.width * 0.75,
         top: Math.random() * size.height * 0.75,
         opacity: 0,
@@ -39,14 +36,14 @@ function Draggable(props: Props) {
         opacity: 1,
         transition: {
           duration: 2,
-          type: 'spring',
+          type: "spring",
         },
       }}
       exit={{ opacity: 1 }}
     >
       {props.children}
     </motion.div>
-  )
+  );
 }
 
-export default Draggable
+export default Draggable;

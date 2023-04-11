@@ -1,16 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 type Props = {
-  id: number
-  Name: string
-  slug: string
-  image_url: string
-  style?: any
-  height: number
-  width: number
-}
+  id: number;
+  Name: string;
+  slug: string;
+  image_url: string;
+  style?: any;
+  aspect_ratio: string;
+};
 
 const Card = (props: Props) => {
   return (
@@ -20,7 +19,7 @@ const Card = (props: Props) => {
     >
       <Link
         as={`/works/${props.slug}`}
-        href={props.slug ? `/works/[slug]` : '/'}
+        href={props.slug ? `/works/[slug]` : "/"}
         key={props.id}
         className="contents"
       >
@@ -29,17 +28,21 @@ const Card = (props: Props) => {
             <h1 className="absolute">{props.Name}</h1>
           </div>
         </div>
-        <Image
-          className="w-full h-full object-cover rounded-lg"
-          height={props.height}
-          width={props.width}
-          src={props.image_url}
-          alt={''}
-          quality={80}
-        />
+        <div
+          style={{ aspectRatio: props.aspect_ratio }}
+          className="relative  w-full h-full"
+        >
+          <Image
+            className=" w-full h-full object-cover"
+            fill={true}
+            src={props.image_url}
+            alt={""}
+            quality={80}
+          />
+        </div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

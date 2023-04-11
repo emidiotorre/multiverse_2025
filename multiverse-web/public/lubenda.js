@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 var _iub = _iub || [];
 _iub.csConfiguration = {
   askConsentAtCookiePolicyUpdate: true,
