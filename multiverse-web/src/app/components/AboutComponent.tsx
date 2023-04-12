@@ -91,7 +91,7 @@ const AboutComponent = ({ blocks }: Props) => {
                             src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
-                            priority={idx === 0}
+                            priority={true}
                             alt={''}
                             quality={80}
                             height={block.item.image.height}
@@ -102,13 +102,13 @@ const AboutComponent = ({ blocks }: Props) => {
                         <div key={idx}>
                           <Image
                             className={
-                              'object-cover h-full w-full  rounded-lg overflow-hidden'
+                              'object-cover h-full w-full rounded-lg overflow-hidden'
                             }
                             src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block.item.image.id
                             }`}
                             alt={''}
-                            priority={idx < 1}
+                            priority={idx < 3}
                             quality={80}
                             height={block.item.image.height}
                             width={block.item.image.width}

@@ -5,6 +5,7 @@ export const GET_WORKS_IMG = gql`
     works: works_page {
       blocks {
         id
+        sort
         item {
           ... on WorkBlocks {
             id

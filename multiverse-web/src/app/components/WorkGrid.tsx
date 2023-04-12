@@ -27,151 +27,79 @@ function WorksGrid({ blocks }: Props) {
       <Container>
         {blocks &&
           blocks
-            .sort((a, b) =>
-              a.item.work1.date_created < b.item.work1.date_created ? -1 : 1,
-            )
+            .sort((a, b) => (a.item.work1.sort < b.item.work1.sort ? -1 : 1))
             .map((block: any, idx: number) => {
               switch (block.item.tipologia) {
                 case 'half-split':
-                  if (
-                    block.item.work1?.status &&
-                    block.item.work2?.status &&
-                    block.item.work3?.status === 'published'
-                  ) {
-                    return (
-                      <div
-                        key={idx}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2"
-                      >
-                        <div className="row-span-2 relative aspect-[4/5] h-full w-full">
-                          <Card
-                            status={block.item.work1?.status}
-                            aspect_ratio={block.item.work1?.aspectRatioImage}
-                            id={block.item.work1?.id}
-                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                              block.item.work1.image?.id
-                            }`}
-                            slug={block.item.work1?.slug}
-                            Name={block.item.work1?.Name}
-                            priority={idx <= 2}
-                          ></Card>
-                        </div>
-                        <div className="relative aspect-[8/5]  w-full h-full">
-                          <Card
-                            status={block.item.work2?.status}
-                            aspect_ratio={block.item.work2?.aspectRatioImage}
-                            id={block.item.work2.id}
-                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                              block.item.work2.image?.id
-                            }`}
-                            slug={block.item.work2?.slug}
-                            Name={block.item.work2?.Name}
-                            priority={idx <= 2}
-                          ></Card>
-                        </div>
-                        <div className="relative aspect-[8/5]  w-full h-full">
-                          <Card
-                            status={block.item.work3?.status}
-                            aspect_ratio={block.item.work3?.aspectRatioImage}
-                            key={block.item.work3.id}
-                            id={block.item.work3.id}
-                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                              block.item.work3.image?.id
-                            }`}
-                            slug={block.item.work3?.slug}
-                            Name={block.item.work3?.Name}
-                            priority={idx <= 2}
-                          ></Card>
-                        </div>
+                  return (
+                    <div
+                      key={idx}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-2"
+                    >
+                      <div className="row-span-2 relative aspect-[4/5] h-full w-full">
+                        <Card
+                          status={block.item.work1?.status}
+                          aspect_ratio={block.item.work1?.aspectRatioImage}
+                          id={block.item.work1?.id}
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work1.image?.id
+                          }`}
+                          slug={block.item.work1?.slug}
+                          Name={block.item.work1?.Name}
+                          priority={idx <= 2}
+                        ></Card>
                       </div>
-                    )
-                  } else {
-                    return <></>
-                  }
+                      <div className="relative aspect-[8/5]  w-full h-full">
+                        <Card
+                          status={block.item.work2?.status}
+                          aspect_ratio={block.item.work2?.aspectRatioImage}
+                          id={block.item.work2.id}
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work2.image?.id
+                          }`}
+                          slug={block.item.work2?.slug}
+                          Name={block.item.work2?.Name}
+                          priority={idx <= 2}
+                        ></Card>
+                      </div>
+                      <div className="relative aspect-[8/5]  w-full h-full">
+                        <Card
+                          status={block.item.work3?.status}
+                          aspect_ratio={block.item.work3?.aspectRatioImage}
+                          key={block.item.work3.id}
+                          id={block.item.work3.id}
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work3.image?.id
+                          }`}
+                          slug={block.item.work3?.slug}
+                          Name={block.item.work3?.Name}
+                          priority={idx <= 2}
+                        ></Card>
+                      </div>
+                    </div>
+                  )
 
                 case 'split-half':
-                  if (
-                    block.item.work1?.status &&
-                    block.item.work2?.status &&
-                    block.item.work3?.status === 'published'
-                  ) {
-                    return (
-                      <div
-                        key={idx}
-                        className="flex flex-col md:flex-row gap-2 mb-2"
-                      >
-                        <div className="flex flex-col gap-2 md:w-1/2">
-                          <div className="relative w-full h-full aspect-[8/5]">
-                            <Card
-                              status={block.item.work1?.status}
-                              aspect_ratio={block.item.work1?.aspectRatioImage}
-                              id={block.item.work1.id}
-                              image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                                block.item.work1.image?.id
-                              }`}
-                              slug={block.item.work1?.slug}
-                              Name={block.item.work1?.Name}
-                              priority={idx <= 2}
-                            ></Card>
-                          </div>
-                          <div className="relative w-full h-full aspect-[8/5]">
-                            <Card
-                              status={block.item.work2?.status}
-                              aspect_ratio={block.item.work2?.aspectRatioImage}
-                              id={block.item.work2.image.id}
-                              image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                                block.item.work2.image?.id
-                              }`}
-                              slug={block.item.work2?.slug}
-                              Name={block.item.work2?.Name}
-                              priority={idx <= 2}
-                            ></Card>
-                          </div>
-                        </div>
-                        <div className="flex aspect-[4/5] md:w-[calc(50%)] overflow-hidden rounded-lg">
-                          <div className="relative w-full h-full ">
-                            <Card
-                              status={block.item.work3?.status}
-                              aspect_ratio={block.item.work3?.aspectRatioImage}
-                              id={block.item.work3.image.id}
-                              image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
-                                block.item.work3.image?.id
-                              }`}
-                              slug={block.item.work3?.slug}
-                              Name={block.item.work3?.Name}
-                              priority={idx <= 2}
-                            ></Card>
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  } else {
-                    return <></>
-                  }
-                case 'half-half':
-                  if (
-                    block.item.work1?.status &&
-                    block.item.work2?.status === 'published'
-                  ) {
-                    return (
-                      <div
-                        key={idx}
-                        className="grid grid-cols-1 md:grid-cols-2 gap-2"
-                      >
-                        <div className="row-span-2 md:mb-2">
+                  return (
+                    <div
+                      key={idx}
+                      className="flex flex-col md:flex-row gap-2 mb-2"
+                    >
+                      <div className="flex flex-col gap-2 md:w-1/2">
+                        <div className="relative w-full h-full aspect-[8/5]">
                           <Card
+                            status={block.item.work1?.status}
                             aspect_ratio={block.item.work1?.aspectRatioImage}
-                            id={block.item.work1.image.id}
+                            id={block.item.work1.id}
                             image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block.item.work1.image?.id
                             }`}
                             slug={block.item.work1?.slug}
                             Name={block.item.work1?.Name}
                             priority={idx <= 2}
-                            status={block.item.work1?.status}
                           ></Card>
                         </div>
-                        <div className="row-span-2 mb-2 ">
+                        <div className="relative w-full h-full aspect-[8/5]">
                           <Card
                             status={block.item.work2?.status}
                             aspect_ratio={block.item.work2?.aspectRatioImage}
@@ -185,10 +113,57 @@ function WorksGrid({ blocks }: Props) {
                           ></Card>
                         </div>
                       </div>
-                    )
-                  } else {
-                    return <></>
-                  }
+                      <div className="flex aspect-[4/5] md:w-[calc(50%)] overflow-hidden rounded-lg">
+                        <div className="relative w-full h-full ">
+                          <Card
+                            status={block.item.work3?.status}
+                            aspect_ratio={block.item.work3?.aspectRatioImage}
+                            id={block.item.work3.image.id}
+                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                              block.item.work3.image?.id
+                            }`}
+                            slug={block.item.work3?.slug}
+                            Name={block.item.work3?.Name}
+                            priority={idx <= 2}
+                          ></Card>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                case 'half-half':
+                  return (
+                    <div
+                      key={idx}
+                      className="grid grid-cols-1 md:grid-cols-2 gap-2"
+                    >
+                      <div className="row-span-2 md:mb-2">
+                        <Card
+                          aspect_ratio={block.item.work1?.aspectRatioImage}
+                          id={block.item.work1.image.id}
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work1.image?.id
+                          }`}
+                          slug={block.item.work1?.slug}
+                          Name={block.item.work1?.Name}
+                          priority={idx <= 2}
+                          status={block.item.work1?.status}
+                        ></Card>
+                      </div>
+                      <div className="row-span-2 mb-2 ">
+                        <Card
+                          status={block.item.work2?.status}
+                          aspect_ratio={block.item.work2?.aspectRatioImage}
+                          id={block.item.work2.image.id}
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work2.image?.id
+                          }`}
+                          slug={block.item.work2?.slug}
+                          Name={block.item.work2?.Name}
+                          priority={idx <= 2}
+                        ></Card>
+                      </div>
+                    </div>
+                  )
               }
             })}
         <div className=" flex justify-end py-16 md:py-20">

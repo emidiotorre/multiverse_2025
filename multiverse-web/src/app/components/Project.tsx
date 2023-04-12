@@ -496,39 +496,41 @@ const Project = ({ work }: Props) => {
               return <div className="overflow-hidden rounded-lg my-2"></div>
           }
         })}
-        <div className="grid md:grid-cols-3 gap-4 mt-7 z-30">
-          <div
-            className="cursor-pointer"
-            onClick={() => setisDescriptionOpen(!isDescriptionOpen)}
-          >
-            {isDescriptionOpen ? (
-              <div> - Project Information</div>
-            ) : (
-              <div> + Project Information</div>
-            )}
-          </div>
-          <AnimateHeight
-            className={`col-span-2 overflow-hidden`}
-            height={isDescriptionOpen ? 'auto' : 0}
-            duration={600}
-          >
-            <div dangerouslySetInnerHTML={{ __html: work.Body }}></div>
-            <div className="pt-32 grid grid-cols-2 divide-x-0">
-              {work?.Credits?.map((credit: any, idx: number) => {
-                return (
-                  <>
-                    <div className="border-none" key={idx}>
-                      <div>{credit.Credit_Category}</div>
-                    </div>
-                    <div className="border-none">
-                      <div>{credit.Credit_Value}</div>
-                    </div>
-                  </>
-                )
-              })}
+        {work.Body && (
+          <div className="grid md:grid-cols-3 gap-4 mt-7 z-30">
+            <div
+              className="cursor-pointer"
+              onClick={() => setisDescriptionOpen(!isDescriptionOpen)}
+            >
+              {isDescriptionOpen ? (
+                <div> - Project Information</div>
+              ) : (
+                <div> + Project Information</div>
+              )}
             </div>
-          </AnimateHeight>
-        </div>
+            <AnimateHeight
+              className={`col-span-2 overflow-hidden`}
+              height={isDescriptionOpen ? 'auto' : 0}
+              duration={600}
+            >
+              <div dangerouslySetInnerHTML={{ __html: work.Body }}></div>
+              <div className="pt-32 grid grid-cols-2 divide-x-0">
+                {work?.Credits?.map((credit: any, idx: number) => {
+                  return (
+                    <>
+                      <div className="border-none" key={idx}>
+                        <div>{credit.Credit_Category}</div>
+                      </div>
+                      <div className="border-none">
+                        <div>{credit.Credit_Value}</div>
+                      </div>
+                    </>
+                  )
+                })}
+              </div>
+            </AnimateHeight>
+          </div>
+        )}
         <div className="flex justify-end py-16 md:py-20">
           <Hand
             onClick={() =>

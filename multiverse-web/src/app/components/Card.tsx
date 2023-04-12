@@ -19,15 +19,17 @@ const Card = (props: Props) => {
       className="relative overflow-hidden rounded-lg w-full h-full"
       style={props.style}
     >
-      {props.status == 'published' ? (
+      {props.status != 'published' ? (
+        <div style={{ aspectRatio: props.aspect_ratio }}></div>
+      ) : (
         <Link
           as={`/works/${props.slug}`}
           href={props.slug ? `/works/[slug]` : '/'}
           key={props.id}
           className="contents"
         >
-          <div className="absolute top-0 left-0 w-full h-full z-10 opacity-0 hover:opacity-90 hover:bg-[#F40000]">
-            <div className="text-black text-4xl pt-6 pl-10 absolute">
+          <div className="absolute top-0 left-0 w-full h-full z-10 opacity-0 hover:opacity-80 hover:bg-[#F40000] transition duration-300">
+            <div className="text-black text-4xl pt-6 pl-6 absolute w-full">
               <h1 className="absolute">{props.Name}</h1>
             </div>
           </div>
@@ -46,8 +48,6 @@ const Card = (props: Props) => {
             />
           </div>
         </Link>
-      ) : (
-        <div style={{ aspectRatio: props.aspect_ratio }}></div>
       )}
     </div>
   )
