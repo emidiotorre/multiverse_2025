@@ -129,3 +129,9 @@ a {
                         'H H H G G G'
                         'H H H G G G';
 }
+
+@media screen and (max-width: 980px) {
+  .iubenda-tp-btn.iubenda-cs-preferences-link {
+    display: none !important;
+  }
+}
