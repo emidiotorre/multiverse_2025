@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client'
 
 export const GET_WORKS_IMG = gql`
   query GetWorkPage {
@@ -10,6 +10,7 @@ export const GET_WORKS_IMG = gql`
             id
             tipologia
             work1 {
+              status
               id
               date_created
               slug
@@ -20,6 +21,7 @@ export const GET_WORKS_IMG = gql`
               }
             }
             work2 {
+              status
               aspectRatioImage
               id
               date_created
@@ -30,6 +32,7 @@ export const GET_WORKS_IMG = gql`
               }
             }
             work3 {
+              status
               id
               aspectRatioImage
               date_created
@@ -44,7 +47,7 @@ export const GET_WORKS_IMG = gql`
       }
     }
   }
-`;
+`
 export const GET_PLAYS_TITLES = gql`
   query GetPlays {
     play_page {
@@ -53,7 +56,7 @@ export const GET_PLAYS_TITLES = gql`
       subtitle
     }
   }
-`;
+`
 export const GET_PLAYS_IMAGE = gql`
   query GetPlays {
     plays: Play {
@@ -67,7 +70,7 @@ export const GET_PLAYS_IMAGE = gql`
       }
     }
   }
-`;
+`
 
 const WORK_FRAG = gql`
   fragment fullWork on Works {
@@ -104,7 +107,7 @@ const WORK_FRAG = gql`
       }
     }
   }
-`;
+`
 export const GET_ABOUT = gql`
   query getAbout {
     about: About {
@@ -134,7 +137,7 @@ export const GET_ABOUT = gql`
       }
     }
   }
-`;
+`
 export const GET_HOME = gql`
   query getHome {
     home: Home {
@@ -142,7 +145,7 @@ export const GET_HOME = gql`
       header
     }
   }
-`;
+`
 export const GET_FOOTER = gql`
   query getFooter {
     footer: Footer {
@@ -150,7 +153,7 @@ export const GET_FOOTER = gql`
       col1
     }
   }
-`;
+`
 
 const LISTWORK_FRAG = gql`
   fragment listWork on Works {
@@ -162,7 +165,7 @@ const LISTWORK_FRAG = gql`
       id
     }
   }
-`;
+`
 
 export const GET_WORKS = gql`
   query getWorks {
@@ -171,7 +174,7 @@ export const GET_WORKS = gql`
     }
   }
   ${LISTWORK_FRAG}
-`;
+`
 export const GET_WORK_BY_SLUG = gql`
   query getWorkBySlug($slug: String) {
     work: Works(filter: { slug: { _eq: $slug } }) {
@@ -180,4 +183,4 @@ export const GET_WORK_BY_SLUG = gql`
   }
 
   ${WORK_FRAG}
-`;
+`

@@ -299,7 +299,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="aspect-[5/8] row-span-2  w-full h-full"
+                      className=" row-span-2  w-full h-full"
                     >
                       <ReactPlayer
                         style={{
@@ -342,7 +342,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="aspect-[5/8] row-span-2 w-full h-full"
+                      className=" row-span-2 w-full h-full"
                     >
                       <ReactPlayer
                         style={{
@@ -366,7 +366,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="row-span-2 mb-2 md:mb-2 w-full h-full relative "
+                      className="row-span-2 mb-2  w-full h-full relative "
                     >
                       <Image
                         fill={true}
