@@ -1,10 +1,10 @@
-"use client";
-import * as React from "react";
-import Masonry, { MasonryOptions } from "react-masonry-component";
-import { useWindowSize } from "usehooks-ts";
+'use client'
+import * as React from 'react'
+import Masonry, { MasonryOptions } from 'react-masonry-component'
+import { useWindowSize } from 'usehooks-ts'
 
 function Gallery(props: any) {
-  const { width, height } = useWindowSize();
+  const { width, height } = useWindowSize()
   const [masonryOptions, setMasonryOprions] = React.useState<MasonryOptions>({
     //percentPosition: true,
     fitWidth: true,
@@ -12,7 +12,7 @@ function Gallery(props: any) {
     gutter: 20,
     resize: true,
     transitionDuration: 0,
-  });
+  })
 
   React.useLayoutEffect(() => {
     setMasonryOprions({
@@ -22,16 +22,16 @@ function Gallery(props: any) {
       gutter: 20,
       resize: true,
       transitionDuration: 0,
-    });
-  }, [width]);
+    })
+  }, [width])
 
   return (
-    <div className="relative flex justify-center ml-8 md:ml-0 md:mt-8">
+    <div className="relative flex justify-center ml-8  md:ml-0 md:mt-8">
       <Masonry
         //onLayoutComplete={}
         {...props}
         className="relative h-auto"
-        elementType={"div"}
+        elementType={'div'}
         options={masonryOptions} // default {}
         disableImagesLoaded={false} // default false
         updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
@@ -40,7 +40,7 @@ function Gallery(props: any) {
         {props.children}
       </Masonry>
     </div>
-  );
+  )
 }
 
-export default Gallery;
+export default Gallery

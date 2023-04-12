@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Container from '@/app/components/Container'
 import AnimateHeight from 'react-animate-height'
 import { VideoAutoPlayer } from './VideoPlayer'
-import { useMediaQuery } from 'usehooks-ts'
 import ReactPlayer from 'react-player'
 import Hand from './Hand'
 
@@ -13,7 +12,6 @@ type Props = {
 }
 
 const Project = ({ work }: Props) => {
-  const matches = useMediaQuery('(min-width: 768px)')
   const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
 
   return (
@@ -209,10 +207,7 @@ const Project = ({ work }: Props) => {
                         ></ReactPlayer>
                       </div>
                     ) : (
-                      <div
-                        key={img.item.id}
-                        className="relative w-full h-full aspect-[8/5]"
-                      >
+                      <div className="relative w-full h-full aspect-[8/5]">
                         <Image
                           fill={true}
                           priority={idx < 3 ? true : false}
@@ -259,7 +254,7 @@ const Project = ({ work }: Props) => {
                       )}
                     </div>
                   </div>
-                  <div className="flex aspect-[4/5] md:w-[calc(50%-8px)] overflow-hidden rounded-lg">
+                  <div className="flex aspect-[4/5] md:w-[calc(50%)] overflow-hidden rounded-lg">
                     {img.item.vimeoUrl3 !== null ? (
                       <div className="   w-full h-full">
                         <ReactPlayer
@@ -280,10 +275,7 @@ const Project = ({ work }: Props) => {
                         ></ReactPlayer>
                       </div>
                     ) : (
-                      <div
-                        key={img.item.id}
-                        className="relative w-full h-full aspect-[4/5]"
-                      >
+                      <div className="relative w-full h-full aspect-[4/5]">
                         <Image
                           fill={true}
                           priority={idx < 3 ? true : false}
@@ -301,7 +293,10 @@ const Project = ({ work }: Props) => {
               )
             case 'half-half':
               return (
-                <div className="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
+                <div
+                  key={idx}
+                  className="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2"
+                >
                   {img.item.vimeoUrl1 !== null ? (
                     <div
                       style={{
@@ -315,21 +310,13 @@ const Project = ({ work }: Props) => {
                           position: 'relative',
                           borderRadius: '0.5rem',
                           objectFit: 'cover',
-                          aspectRatio: img?.item.aspect_ratio?.replace(
-                            '-',
-                            '/',
-                          ),
+                          aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
                         muted={true}
                         height={'100%'}
                         width={'100%'}
                         loop
-                        config={{
-                          vimeo: {
-                            playerOptions: {},
-                          },
-                        }}
                         playing={true}
                         url={img?.item?.vimeoUrl1}
                       ></ReactPlayer>
@@ -339,7 +326,6 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      key={img.item.id}
                       className="row-span-2 mb-2 w-full h-full relative"
                     >
                       <Image
@@ -359,7 +345,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="  aspect-[5/8] row-span-2 w-full h-full"
+                      className="aspect-[5/8] row-span-2 w-full h-full"
                     >
                       <ReactPlayer
                         style={{
@@ -367,10 +353,7 @@ const Project = ({ work }: Props) => {
                           overflow: 'hidden',
                           position: 'relative',
                           objectFit: 'cover',
-                          aspectRatio: img?.item.aspect_ratio?.replace(
-                            '-',
-                            '/',
-                          ),
+                          aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
                         muted={true}
@@ -386,7 +369,6 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      key={img.item.id}
                       className="row-span-2 mb-2 md:mb-2 w-full h-full relative "
                     >
                       <Image
@@ -405,7 +387,10 @@ const Project = ({ work }: Props) => {
               )
             case 'third-third-third':
               return (
-                <div className="flex justify-between flex-col md:flex-row gap-x-2 gap-y-2 mb-2 md:mb-2">
+                <div
+                  key={idx}
+                  className="flex justify-between flex-col md:flex-row gap-x-2 gap-y-2 mb-2 md:mb-2"
+                >
                   {img.item.vimeoUrl1 !== null ? (
                     <div className="aspect-square w-full h-full">
                       <ReactPlayer
@@ -427,10 +412,7 @@ const Project = ({ work }: Props) => {
                       ></ReactPlayer>
                     </div>
                   ) : (
-                    <div
-                      key={img.item.id}
-                      className="relative  h-full w-full   aspect-square"
-                    >
+                    <div className="relative  h-full w-full aspect-square">
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
@@ -444,7 +426,7 @@ const Project = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl2 !== null ? (
-                    <div className="aspect-square   w-full h-full">
+                    <div className="aspect-square w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
@@ -464,10 +446,7 @@ const Project = ({ work }: Props) => {
                       ></ReactPlayer>
                     </div>
                   ) : (
-                    <div
-                      key={img.item.id}
-                      className="relative h-full   w-full aspect-square"
-                    >
+                    <div className="relative h-full   w-full aspect-square">
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
@@ -481,7 +460,7 @@ const Project = ({ work }: Props) => {
                     </div>
                   )}
                   {img.item.vimeoUrl3 !== null ? (
-                    <div className="aspect-square   w-full h-full">
+                    <div className="aspect-square w-full h-full">
                       <ReactPlayer
                         muted={true}
                         style={{
@@ -501,10 +480,7 @@ const Project = ({ work }: Props) => {
                       ></ReactPlayer>
                     </div>
                   ) : (
-                    <div
-                      key={img.item.id}
-                      className="relative h-full w-full  aspect-square"
-                    >
+                    <div className="relative h-full w-full aspect-square">
                       <Image
                         fill={true}
                         priority={idx < 3 ? true : false}
@@ -529,9 +505,9 @@ const Project = ({ work }: Props) => {
             onClick={() => setisDescriptionOpen(!isDescriptionOpen)}
           >
             {isDescriptionOpen ? (
-              <p> - Project Information</p>
+              <div> - Project Information</div>
             ) : (
-              <p> + Project Information</p>
+              <div> + Project Information</div>
             )}
           </div>
           <AnimateHeight
@@ -539,16 +515,16 @@ const Project = ({ work }: Props) => {
             height={isDescriptionOpen ? 'auto' : 0}
             duration={600}
           >
-            <p dangerouslySetInnerHTML={{ __html: work.Body }}></p>
+            <div dangerouslySetInnerHTML={{ __html: work.Body }}></div>
             <div className="pt-32 grid grid-cols-2 divide-x-0">
               {work?.Credits?.map((credit: any, idx: number) => {
                 return (
                   <>
                     <div className="border-none" key={idx}>
-                      <p>{credit.Credit_Category}</p>
+                      <div>{credit.Credit_Category}</div>
                     </div>
                     <div className="border-none">
-                      <p>{credit.Credit_Value}</p>
+                      <div>{credit.Credit_Value}</div>
                     </div>
                   </>
                 )

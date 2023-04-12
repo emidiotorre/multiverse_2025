@@ -42,6 +42,7 @@ const AboutComponent = ({ blocks }: Props) => {
                   if (block.item.columns === 2) {
                     return (
                       <div
+                        key={idx}
                         style={{ background: block.item.background_color }}
                         className=" h-full w-full flex justify-between flex-col rounded-lg "
                       >
@@ -49,7 +50,6 @@ const AboutComponent = ({ blocks }: Props) => {
                           {block.item.Title}
                         </h3>
                         <div
-                          key={idx}
                           className="font-Sharp_Grotesk_Medium20 pt-8 text-xl lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
@@ -60,6 +60,7 @@ const AboutComponent = ({ blocks }: Props) => {
                   } else if (block.item.columns === 1) {
                     return (
                       <div
+                        key={idx}
                         style={{ background: block.item.background_color }}
                         className=" h-full w-full flex justify-between flex-col rounded-lg"
                       >
@@ -90,6 +91,7 @@ const AboutComponent = ({ blocks }: Props) => {
                             src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
+                            priority={idx === 0}
                             alt={''}
                             quality={80}
                             height={block.item.image.height}
@@ -97,7 +99,7 @@ const AboutComponent = ({ blocks }: Props) => {
                           />
                         </div>
                       ) : (
-                        <div className="" key={idx}>
+                        <div key={idx}>
                           <Image
                             className={
                               'object-cover h-full w-full  rounded-lg overflow-hidden'
@@ -106,6 +108,7 @@ const AboutComponent = ({ blocks }: Props) => {
                               block.item.image.id
                             }`}
                             alt={''}
+                            priority={idx < 1}
                             quality={80}
                             height={block.item.image.height}
                             width={block.item.image.width}
