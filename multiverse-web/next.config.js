@@ -9,7 +9,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'multiverse-dev-directus.ov3mip.easypanel.host',
+        hostname: 'multiverse-dev-directus.rizo.tech',
         port: '',
         pathname: '/assets/**',
       },
@@ -18,4 +18,4 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
-/* 'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/ */
+/* 'https://multiverse-dev-directus.rizo.tech'}/assets/ */

@@ -42,10 +42,7 @@ const Project = ({ work }: Props) => {
                           marginBottom: '0.5rem',
                           objectFit: 'cover',
                           borderRadius: '0.5rem',
-                          aspectRatio: img?.item.aspect_ratio?.replace(
-                            '-',
-                            '/',
-                          ),
+                          aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
                         height={'auto'}
@@ -61,7 +58,7 @@ const Project = ({ work }: Props) => {
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className={`object-cover  w-full h-full rounded-lg overflow-hidden`}
-                      src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                      src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                         img?.item?.image_1?.id
                       }`}
                       quality={80}
@@ -102,7 +99,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover rounded-lg  w-full h-full overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img?.item?.image_1?.id
                         }`}
                         quality={80}
@@ -135,7 +132,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover  w-full h-full rounded-lg overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
@@ -169,7 +166,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover  w-full h-full rounded-lg overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_3.id
                         }`}
                         quality={80}
@@ -212,7 +209,7 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className="w-full h-full object-cover rounded-lg overflow-hidden"
-                          src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             img.item.image_1.id
                           }`}
                           quality={80}
@@ -245,7 +242,7 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className="w-full h-full object-cover overflow-hidden rounded-lg"
-                          src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             img.item.image_2.id
                           }`}
                           quality={80}
@@ -280,7 +277,7 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className=" w-full h-full object-cover rounded-lg overflow-hidden"
-                          src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             img.item.image_3.id
                           }`}
                           quality={80}
@@ -332,7 +329,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_1.id
                         }`}
                         quality={80}
@@ -375,7 +372,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
@@ -417,7 +414,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover  rounded-lg"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_1.id
                         }`}
                         quality={80}
@@ -451,7 +448,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
@@ -485,7 +482,7 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                           img.item.image_3.id
                         }`}
                         quality={80}

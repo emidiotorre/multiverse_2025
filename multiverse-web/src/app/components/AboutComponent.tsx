@@ -88,7 +88,7 @@ const AboutComponent = ({ blocks }: Props) => {
                             className={
                               'object-cover h-full w-full rounded-lg overflow-hidden'
                             }
-                            src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                            src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
                             priority={idx === 0}
@@ -104,7 +104,7 @@ const AboutComponent = ({ blocks }: Props) => {
                             className={
                               'object-cover h-full w-full  rounded-lg overflow-hidden'
                             }
-                            src={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                            src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block.item.image.id
                             }`}
                             alt={''}

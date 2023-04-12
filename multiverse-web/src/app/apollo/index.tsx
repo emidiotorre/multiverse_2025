@@ -2,7 +2,7 @@ import { DocumentNode } from 'graphql'
 import { request } from 'graphql-request'
 export const fetcher = (data: { query: DocumentNode; variables: any }) =>
   request(
-    'https://multiverse-dev-directus.ov3mip.easypanel.host/graphql',
+    'https://multiverse-dev-directus.rizo.tech/graphql',
     data.query,
     data.variables,
   )

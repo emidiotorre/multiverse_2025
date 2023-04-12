@@ -11,7 +11,7 @@ type Props = {
 }
 
 function WorksGrid({ blocks }: Props) {
-  const matches = useMediaQuery('(min-width: 768px)')
+  //const matches = useMediaQuery('(min-width: 768px)')
   return (
     <>
       <div className="my-5">
@@ -42,7 +42,7 @@ function WorksGrid({ blocks }: Props) {
                         <Card
                           aspect_ratio={block.item.work1?.aspectRatioImage}
                           id={block.item.work1?.id}
-                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             block.item.work1.image?.id
                           }`}
                           slug={block.item.work1?.slug}
@@ -54,7 +54,7 @@ function WorksGrid({ blocks }: Props) {
                         <Card
                           aspect_ratio={block.item.work2?.aspectRatioImage}
                           id={block.item.work2.id}
-                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             block.item.work2.image?.id
                           }`}
                           slug={block.item.work2?.slug}
@@ -67,7 +67,7 @@ function WorksGrid({ blocks }: Props) {
                           aspect_ratio={block.item.work3?.aspectRatioImage}
                           key={block.item.work3.id}
                           id={block.item.work3.id}
-                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             block.item.work3.image?.id
                           }`}
                           slug={block.item.work3?.slug}
@@ -88,7 +88,7 @@ function WorksGrid({ blocks }: Props) {
                           <Card
                             aspect_ratio={block.item.work1?.aspectRatioImage}
                             id={block.item.work1.id}
-                            image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block.item.work1.image?.id
                             }`}
                             slug={block.item.work1?.slug}
@@ -100,8 +100,8 @@ function WorksGrid({ blocks }: Props) {
                           <Card
                             aspect_ratio={block.item.work2?.aspectRatioImage}
                             id={block.item.work2.image.id}
-                            image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                              block.item.work2.image.id
+                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                              block.item.work2.image?.id
                             }`}
                             slug={block.item.work2?.slug}
                             Name={block.item.work2?.Name}
@@ -114,8 +114,8 @@ function WorksGrid({ blocks }: Props) {
                           <Card
                             aspect_ratio={block.item.work3?.aspectRatioImage}
                             id={block.item.work3.image.id}
-                            image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                              block.item.work3.image.id
+                            image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                              block.item.work3.image?.id
                             }`}
                             slug={block.item.work3?.slug}
                             Name={block.item.work3?.Name}
@@ -135,7 +135,7 @@ function WorksGrid({ blocks }: Props) {
                         <Card
                           aspect_ratio={block.item.work1?.aspectRatioImage}
                           id={block.item.work1.image.id}
-                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                             block.item.work1.image?.id
                           }`}
                           slug={block.item.work1?.slug}
@@ -147,8 +147,8 @@ function WorksGrid({ blocks }: Props) {
                         <Card
                           aspect_ratio={block.item.work2?.aspectRatioImage}
                           id={block.item.work2.image.id}
-                          image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
-                            block.item.work2.image.id
+                          image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            block.item.work2.image?.id
                           }`}
                           slug={block.item.work2?.slug}
                           Name={block.item.work2?.Name}

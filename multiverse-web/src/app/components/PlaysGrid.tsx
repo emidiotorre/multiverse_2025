@@ -31,7 +31,7 @@ function PlaysGrid(props: Props) {
               height={play.image.height}
               width={play.image.width}
               key={'subgrid_item_' + idx}
-              image_url={`${'https://multiverse-dev-directus.ov3mip.easypanel.host'}/assets/${
+              image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                 play?.image?.id
               }`}
               body={play.body}
