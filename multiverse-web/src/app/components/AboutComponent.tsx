@@ -83,11 +83,12 @@ const AboutComponent = ({ blocks }: Props) => {
                   return (
                     <>
                       {!matches && idx === 0 ? (
-                        <div key={idx}>
+                        <div
+                          className="-ml-16 w-[500px] h-[40rem] overflow-hidden"
+                          key={idx}
+                        >
                           <Image
-                            className={
-                              'object-cover h-full w-full rounded-lg overflow-hidden'
-                            }
+                            className={'object-cover  h-full rounded-lg '}
                             src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}

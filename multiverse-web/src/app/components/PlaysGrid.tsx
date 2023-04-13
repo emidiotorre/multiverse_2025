@@ -14,7 +14,7 @@ function PlaysGrid(props: Props) {
   return (
     <>
       <div key={props.play_page.id} className="flex justify-center mt-6">
-        <div className="font-sans max-w-[62%] md:max-w-[41%] lg:max-w-[50%] text-3xl md:text-7xl md:mt-20 break-words font-semibold text-center">
+        <div className="font-sans  text-3xl md:text-7xl md:mt-20 break-words font-semibold text-center">
           <h1 dangerouslySetInnerHTML={{ __html: props.play_page.title }} />
         </div>
       </div>
