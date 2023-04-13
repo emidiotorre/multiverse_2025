@@ -1,9 +1,16 @@
 'use client'
 import React, { useRef, useState, useEffect } from 'react'
 import ReactPlayer from 'react-player'
-import { PlayerPause, PlayerPlay, Volume3 } from 'tabler-icons-react'
-import { Volume } from 'tabler-icons-react'
+import {
+  PlayerPause,
+  PlayerPlay,
+  Volume3,
+  Volume,
+  Minimize,
+  Maximize,
+} from 'tabler-icons-react'
 import { useIntersectionObserver } from 'usehooks-ts'
+import screenfull from 'screenfull'
 
 // const isSafari = () => {
 //   const ua = navigator.userAgent.toLowerCase();
@@ -14,14 +21,18 @@ export function VideoAutoPlayer({ src }: { src: string }) {
   const [playing, setPlaying] = useState(false)
   const [mute, setMute] = useState(true)
   const [show, setShow] = useState(false)
+  const [fullScreen, setFullScreen] = useState(false)
+
   // const initialRef: any = null;
   // const videoParentRef = useRef(initialRef);
   const ref = useRef<HTMLDivElement | null>(null)
+  const playerRef = useRef<HTMLDivElement | null>(null)
   const entry = useIntersectionObserver(ref, {})
   //const [shouldUseImage, setShouldUseImage] = useState(false);
   const isVisible = !!entry?.isIntersecting
   useEffect(() => {
     setPlaying(isVisible)
+
     // check if user agent is safari and we have the ref to the container <div />
     // if (
     //   isSafari() &&
@@ -60,11 +71,14 @@ export function VideoAutoPlayer({ src }: { src: string }) {
     // }
   }, [isVisible])
 
+  const toogleFullScreen = () => {
+    screenfull.toggle(ref.current!)
+  }
   return (
     //  shouldUseImage ? (
     //   <img src={src} alt="Muted Video" />
     // ) :
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative select-none">
       <ReactPlayer
         loop={true}
         style={{
@@ -81,49 +95,71 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         height={'auto'}
         muted={mute}
         playing={playing}
+        full
         url={src}
       />
       <div
-        className="absolute  pl-5 pt-6 pr-10  bottom-4  h-[100%]  w-full flex  items-end z-20"
+        className="absolute pl-5 pt-6 pr-10 bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >
         {show && (
           <>
-            <div onClick={() => setPlaying(!playing)} className="mr-4">
-              {playing ? (
-                <PlayerPause
-                  size={32}
-                  overlineThickness={0}
-                  fill="white"
-                  color="white"
-                />
-              ) : (
-                <PlayerPlay
-                  size={32}
-                  overlineThickness={0}
-                  fill="white"
-                  color="white"
-                />
-              )}
-            </div>
+            <div className="flex">
+              <div onClick={() => setPlaying(!playing)} className="mr-4">
+                {playing ? (
+                  <PlayerPause
+                    size={32}
+                    overlineThickness={0}
+                    fill="white"
+                    color="white"
+                  />
+                ) : (
+                  <PlayerPlay
+                    size={32}
+                    overlineThickness={0}
+                    fill="white"
+                    color="white"
+                  />
+                )}
+              </div>
 
-            <div onClick={() => setMute(!mute)}>
-              {mute ? (
-                <Volume3
-                  size={32}
-                  overlineThickness={2}
-                  fill="white"
-                  color="white"
-                />
-              ) : (
-                <Volume
-                  size={32}
-                  overlineThickness={2}
-                  fill="white"
-                  color="white"
-                />
-              )}
+              <div onClick={() => setMute(!mute)}>
+                {mute ? (
+                  <Volume3
+                    size={32}
+                    overlineThickness={2}
+                    fill="white"
+                    color="white"
+                  />
+                ) : (
+                  <Volume
+                    size={32}
+                    overlineThickness={2}
+                    fill="white"
+                    color="white"
+                  />
+                )}
+              </div>
+            </div>
+            <div onClick={toogleFullScreen}>
+              <div onClick={() => setFullScreen(!fullScreen)}>
+                {fullScreen ? (
+                  <Minimize
+                    size={32}
+                    overlineThickness={2}
+                    fill="white"
+                    color="white"
+                  />
+                ) : (
+                  <Maximize
+                    size={32}
+                    overlineThickness={2}
+                    fill="white"
+                    color="white"
+                  />
+                )}
+              </div>
             </div>
           </>
         )}

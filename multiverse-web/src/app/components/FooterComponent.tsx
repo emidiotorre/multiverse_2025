@@ -24,15 +24,17 @@ function FooterComponent({ footer }: Props) {
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/joinmvs/"
                   className="hover:underline mr-4 hover:text-[#F40000]"
+                  target="_blank"
                 >
                   Instagram
                 </Link>
                 |
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.facebook.com/joinmvs"
                   className="hover:underline ml-4 hover:text-[#F40000]"
+                  target="_blank"
                 >
                   Facebook
                 </Link>
@@ -65,6 +67,7 @@ function FooterComponent({ footer }: Props) {
                           {contact.type == 'address' && (
                             <a
                               href={contact.googlemapsLink}
+                              target="_blank"
                               className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}

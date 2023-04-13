@@ -28,6 +28,7 @@ specifiers:
   react-masonry-component: '>=6.3.0'
   react-player: ^2.12.0
   react-responsive-masonry: ^2.1.7
+  screenfull: ^6.0.2
   swr: ^2.0.4
   tabler-icons-react: ^1.56.0
   tailwind-nth-child: ^1.0.1
@@ -60,6 +61,7 @@ dependencies:
   react-masonry-component: 6.3.0_react@18.2.0
   react-player: 2.12.0_react@18.2.0
   react-responsive-masonry: 2.1.7
+  screenfull: 6.0.2
   swr: 2.0.4_react@18.2.0
   tabler-icons-react: 1.56.0_react@18.2.0
   tailwind-nth-child: 1.0.1
@@ -3972,6 +3974,11 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /screenfull/6.0.2:
+    resolution: {integrity: sha512-AQdy8s4WhNvUZ6P8F6PB21tSPIYKniic+Ogx0AacBMjKP1GUHN2E9URxQHtCusiwxudnCKkdy4GrHXPPJSkCCw==}
+    engines: {node: ^14.13.1 || >=16.0.0}
     dev: false
 
   /semver-compare/1.0.0:
