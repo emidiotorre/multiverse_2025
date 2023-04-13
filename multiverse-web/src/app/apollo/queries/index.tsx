@@ -151,7 +151,7 @@ export const GET_FOOTER = gql`
   query getFooter {
     footer: Footer {
       id
-      col1
+      contacts
     }
   }
 `

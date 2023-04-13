@@ -64,7 +64,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
     //  shouldUseImage ? (
     //   <img src={src} alt="Muted Video" />
     // ) :
-    <div ref={ref}>
+    <div ref={ref} className="relative">
       <ReactPlayer
         loop={true}
         style={{
@@ -84,25 +84,45 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         url={src}
       />
       <div
-        className="absolute top-0 pl-5 pt-6 pr-10 md:pr-[7.5rem] md:pl-10 md:top-16 h-[2%]  w-full flex justify-between z-20"
+        className="absolute  pl-5 pt-6 pr-10  bottom-4  h-[100%]  w-full flex  items-end z-20"
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >
         {show && (
           <>
-            <div onClick={() => setPlaying(!playing)}>
+            <div onClick={() => setPlaying(!playing)} className="mr-4">
               {playing ? (
-                <PlayerPause size={48} color="white" />
+                <PlayerPause
+                  size={32}
+                  overlineThickness={0}
+                  fill="white"
+                  color="white"
+                />
               ) : (
-                <PlayerPlay size={48} color="white" />
+                <PlayerPlay
+                  size={32}
+                  overlineThickness={0}
+                  fill="white"
+                  color="white"
+                />
               )}
             </div>
 
             <div onClick={() => setMute(!mute)}>
               {mute ? (
-                <Volume3 size={48} color="white" />
+                <Volume3
+                  size={32}
+                  overlineThickness={2}
+                  fill="white"
+                  color="white"
+                />
               ) : (
-                <Volume size={48} color="white" />
+                <Volume
+                  size={32}
+                  overlineThickness={2}
+                  fill="white"
+                  color="white"
+                />
               )}
             </div>
           </>

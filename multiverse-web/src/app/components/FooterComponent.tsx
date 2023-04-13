@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
-import { useMediaQuery } from 'usehooks-ts'
 import Container from './Container'
 import DateTime from './DateTime'
 
@@ -33,22 +32,49 @@ function FooterComponent({ footer }: Props) {
                 |
                 <Link
                   href="https://instagram.com"
-                  className="hover:underline mx-4 hover:text-[#F40000]"
+                  className="hover:underline ml-4 hover:text-[#F40000]"
                 >
                   Facebook
                 </Link>
-                <span className="sm:mr-4">|</span>
+                {/* 
               </small>
-
-              <small
-                className="max-[1098px]:flex max-[1098px]:flex-col "
-                key={footer.id}
-                dangerouslySetInnerHTML={{ __html: footer.col1 }}
-              ></small>
-              <small
-                className="max-[1098px]:flex max-[1098px]:flex-col "
-                dangerouslySetInnerHTML={{ __html: footer.col2 }}
-              ></small>
+              
+            <small className="flex flex-row" key={footer.id}> */}
+                {footer.contacts &&
+                  footer.contacts.map((contact: any, idx: number) => {
+                    return (
+                      <>
+                        <span className="mx-4">|</span>
+                        <span key={idx} className=" ">
+                          {contact.type == 'email' && (
+                            <a
+                              href={'mailto:' + contact.content}
+                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                            >
+                              {contact.content}
+                            </a>
+                          )}
+                          {contact.type == 'tel' && (
+                            <a
+                              href={'tel:' + contact.content}
+                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                            >
+                              {contact.content}
+                            </a>
+                          )}
+                          {contact.type == 'address' && (
+                            <a
+                              href={contact.googlemapsLink}
+                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                            >
+                              {contact.content}
+                            </a>
+                          )}
+                        </span>
+                      </>
+                    )
+                  })}
+              </small>
             </div>
             <div>
               <DateTime />
