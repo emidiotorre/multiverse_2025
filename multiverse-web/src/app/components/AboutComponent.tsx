@@ -34,7 +34,7 @@ const AboutComponent = ({ blocks }: Props) => {
         <></>
       )}
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-7:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2">
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
@@ -84,11 +84,13 @@ const AboutComponent = ({ blocks }: Props) => {
                     <>
                       {!matches && idx === 0 ? (
                         <div
-                          className=" w-[23.6rem] h-[40rem] sm:w-[49rem] sm:h-[52rem] overflow-hidden"
+                          className=" -ml-32 bg-cover w-[40rem] h-auto  "
                           key={idx}
                         >
                           <Image
-                            className={'object-cover h-full rounded-lg '}
+                            className={
+                              ' w-full max-w-full rounded-lg overflow-hidden'
+                            }
                             src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
@@ -100,7 +102,7 @@ const AboutComponent = ({ blocks }: Props) => {
                           />
                         </div>
                       ) : (
-                        <div key={idx}>
+                        <div className="w-full h-full" key={idx}>
                           <Image
                             className={
                               'object-cover h-full w-full rounded-lg overflow-hidden'
