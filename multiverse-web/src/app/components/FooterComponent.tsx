@@ -32,13 +32,21 @@ function FooterComponent({ footer }: Props) {
                   Instagram
                 </Link>
                 |
-                <Link
+                {/*  <Link
                   href="https://www.facebook.com/joinmvs"
                   className="hover:underline ml-4 hover:text-[#F40000]"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Facebook
+                </Link> */}
+                <Link
+                  href="https://www.behance.net/multiversestudio"
+                  className="hover:underline ml-4 hover:text-[#F40000]"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Behance
                 </Link>
                 {/* 
               </small>
