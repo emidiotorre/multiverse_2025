@@ -47,6 +47,7 @@ dependencies:
   '@types/react-dom': 18.0.10
   '@types/react-responsive-masonry': 2.1.0
   autoprefixer: 10.4.13_postcss@8.4.21
+  encoding: 0.1.13
   eslint: 8.32.0
   eslint-config-next: 13.1.4_7uibuqfxkfaozanbtbziikiqje
   framer-motion: 9.1.7_biqbaboplfbrettd7655fr4n2y
@@ -66,14 +67,13 @@ dependencies:
   swr: 2.0.4_react@18.2.0
   tabler-icons-react: 1.56.0_react@18.2.0
   tailwind-nth-child: 1.0.1
-  tailwindcss: 3.2.7_postcss@8.4.21
+  tailwindcss: 3.2.7
   typescript: 4.9.4
   usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@babel/core': 7.21.4
   '@babel/preset-env': 7.21.4_@babel+core@7.21.4
-  encoding: 0.1.13
   patch-package: 6.5.1
 
 packages:
@@ -2201,6 +2201,7 @@ packages:
     resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
     dependencies:
       iconv-lite: 0.6.3
+    dev: false
 
   /enhanced-resolve/5.12.0:
     resolution: {integrity: sha512-QHTXI/sZQmko1cbDoNAa3mJ5qhWUUNAq3vR0/YiD379fWQrcfuoX1+HW2S0MTt7XmoPLapdaDKUtelUSPic7hQ==}
@@ -2959,6 +2960,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       safer-buffer: 2.1.2
+    dev: false
 
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
@@ -3986,6 +3988,7 @@ packages:
 
   /safer-buffer/2.1.2:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: false
 
   /scheduler/0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
@@ -4204,12 +4207,10 @@ packages:
     resolution: {integrity: sha512-xZX+4K29ZxqmBEKcvJvE7lDkXsJcXjTv9xzmVTCQUqmX3fMOluaPPKqIN5X+4xVDaAH/0u3IzaV7O7dLiI5dFA==}
     dev: false
 
-  /tailwindcss/3.2.7_postcss@8.4.21:
+  /tailwindcss/3.2.7:
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
