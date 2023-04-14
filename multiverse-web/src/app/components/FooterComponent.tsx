@@ -70,6 +70,7 @@ function FooterComponent({ footer }: Props) {
                             <a
                               href={contact.googlemapsLink}
                               target="_blank"
+                              rel="noreferrer"
                               className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
