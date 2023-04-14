@@ -31,7 +31,7 @@ const DateTime = () => {
         ':' +
         date.getUTCMilliseconds().toString().padStart(3, '0'),
     )
-  }, [date, isMobile])
+  }, [date, isMobile, str])
   return (
     <div className="flex text-red-500 font-mono text-right">
       <small className="px-0 md:px-2">{timerText}</small>
