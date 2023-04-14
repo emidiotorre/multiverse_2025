@@ -27,6 +27,7 @@ function FooterComponent({ footer }: Props) {
                   href="https://www.instagram.com/joinmvs/"
                   className="hover:underline mr-4 hover:text-[#F40000]"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Instagram
                 </Link>
@@ -35,6 +36,7 @@ function FooterComponent({ footer }: Props) {
                   href="https://www.facebook.com/joinmvs"
                   className="hover:underline ml-4 hover:text-[#F40000]"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Facebook
                 </Link>
