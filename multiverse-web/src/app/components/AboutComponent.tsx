@@ -2,9 +2,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Container from './Container'
-import Hand from './Hand'
 import Marquee from 'react-fast-marquee'
 import { useMediaQuery } from 'usehooks-ts'
+import HandScrollUp from './HandScrollUp'
 
 type Props = {
   blocks: any[]
@@ -50,7 +50,7 @@ const AboutComponent = ({ blocks }: Props) => {
                           {block.item.Title}
                         </h3>
                         <div
-                          className="font-Sharp_Grotesk_Medium20 pt-8 text-xl lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
+                          className="font-Sharp_Grotesk_Medium20 pt-8 text-lg lg:font-medium lg:gap-x-10 mx-6 grid grid-cols-1 lg:grid-cols-2 md:divide-x-0 mb-10"
                           dangerouslySetInnerHTML={{
                             __html: block.item.Body,
                           }}
@@ -70,7 +70,7 @@ const AboutComponent = ({ blocks }: Props) => {
                         <div>
                           <div
                             key={idx}
-                            className="font-Sharp_Grotesk_Medium20 mx-6 pt-8 mb-10 text-xl"
+                            className="font-Sharp_Grotesk_Medium20 mx-6 pt-8 mb-10 text-lg"
                             dangerouslySetInnerHTML={{
                               __html: block.item.Body,
                             }}
@@ -84,11 +84,11 @@ const AboutComponent = ({ blocks }: Props) => {
                     <>
                       {!matches && idx === 0 ? (
                         <div
-                          className="-ml-16 w-[500px] h-[40rem] overflow-hidden"
+                          className=" w-[23.6rem] h-[40rem] sm:w-[49rem] sm:h-[52rem] overflow-hidden"
                           key={idx}
                         >
                           <Image
-                            className={'object-cover  h-full rounded-lg '}
+                            className={'object-cover h-full rounded-lg '}
                             src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
@@ -121,20 +121,7 @@ const AboutComponent = ({ blocks }: Props) => {
               }
             })}
         </div>
-
-        <div className="flex justify-end py-16 md:py-20">
-          <Hand
-            onClick={() =>
-              document.documentElement.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth',
-              })
-            }
-            className="object- h-[18vh] w-[10vh] cursor-pointer"
-            height="80"
-          />
-        </div>
+        <HandScrollUp />
       </Container>
     </>
   )

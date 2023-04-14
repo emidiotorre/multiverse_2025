@@ -99,7 +99,7 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         url={src}
       />
       <div
-        className="absolute pl-5 pt-6 pr-10 bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
+        className="absolute px-5 pt-6  bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >

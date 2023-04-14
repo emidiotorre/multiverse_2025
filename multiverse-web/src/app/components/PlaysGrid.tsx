@@ -4,6 +4,7 @@ import Item from './Item'
 
 import Gallery from './Gallery'
 import Hand from './Hand'
+import HandScrollUp from './HandScrollUp'
 
 type Props = {
   play_page: any
@@ -39,18 +40,7 @@ function PlaysGrid(props: Props) {
           )
         })}
       </Gallery>
-      <div className="flex justify-end py-10 md:py-20">
-        <Hand
-          onClick={() =>
-            document.documentElement.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            })
-          }
-          className="object-cover h-[18vh] w-[10vh] cursor-pointer "
-        />
-      </div>
+      <HandScrollUp />
     </>
   )
 }

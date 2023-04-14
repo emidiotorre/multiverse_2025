@@ -6,6 +6,7 @@ import AnimateHeight from 'react-animate-height'
 import { VideoAutoPlayer } from './VideoPlayer'
 import ReactPlayer from 'react-player'
 import Hand from './Hand'
+import HandScrollUp from './HandScrollUp'
 
 type Props = {
   work: any
@@ -531,18 +532,7 @@ const Project = ({ work }: Props) => {
             </AnimateHeight>
           </div>
         )}
-        <div className="flex justify-end py-16 md:py-20">
-          <Hand
-            onClick={() =>
-              document.documentElement.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth', // Optional if you want to skip the scrolling animation
-              })
-            }
-            className="object-cover h-[18vh] w-[10vh] cursor-pointer"
-          />
-        </div>
+        <HandScrollUp />
       </Container>
     </>
   )
