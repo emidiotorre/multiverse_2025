@@ -25,9 +25,9 @@ function Header() {
                   <LogoSmall className="h-[2em] md:h-[2.5em]  w-auto" />
                 </Link>
 
-                {/*   <MenuSwitch></MenuSwitch> */}
+                <MenuSwitch></MenuSwitch>
               </div>
-              {/*  <div className="flex justify-end ">
+              <div className="flex justify-end ">
                 <Link
                   as={'/about'}
                   prefetch={true}
@@ -40,7 +40,7 @@ function Header() {
                 >
                   about
                 </Link>
-              </div> */}
+              </div>
             </div>
           </Container>
         </header>
