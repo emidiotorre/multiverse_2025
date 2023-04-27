@@ -151,7 +151,6 @@ const Project = ({ work }: Props) => {
                           borderRadius: "0.5rem",
                           overflow: "hidden",
                           position: "relative",
-                          marginBottom: "0.5rem",
                           objectFit: "cover",
                           aspectRatio: "8/5",
                         }}
@@ -327,7 +326,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="row-span-2 mb-2 w-full h-full relative"
+                      className="row-span-2  w-full h-full relative"
                     >
                       <Image
                         fill={true}
@@ -370,7 +369,7 @@ const Project = ({ work }: Props) => {
                       style={{
                         aspectRatio: img?.item.aspect_ratio,
                       }}
-                      className="row-span-2 mb-2  w-full h-full relative "
+                      className="row-span-2   w-full h-full relative "
                     >
                       <Image
                         fill={true}
