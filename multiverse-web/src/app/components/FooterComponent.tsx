@@ -58,7 +58,8 @@ function FooterComponent({ footer }: Props) {
                       <>
                         <span
                           className={
-                            "mx-4 " + (contact.type != "email" ? "hidden" : "")
+                            "mx-4 " +
+                            (contact.type != "email" ? "hidden md:inline" : "")
                           }
                         >
                           |
