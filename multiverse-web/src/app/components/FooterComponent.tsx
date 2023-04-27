@@ -56,7 +56,7 @@ function FooterComponent({ footer }: Props) {
                   footer.contacts.map((contact: any, idx: number) => {
                     return (
                       <>
-                        <span className="mx-4">|</span>
+                        <span className="mx-4 hidden md:block ">|</span>
                         <span key={idx} className=" ">
                           {contact.type == "email" && (
                             <a
@@ -76,6 +76,7 @@ function FooterComponent({ footer }: Props) {
                           )}
                           {contact.type == "address" && (
                             <>
+                              <br />
                               <a
                                 href={contact.googlemapsLink}
                                 target="_blank"
@@ -84,6 +85,7 @@ function FooterComponent({ footer }: Props) {
                               >
                                 {contact.content}
                               </a>
+                              <br />
                             </>
                           )}
                         </span>
