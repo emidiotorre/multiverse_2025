@@ -1,26 +1,26 @@
-'use client'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React from 'react'
-import Container from './Container'
-import DateTime from './DateTime'
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React from "react";
+import Container from "./Container";
+import DateTime from "./DateTime";
 
 type Props = {
-  footer: any
-}
+  footer: any;
+};
 
 function FooterComponent({ footer }: Props) {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const borderTop = `${
-    pathname === '/' ? 'border-none ' : 'border-black border-t'
-  } md:border-none pb-2`
+    pathname === "/" ? "border-none " : "border-black border-t"
+  } md:border-none pb-2`;
 
   return (
     <>
       <footer className="absolute h-max bottom-16 md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-Sharp_Grotesk_Book20 md:text-xs ">
-        <Container style={{ alignSelf: 'flex-end' }}>
+        <Container style={{ alignSelf: "flex-end" }}>
           <hr className={borderTop} />
-          <div className=" columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-5 ">
+          <div className="flex-col md:flex-row md:columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-5 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
@@ -58,35 +58,37 @@ function FooterComponent({ footer }: Props) {
                       <>
                         <span className="mx-4">|</span>
                         <span key={idx} className=" ">
-                          {contact.type == 'email' && (
+                          {contact.type == "email" && (
                             <a
-                              href={'mailto:' + contact.content}
+                              href={"mailto:" + contact.content}
                               className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
                             </a>
                           )}
-                          {contact.type == 'tel' && (
+                          {contact.type == "tel" && (
                             <a
-                              href={'tel:' + contact.content}
+                              href={"tel:" + contact.content}
                               className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
                             </a>
                           )}
-                          {contact.type == 'address' && (
-                            <a
-                              href={contact.googlemapsLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
-                            >
-                              {contact.content}
-                            </a>
+                          {contact.type == "address" && (
+                            <>
+                              <a
+                                href={contact.googlemapsLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                              >
+                                {contact.content}
+                              </a>
+                            </>
                           )}
                         </span>
                       </>
-                    )
+                    );
                   })}
               </small>
             </div>
@@ -97,7 +99,7 @@ function FooterComponent({ footer }: Props) {
         </Container>
       </footer>
     </>
-  )
+  );
 }
 
-export default FooterComponent
+export default FooterComponent;
