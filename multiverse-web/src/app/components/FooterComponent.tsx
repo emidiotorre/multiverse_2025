@@ -20,7 +20,7 @@ function FooterComponent({ footer }: Props) {
       <footer className="absolute h-max bottom-16 md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-Sharp_Grotesk_Book20 md:text-xs ">
         <Container style={{ alignSelf: "flex-end" }}>
           <hr className={borderTop} />
-          <div className="flex-col md:flex-row md:columns-2 flex justify-between text-[12px] md:text-sm items-end md:py-5 ">
+          <div className="flex-col md:flex-row md:columns-2 flex justify-between text-[12px] md:text-sm gap-2 md:items-end md:py-5 ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
@@ -61,7 +61,7 @@ function FooterComponent({ footer }: Props) {
                           {contact.type == "email" && (
                             <a
                               href={"mailto:" + contact.content}
-                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                              className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
                             </a>
@@ -69,7 +69,7 @@ function FooterComponent({ footer }: Props) {
                           {contact.type == "tel" && (
                             <a
                               href={"tel:" + contact.content}
-                              className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                              className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
                             </a>
@@ -80,7 +80,7 @@ function FooterComponent({ footer }: Props) {
                                 href={contact.googlemapsLink}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="whitespace-normal cursor-pointer hover:text-[#F40000] break-keep"
+                                className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                               >
                                 {contact.content}
                               </a>
