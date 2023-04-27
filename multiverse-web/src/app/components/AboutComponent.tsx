@@ -34,7 +34,7 @@ const AboutComponent = ({ blocks }: Props) => {
         <></>
       )}
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-6:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-[6]:row-span-2 ">
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
