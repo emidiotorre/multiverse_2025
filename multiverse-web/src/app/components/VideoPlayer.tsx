@@ -105,72 +105,74 @@ export function VideoAutoPlayer({
         url={src}
         controls={showControls}
       />
-      <div
-        className="absolute px-5 pt-6  bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
-        onMouseLeave={() => setShow(false)}
-        onMouseEnter={() => setShow(true)}
-      >
-        {!showControls && show && (
-          <>
-            <div className="flex">
-              <div onClick={() => setPlaying(!playing)} className="mr-4">
-                {playing ? (
-                  <PlayerPause
-                    size={32}
-                    overlineThickness={0}
-                    fill="white"
-                    color="white"
-                  />
-                ) : (
-                  <PlayerPlay
-                    size={32}
-                    overlineThickness={0}
-                    fill="white"
-                    color="white"
-                  />
-                )}
-              </div>
+      {!showControls && (
+        <div
+          className="absolute px-5 pt-6  bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
+          onMouseLeave={() => setShow(false)}
+          onMouseEnter={() => setShow(true)}
+        >
+          {show && (
+            <>
+              <div className="flex">
+                <div onClick={() => setPlaying(!playing)} className="mr-4">
+                  {playing ? (
+                    <PlayerPause
+                      size={32}
+                      overlineThickness={0}
+                      fill="white"
+                      color="white"
+                    />
+                  ) : (
+                    <PlayerPlay
+                      size={32}
+                      overlineThickness={0}
+                      fill="white"
+                      color="white"
+                    />
+                  )}
+                </div>
 
-              <div onClick={() => setMute(!mute)}>
-                {mute ? (
-                  <Volume3
-                    size={32}
-                    overlineThickness={2}
-                    fill="white"
-                    color="white"
-                  />
-                ) : (
-                  <Volume
-                    size={32}
-                    overlineThickness={2}
-                    fill="white"
-                    color="white"
-                  />
-                )}
+                <div onClick={() => setMute(!mute)}>
+                  {mute ? (
+                    <Volume3
+                      size={32}
+                      overlineThickness={2}
+                      fill="white"
+                      color="white"
+                    />
+                  ) : (
+                    <Volume
+                      size={32}
+                      overlineThickness={2}
+                      fill="white"
+                      color="white"
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-            <div onClick={toogleFullScreen}>
-              <div onClick={() => setFullScreen(!fullScreen)}>
-                {fullScreen ? (
-                  <Minimize
-                    size={32}
-                    overlineThickness={2}
-                    fill="white"
-                    color="white"
-                  />
-                ) : (
-                  <Maximize
-                    size={32}
-                    overlineThickness={2}
-                    fill="white"
-                    color="white"
-                  />
-                )}
+              <div onClick={toogleFullScreen}>
+                <div onClick={() => setFullScreen(!fullScreen)}>
+                  {fullScreen ? (
+                    <Minimize
+                      size={32}
+                      overlineThickness={2}
+                      fill="white"
+                      color="white"
+                    />
+                  ) : (
+                    <Maximize
+                      size={32}
+                      overlineThickness={2}
+                      fill="white"
+                      color="white"
+                    />
+                  )}
+                </div>
               </div>
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }
