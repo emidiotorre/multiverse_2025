@@ -1,17 +1,17 @@
-'use client'
-import React from 'react'
-import Image from 'next/image'
-import Container from './Container'
-import Marquee from 'react-fast-marquee'
-import { useMediaQuery } from 'usehooks-ts'
-import HandScrollUp from './HandScrollUp'
+"use client";
+import React from "react";
+import Image from "next/image";
+import Container from "./Container";
+import Marquee from "react-fast-marquee";
+import { useMediaQuery } from "usehooks-ts";
+import HandScrollUp from "./HandScrollUp";
 
 type Props = {
-  blocks: any[]
-}
+  blocks: any[];
+};
 
 const AboutComponent = ({ blocks }: Props) => {
-  const matches = useMediaQuery('(min-width: 768px)')
+  const matches = useMediaQuery("(min-width: 768px)");
 
   return (
     <>
@@ -20,7 +20,7 @@ const AboutComponent = ({ blocks }: Props) => {
           <Marquee
             gradient={false}
             speed={80}
-            style={{ overflowY: 'hidden', color: '#F40000' }}
+            style={{ overflowY: "hidden", color: "#F40000" }}
           >
             <h3 className="  text-6xl font-bold uppercase ">
               &nbsp;Enter The Dungeon
@@ -34,11 +34,11 @@ const AboutComponent = ({ blocks }: Props) => {
         <></>
       )}
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:nth-child-2:col-span-2 md:nth-child-3:row-span-2 md:nth-child-6:row-span-2">
           {blocks &&
             blocks.map((block: any, idx: number) => {
               switch (block.item.type) {
-                case 'TextBlock':
+                case "TextBlock":
                   if (block.item.columns === 2) {
                     return (
                       <div
@@ -56,7 +56,7 @@ const AboutComponent = ({ blocks }: Props) => {
                           }}
                         ></div>
                       </div>
-                    )
+                    );
                   } else if (block.item.columns === 1) {
                     return (
                       <div
@@ -77,9 +77,9 @@ const AboutComponent = ({ blocks }: Props) => {
                           ></div>
                         </div>
                       </div>
-                    )
+                    );
                   }
-                case 'ImageBlock':
+                case "ImageBlock":
                   return (
                     <>
                       {!matches && idx === 0 ? (
@@ -89,13 +89,13 @@ const AboutComponent = ({ blocks }: Props) => {
                         >
                           <Image
                             className={
-                              ' w-full max-w-full rounded-lg overflow-hidden'
+                              " w-full max-w-full rounded-lg overflow-hidden"
                             }
-                            src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                               block?.item?.image_mobile?.id
                             }`}
                             priority={true}
-                            alt={''}
+                            alt={""}
                             quality={80}
                             height={block.item.image.height}
                             width={block.item.image.width}
@@ -105,12 +105,12 @@ const AboutComponent = ({ blocks }: Props) => {
                         <div className="w-full h-full" key={idx}>
                           <Image
                             className={
-                              'object-cover h-full w-full rounded-lg overflow-hidden'
+                              "object-cover h-full w-full rounded-lg overflow-hidden"
                             }
-                            src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                            src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                               block.item.image.id
                             }`}
-                            alt={''}
+                            alt={""}
                             priority={idx < 3}
                             quality={80}
                             height={block.item.image.height}
@@ -119,14 +119,14 @@ const AboutComponent = ({ blocks }: Props) => {
                         </div>
                       )}
                     </>
-                  )
+                  );
               }
             })}
         </div>
         <HandScrollUp />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default AboutComponent
+export default AboutComponent;
