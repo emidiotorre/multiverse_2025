@@ -33,7 +33,7 @@ export default async function RootLayout({
         ></script> */}
       </head>
       <body>
-        <main className="relative  pt-0 md:pb-0 flex flex-col w-full justify-start min-h-[100dvh] ">
+        <main className="relative  pt-0 md:pb-0 flex flex-col w-full justify-start md:min-h-[100dvh] ">
           <Header />
           {children}
           {footer && <FooterComponent footer={footer} />}

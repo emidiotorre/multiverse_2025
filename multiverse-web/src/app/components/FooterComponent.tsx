@@ -17,7 +17,7 @@ function FooterComponent({ footer }: Props) {
 
   return (
     <>
-      <footer className="absolute h-max bottom-16 md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-Sharp_Grotesk_Book20 md:text-xs ">
+      <footer className="md:absolute h-max  md:bottom-0 top-auto flex-1 w-full max-w-full  flex align-bottom font-Sharp_Grotesk_Book20 md:text-xs ">
         <Container style={{ alignSelf: "flex-end" }}>
           <hr className={borderTop} />
           <div className="flex-col md:flex-row md:columns-2 flex justify-between text-[12px] md:text-sm gap-2 md:items-end md:py-5 ">
