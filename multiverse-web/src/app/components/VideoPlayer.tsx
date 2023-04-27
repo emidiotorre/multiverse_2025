@@ -1,6 +1,6 @@
-'use client'
-import React, { useRef, useState, useEffect } from 'react'
-import ReactPlayer from 'react-player'
+"use client";
+import React, { useRef, useState, useEffect } from "react";
+import ReactPlayer from "react-player";
 import {
   PlayerPause,
   PlayerPlay,
@@ -8,30 +8,36 @@ import {
   Volume,
   Minimize,
   Maximize,
-} from 'tabler-icons-react'
-import { useIntersectionObserver } from 'usehooks-ts'
-import screenfull from 'screenfull'
+} from "tabler-icons-react";
+import { useIntersectionObserver } from "usehooks-ts";
+import screenfull from "screenfull";
 
 // const isSafari = () => {
 //   const ua = navigator.userAgent.toLowerCase();
 //   return ua.indexOf("safari") > -1 && ua.indexOf("chrome") < 0;
 // };
 
-export function VideoAutoPlayer({ src }: { src: string }) {
-  const [playing, setPlaying] = useState(false)
-  const [mute, setMute] = useState(true)
-  const [show, setShow] = useState(false)
-  const [fullScreen, setFullScreen] = useState(false)
+export function VideoAutoPlayer({
+  src,
+  showControls = false,
+}: {
+  src: string;
+  showControls: boolean;
+}) {
+  const [playing, setPlaying] = useState(false);
+  const [mute, setMute] = useState(true);
+  const [show, setShow] = useState(false);
+  const [fullScreen, setFullScreen] = useState(false);
 
   // const initialRef: any = null;
   // const videoParentRef = useRef(initialRef);
-  const ref = useRef<HTMLDivElement | null>(null)
-  const playerRef = useRef<HTMLDivElement | null>(null)
-  const entry = useIntersectionObserver(ref, {})
+  const ref = useRef<HTMLDivElement | null>(null);
+  const playerRef = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
   //const [shouldUseImage, setShouldUseImage] = useState(false);
-  const isVisible = !!entry?.isIntersecting
+  const isVisible = !!entry?.isIntersecting;
   useEffect(() => {
-    setPlaying(isVisible)
+    setPlaying(isVisible);
 
     // check if user agent is safari and we have the ref to the container <div />
     // if (
@@ -69,11 +75,11 @@ export function VideoAutoPlayer({ src }: { src: string }) {
     //     }, 0);
     //   }
     // }
-  }, [isVisible])
+  }, [isVisible]);
 
   const toogleFullScreen = () => {
-    screenfull.toggle(ref.current!)
-  }
+    screenfull.toggle(ref.current!);
+  };
   return (
     //  shouldUseImage ? (
     //   <img src={src} alt="Muted Video" />
@@ -82,28 +88,29 @@ export function VideoAutoPlayer({ src }: { src: string }) {
       <ReactPlayer
         loop={true}
         style={{
-          overflow: 'hidden',
-          position: 'relative',
-          marginTop: '0.5rem',
-          marginBottom: '0.5rem',
+          overflow: "hidden",
+          position: "relative",
+          marginTop: "0.5rem",
+          marginBottom: "0.5rem",
           zIndex: 10,
-          borderRadius: '0.5rem',
-          aspectRatio: '16/9',
+          borderRadius: "0.5rem",
+          aspectRatio: "16/9",
         }}
         playsinline={true}
-        width={'auto'}
-        height={'auto'}
+        width={"auto"}
+        height={"auto"}
         muted={mute}
         playing={playing}
         full
         url={src}
+        controls={showControls}
       />
       <div
         className="absolute px-5 pt-6  bottom-4 h-[100%] w-full flex justify-between items-end z-20 select-none cursor-pointer"
         onMouseLeave={() => setShow(false)}
         onMouseEnter={() => setShow(true)}
       >
-        {show && (
+        {!showControls && show && (
           <>
             <div className="flex">
               <div onClick={() => setPlaying(!playing)} className="mr-4">
@@ -165,5 +172,5 @@ export function VideoAutoPlayer({ src }: { src: string }) {
         )}
       </div>
     </div>
-  )
+  );
 }

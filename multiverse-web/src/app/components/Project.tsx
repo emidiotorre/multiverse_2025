@@ -1,31 +1,34 @@
-'use client'
-import React, { useState } from 'react'
-import Image from 'next/image'
-import Container from '@/app/components/Container'
-import AnimateHeight from 'react-animate-height'
-import { VideoAutoPlayer } from './VideoPlayer'
-import ReactPlayer from 'react-player'
-import Hand from './Hand'
-import HandScrollUp from './HandScrollUp'
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Container from "@/app/components/Container";
+import AnimateHeight from "react-animate-height";
+import { VideoAutoPlayer } from "./VideoPlayer";
+import ReactPlayer from "react-player";
+import Hand from "./Hand";
+import HandScrollUp from "./HandScrollUp";
 
 type Props = {
-  work: any
-}
+  work: any;
+};
 
 const Project = ({ work }: Props) => {
-  const [isDescriptionOpen, setisDescriptionOpen] = useState(false)
+  const [isDescriptionOpen, setisDescriptionOpen] = useState(false);
 
   return (
     <>
       <Container className="font-Sharp_Grotesk_Book25">
         {work?.vimeoUrl !== null ? (
-          <VideoAutoPlayer src={work?.vimeoUrl}></VideoAutoPlayer>
+          <VideoAutoPlayer
+            src={work?.vimeoUrl}
+            showControls={true}
+          ></VideoAutoPlayer>
         ) : (
           <></>
         )}
         {work.gallery?.map((img: any, idx: number) => {
           switch (img.item.tipologia) {
-            case 'full-width':
+            case "full-width":
               return (
                 <div
                   key={idx}
@@ -38,16 +41,16 @@ const Project = ({ work }: Props) => {
                     <div className="w-full h-full">
                       <ReactPlayer
                         style={{
-                          overflow: 'hidden',
-                          position: 'relative',
-                          marginBottom: '0.5rem',
-                          objectFit: 'cover',
-                          borderRadius: '0.5rem',
+                          overflow: "hidden",
+                          position: "relative",
+                          marginBottom: "0.5rem",
+                          objectFit: "cover",
+                          borderRadius: "0.5rem",
                           aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
-                        height={'auto'}
-                        width={'auto'}
+                        height={"auto"}
+                        width={"auto"}
                         loop
                         muted={true}
                         playing={true}
@@ -59,16 +62,16 @@ const Project = ({ work }: Props) => {
                       fill={true}
                       priority={idx < 3 ? true : false}
                       className={`object-cover  w-full h-full rounded-lg overflow-hidden`}
-                      src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                      src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                         img?.item?.image_1?.id
                       }`}
                       quality={80}
-                      alt={''}
+                      alt={""}
                     />
                   )}
                 </div>
-              )
-            case 'half-split':
+              );
+            case "half-split":
               return (
                 <div
                   key={idx}
@@ -78,17 +81,17 @@ const Project = ({ work }: Props) => {
                     <div className="  aspect-[4/5] row-span-2  w-full h-full">
                       <ReactPlayer
                         style={{
-                          overflow: 'hidden',
-                          borderRadius: '0.5rem',
-                          position: 'relative',
-                          marginBottom: '0.5rem',
-                          objectFit: 'cover',
-                          aspectRatio: '4/5',
+                          overflow: "hidden",
+                          borderRadius: "0.5rem",
+                          position: "relative",
+                          marginBottom: "0.5rem",
+                          objectFit: "cover",
+                          aspectRatio: "4/5",
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'auto'}
-                        width={'auto'}
+                        height={"auto"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -100,11 +103,11 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover rounded-lg  w-full h-full overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img?.item?.image_1?.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
@@ -112,16 +115,16 @@ const Project = ({ work }: Props) => {
                     <div className="  aspect-[8/5] w-full h-full">
                       <ReactPlayer
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
-                          objectFit: 'cover',
-                          aspectRatio: '8/5',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
+                          objectFit: "cover",
+                          aspectRatio: "8/5",
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'auto'}
-                        width={'auto'}
+                        height={"auto"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -133,11 +136,11 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover  w-full h-full rounded-lg overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
@@ -145,17 +148,17 @@ const Project = ({ work }: Props) => {
                     <div className=" aspect-[8/5]  w-full h-full">
                       <ReactPlayer
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
-                          marginBottom: '0.5rem',
-                          objectFit: 'cover',
-                          aspectRatio: '8/5',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
+                          marginBottom: "0.5rem",
+                          objectFit: "cover",
+                          aspectRatio: "8/5",
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'auto'}
-                        width={'auto'}
+                        height={"auto"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl3}
@@ -167,18 +170,18 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className=" object-cover  w-full h-full rounded-lg overflow-hidden"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_3.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
                 </div>
-              )
+              );
 
-            case 'split-half':
+            case "split-half":
               return (
                 <div
                   key={idx}
@@ -190,15 +193,15 @@ const Project = ({ work }: Props) => {
                         <ReactPlayer
                           muted={true}
                           style={{
-                            borderRadius: '0.5rem',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            objectFit: 'cover',
-                            aspectRatio: '8/5',
+                            borderRadius: "0.5rem",
+                            overflow: "hidden",
+                            position: "relative",
+                            objectFit: "cover",
+                            aspectRatio: "8/5",
                           }}
                           playsinline={true}
-                          height={'auto'}
-                          width={'auto'}
+                          height={"auto"}
+                          width={"auto"}
                           loop
                           playing={true}
                           url={img?.item?.vimeoUrl1}
@@ -210,11 +213,11 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className="w-full h-full object-cover rounded-lg overflow-hidden"
-                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                          src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                             img.item.image_1.id
                           }`}
                           quality={80}
-                          alt={''}
+                          alt={""}
                         />
                       </div>
                     )}
@@ -224,15 +227,15 @@ const Project = ({ work }: Props) => {
                           <ReactPlayer
                             muted={true}
                             style={{
-                              borderRadius: '0.5rem',
-                              overflow: 'hidden',
-                              position: 'relative',
+                              borderRadius: "0.5rem",
+                              overflow: "hidden",
+                              position: "relative",
                               //marginBottom: '0.5rem',
-                              aspectRatio: '8/5',
+                              aspectRatio: "8/5",
                             }}
                             playsinline={true}
-                            height={'auto'}
-                            width={'auto'}
+                            height={"auto"}
+                            width={"auto"}
                             loop
                             playing={true}
                             url={img?.item?.vimeoUrl2}
@@ -243,11 +246,11 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className="w-full h-full object-cover overflow-hidden rounded-lg"
-                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                          src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                             img.item.image_2.id
                           }`}
                           quality={80}
-                          alt={''}
+                          alt={""}
                         />
                       )}
                     </div>
@@ -257,16 +260,16 @@ const Project = ({ work }: Props) => {
                       <div className="   w-full h-full">
                         <ReactPlayer
                           style={{
-                            borderRadius: '0.5rem',
-                            overflow: 'hidden',
-                            position: 'relative',
+                            borderRadius: "0.5rem",
+                            overflow: "hidden",
+                            position: "relative",
                             //marginBottom: '0.5rem',
-                            aspectRatio: '4/5',
+                            aspectRatio: "4/5",
                           }}
                           playsinline={true}
                           muted={true}
-                          height={'100%'}
-                          width={'auto'}
+                          height={"100%"}
+                          width={"auto"}
                           loop
                           playing={true}
                           url={img?.item?.vimeoUrl3}
@@ -278,18 +281,18 @@ const Project = ({ work }: Props) => {
                           fill={true}
                           priority={idx < 3 ? true : false}
                           className=" w-full h-full object-cover rounded-lg overflow-hidden"
-                          src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                          src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                             img.item.image_3.id
                           }`}
                           quality={80}
-                          alt={''}
+                          alt={""}
                         />
                       </div>
                     )}
                   </div>
                 </div>
-              )
-            case 'half-half':
+              );
+            case "half-half":
               return (
                 <div
                   key={idx}
@@ -304,16 +307,16 @@ const Project = ({ work }: Props) => {
                     >
                       <ReactPlayer
                         style={{
-                          overflow: 'hidden',
-                          position: 'relative',
-                          borderRadius: '0.5rem',
-                          objectFit: 'cover',
+                          overflow: "hidden",
+                          position: "relative",
+                          borderRadius: "0.5rem",
+                          objectFit: "cover",
                           aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'100%'}
-                        width={'100%'}
+                        height={"100%"}
+                        width={"100%"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -330,11 +333,11 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_1.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
@@ -347,16 +350,16 @@ const Project = ({ work }: Props) => {
                     >
                       <ReactPlayer
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
-                          objectFit: 'cover',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
+                          objectFit: "cover",
                           aspectRatio: img?.item.aspect_ratio,
                         }}
                         playsinline={true}
                         muted={true}
-                        height={'auto'}
-                        width={'auto'}
+                        height={"auto"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -373,17 +376,17 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
                 </div>
-              )
-            case 'third-third-third':
+              );
+            case "third-third-third":
               return (
                 <div
                   key={idx}
@@ -394,16 +397,16 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
                           //marginBottom: "0.5rem",
-                          objectFit: 'cover',
-                          aspectRatio: '1/1',
+                          objectFit: "cover",
+                          aspectRatio: "1/1",
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'auto'}
+                        height={"100%"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -415,11 +418,11 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover  rounded-lg"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_1.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
@@ -428,16 +431,16 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
                           //marginBottom: "0.5rem",
-                          objectFit: 'cover',
-                          aspectRatio: '1/1',
+                          objectFit: "cover",
+                          aspectRatio: "1/1",
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'auto'}
+                        height={"100%"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl2}
@@ -449,11 +452,11 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_2.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
@@ -462,16 +465,16 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: '0.5rem',
-                          overflow: 'hidden',
-                          position: 'relative',
+                          borderRadius: "0.5rem",
+                          overflow: "hidden",
+                          position: "relative",
                           //marginBottom: "0.5rem",
-                          objectFit: 'cover',
-                          aspectRatio: '1/1',
+                          objectFit: "cover",
+                          aspectRatio: "1/1",
                         }}
                         playsinline={true}
-                        height={'100%'}
-                        width={'auto'}
+                        height={"100%"}
+                        width={"auto"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl3}
@@ -483,18 +486,18 @@ const Project = ({ work }: Props) => {
                         fill={true}
                         priority={idx < 3 ? true : false}
                         className="w-full h-full object-cover rounded-lg"
-                        src={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+                        src={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                           img.item.image_3.id
                         }`}
                         quality={80}
-                        alt={''}
+                        alt={""}
                       />
                     </div>
                   )}
                 </div>
-              )
+              );
             default:
-              return <div className="overflow-hidden rounded-lg my-2"></div>
+              return <div className="overflow-hidden rounded-lg my-2"></div>;
           }
         })}
         {work.Body && (
@@ -510,8 +513,8 @@ const Project = ({ work }: Props) => {
               )}
             </div>
             <AnimateHeight
-              className={`col-span-2 overflow-hidden`}
-              height={isDescriptionOpen ? 'auto' : 0}
+              className={`col-span-2 overflow-hidden text-sm`}
+              height={isDescriptionOpen ? "auto" : 0}
               duration={600}
             >
               <div dangerouslySetInnerHTML={{ __html: work.Body }}></div>
@@ -526,7 +529,7 @@ const Project = ({ work }: Props) => {
                         <div>{credit.Credit_Value}</div>
                       </div>
                     </>
-                  )
+                  );
                 })}
               </div>
             </AnimateHeight>
@@ -535,7 +538,7 @@ const Project = ({ work }: Props) => {
         <HandScrollUp />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Project
+export default Project;
