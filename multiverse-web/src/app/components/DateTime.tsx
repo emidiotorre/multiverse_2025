@@ -22,7 +22,8 @@ const DateTime = () => {
         " " +
         date.getUTCDate() +
         " " +
-        (!isMobile ? str + " " : "") +
+        /* (!isMobile ? str + ' ' : '') + */
+        " " +
         (date.getUTCHours() + 1).toString().padStart(2, "0") +
         ":" +
         date.getUTCMinutes().toString().padStart(2, "0") +
