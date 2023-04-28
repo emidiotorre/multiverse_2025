@@ -84,7 +84,7 @@ const Project = ({ work }: Props) => {
                           overflow: "hidden",
                           borderRadius: "0.5rem",
                           position: "relative",
-                          marginBottom: "0.5rem",
+                          //marginBottom: "0.5rem",
                           objectFit: "cover",
                           aspectRatio: "4/5",
                         }}
