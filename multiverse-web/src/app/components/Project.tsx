@@ -92,8 +92,8 @@ const Project = ({ work }: Props) => {
                         }}
                         playsinline={true}
                         muted={true}
-                        height={"auto"}
-                        width={"auto"}
+                        height={"100%"}
+                        width={"100%"}
                         loop
                         playing={true}
                         url={img?.item?.vimeoUrl1}
@@ -272,7 +272,7 @@ const Project = ({ work }: Props) => {
                           playsinline={true}
                           muted={true}
                           height={"100%"}
-                          width={"auto"}
+                          width={"100%"}
                           loop
                           playing={true}
                           url={img?.item?.vimeoUrl3}
