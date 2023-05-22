@@ -86,7 +86,9 @@ const Project = ({ work }: Props) => {
                           position: "relative",
                           //marginBottom: "0.5rem",
                           objectFit: "cover",
-                          aspectRatio: "4/5",
+                          width: "100%",
+                          height: "100%",
+                          //aspectRatio: "4/5",
                         }}
                         playsinline={true}
                         muted={true}
@@ -263,7 +265,9 @@ const Project = ({ work }: Props) => {
                             overflow: "hidden",
                             position: "relative",
                             //marginBottom: '0.5rem',
-                            aspectRatio: "4/5",
+                            width: "100%",
+                            height: "100%",
+                            //aspectRatio: "4/5",
                           }}
                           playsinline={true}
                           muted={true}
