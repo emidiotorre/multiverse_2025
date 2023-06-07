@@ -34,7 +34,11 @@ function WorksGrid({ blocks }: Props) {
                 case "full":
                   return (
                     <div key={idx} className="grid grid-cols-1 gap-2 mb-2">
-                      <div className="row-span-2 relative aspect-[17/5] h-full w-full">
+                      <div
+                        className={`row-span-2 relative aspect-[${
+                          block.item.work1?.aspectRatioImage ?? "17/5"
+                        }] h-full w-full`}
+                      >
                         <Card
                           status={block.item.work1?.status}
                           aspect_ratio={block.item.work1?.aspectRatioImage}
