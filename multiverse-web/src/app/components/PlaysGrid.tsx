@@ -1,15 +1,15 @@
-'use client'
-import React, { useState } from 'react'
-import Item from './Item'
+"use client";
+import React, { useState } from "react";
+import Item from "./Item";
 
-import Gallery from './Gallery'
-import Hand from './Hand'
-import HandScrollUp from './HandScrollUp'
+import Gallery from "./Gallery";
+import Hand from "./Hand";
+import HandScrollUp from "./HandScrollUp";
 
 type Props = {
-  play_page: any
-  plays: any[]
-}
+  play_page: any;
+  plays: any[];
+};
 
 function PlaysGrid(props: Props) {
   return (
@@ -29,19 +29,20 @@ function PlaysGrid(props: Props) {
           return (
             <Item
               id={idx}
-              height={play.image.height}
-              width={play.image.width}
-              key={'subgrid_item_' + idx}
-              image_url={`${'https://multiverse-dev-directus.rizo.tech'}/assets/${
+              height={play?.image?.height}
+              width={play?.image?.width}
+              key={"subgrid_item_" + idx}
+              image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                 play?.image?.id
               }`}
+              video_url={play.videoUrl}
               body={play.body}
             ></Item>
-          )
+          );
         })}
       </Gallery>
       <HandScrollUp />
     </>
-  )
+  );
 }
-export default PlaysGrid
+export default PlaysGrid;
