@@ -23,7 +23,6 @@ const Card = (props: Props) => {
         <div style={{ aspectRatio: props.aspect_ratio }}></div>
       ) : (
         <Link
-          as={`/works/${props.slug}`}
           href={props.slug ? `/works/[slug]` : '/'}
           key={props.id}
           className="contents"
