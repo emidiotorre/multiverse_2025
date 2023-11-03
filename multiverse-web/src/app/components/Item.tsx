@@ -16,7 +16,7 @@ type Props = {
 function Item(props: Props) {
   return (
     <div
-      className={`grid-item relative max-w-[80vw] block mb-8 mx-2`}
+      className={`grid-item relative block mb-8 mx-2`}
       style={{
         ...props.style,
         aspectRatio: (props.width!/props.height!),
