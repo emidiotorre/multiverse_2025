@@ -17,6 +17,7 @@ function Header() {
             <div className="flex justify-between py-4 md:pt-6 md:pb-2 w-full ">
               <div className="flex justify-start max-w-screen-2xl items-center ">
                 <Link
+                  passHref legacyBehavior
                   href="/"
                   prefetch={true}
                   className="h-fit-content"
@@ -29,6 +30,7 @@ function Header() {
               <div className="flex justify-end ">
                 <Link
                   prefetch={true}
+                  passHref legacyBehavior
                   href="/about"
                   className={`px-5 pt-[.25rem] md:pt-[.5rem] md:px-8 md:-pb-[1rem] transition-colors rounded-full font-Sharp_Grotesk_Book20 ${
                     pathname?.split('/').includes('about')

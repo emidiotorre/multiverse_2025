@@ -24,6 +24,7 @@ const Card = (props: Props) => {
       ) : (
         <Link
           href={props.slug ? `/works/[slug]` : '/'}
+          passHref legacyBehavior
           key={props.id}
           className="contents"
         >

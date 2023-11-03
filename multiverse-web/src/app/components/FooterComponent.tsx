@@ -24,6 +24,7 @@ function FooterComponent({ footer }: Props) {
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
+                  passHref legacyBehavior
                   href="https://www.instagram.com/joinmvs/"
                   className="hover:underline mr-4 hover:text-[#F40000]"
                   target="_blank"
@@ -33,6 +34,7 @@ function FooterComponent({ footer }: Props) {
                 </Link>
                 |
                 {/*  <Link
+                  passHref legacyBehavior
                   href="https://www.facebook.com/joinmvs"
                   className="hover:underline ml-4 hover:text-[#F40000]"
                   target="_blank"
@@ -41,6 +43,7 @@ function FooterComponent({ footer }: Props) {
                   Facebook
                 </Link> */}
                 <Link
+                  passHref legacyBehavior
                   href="https://www.behance.net/multiversestudio"
                   className="hover:underline ml-4 hover:text-[#F40000]"
                   target="_blank"
@@ -67,7 +70,8 @@ function FooterComponent({ footer }: Props) {
                         <span key={idx} className=" ">
                           {contact.type == "email" && (
                             <a
-                              href={"mailto:" + contact.content}
+                            passHref legacyBehavior  
+                            href={"mailto:" + contact.content}
                               className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
@@ -75,7 +79,8 @@ function FooterComponent({ footer }: Props) {
                           )}
                           {contact.type == "tel" && (
                             <a
-                              href={"tel:" + contact.content}
+                            passHref legacyBehavior  
+                            href={"tel:" + contact.content}
                               className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
                               {contact.content}
@@ -85,6 +90,7 @@ function FooterComponent({ footer }: Props) {
                             <>
                               <br className="md:hidden" />
                               <a
+                                passHref legacyBehavior
                                 href={contact.googlemapsLink}
                                 target="_blank"
                                 rel="noreferrer"
