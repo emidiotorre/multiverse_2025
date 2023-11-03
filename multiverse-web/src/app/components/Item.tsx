@@ -31,8 +31,9 @@ function Item(props: Props) {
           className={`rounded-lg `}
           alt={""}
           quality={80}
-          height={(props.height ?? 1200) / 3}
-          width={(props.width ?? 1200) / 3} 
+          fill={true}
+          //height={(props.height ?? 1200) / 3}
+          //width={(props.width ?? 1200) / 3} 
         />
       )}
       <div className="absolute -bottom-4 flex justify-start font-Sharp_Grotesk_Book25">

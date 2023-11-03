@@ -24,9 +24,9 @@ function PlaysGrid(props: Props) {
       <Masonry
       items={props?.plays}
       config={{
-        columns: [1, 2, 3],
-        gap: [24, 12, 6],
-        media: [640, 768, 1024],
+        columns: [1, 2, 3, 4],
+        gap: [24, 12],
+        media: [640, 768, 1024, 1480],
       }}
       render={(play, idx) => (
         <Item
