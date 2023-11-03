@@ -11,7 +11,6 @@ function MenuSwitch({}: Props) {
       <Link
         prefetch={true}
         href="/works"
-        as={"/works"}
         className="	 mx-4 md:mx-6 my-0 py-1 md:py-2 z-10"
       >
         work
@@ -29,7 +28,6 @@ function MenuSwitch({}: Props) {
          }`}
       ></div>
       <Link
-        as={"/play"}
         prefetch={true}
         href="/play"
         className=" mx-4 md:mx-6 my-0 py-1 md:py-2 z-10 "
