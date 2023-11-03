@@ -10,7 +10,6 @@ function MenuSwitch({}: Props) {
     <div className="font-Sharp_Grotesk_Book20 text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] rounded-full  ">
       <Link
         prefetch={true}
-        passHref legacyBehavior
         href="/works"
         className="	 mx-4 md:mx-6 my-0 py-1 md:py-2 z-10"
       >
@@ -30,7 +29,6 @@ function MenuSwitch({}: Props) {
       ></div>
       <Link
         prefetch={true}
-        passHref legacyBehavior
         href="/play"
         className=" mx-4 md:mx-6 my-0 py-1 md:py-2 z-10 "
       >
