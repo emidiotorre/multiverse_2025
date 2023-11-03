@@ -22,7 +22,7 @@ function PlaysGrid(props: Props) {
         </div>
       </div>
       <Masonry
-      items={props?.plays}
+      items={props?.plays.filter(p=>p.status==="published")}
       config={{
         columns: [1, 2, 3, 4],
         gap: [24, 12],

@@ -65,6 +65,7 @@ export const GET_PLAYS_IMAGE = gql`
       body
       url
       videoUrl
+      status
       image {
         id
         height
