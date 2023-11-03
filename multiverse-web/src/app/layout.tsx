@@ -9,6 +9,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  //@ts-ignore
   const { footer } = await fetcher({
     query: GET_FOOTER,
     variables: null,
