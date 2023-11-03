@@ -16,10 +16,10 @@ type Props = {
 function Item(props: Props) {
   return (
     <div
-      className={`grid-item relative max-w-[80vw] block mb-5`}
+      className={`grid-item relative max-w-[80vw] block mb-8 mx-2`}
       style={{
         ...props.style,
-       /*  width: (props.width ?? 1200) / 3, */
+        aspectRatio: (props.width!/props.height!),
       }}
     >
       {props.video_url && (

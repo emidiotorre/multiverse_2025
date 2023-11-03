@@ -22,6 +22,9 @@ const Project = ({ work }: Props) => {
           <VideoAutoPlayer
             src={work?.vimeoUrl}
             showControls={true}
+            style={{
+              marginBottom: "0.5rem",
+            }}
           ></VideoAutoPlayer>
         ) : (
           <></>

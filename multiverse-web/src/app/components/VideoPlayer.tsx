@@ -20,9 +20,11 @@ import screenfull from "screenfull";
 export function VideoAutoPlayer({
   src,
   showControls = false,
+  style={}
 }: {
   src: string;
   showControls: boolean;
+  style?: any
 }) {
   const [playing, setPlaying] = useState(false);
   const [mute, setMute] = useState(true);
@@ -91,10 +93,10 @@ export function VideoAutoPlayer({
           overflow: "hidden",
           position: "relative",
           marginTop: "0.5rem",
-          marginBottom: "0.5rem",
           zIndex: 10,
           borderRadius: "0.5rem",
           aspectRatio: "16/9",
+          ...style
         }}
         playsinline={true}
         width={"auto"}
