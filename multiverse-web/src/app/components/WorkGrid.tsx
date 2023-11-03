@@ -17,15 +17,18 @@ function WorksGrid({ blocks }: Props) {
     <>
       <div className="my-5">
         <Marquee gradient={false} speed={100} style={{ overflowY: "hidden" }}>
+          <>
           <h3 className="marque-title text-8xl font-bold uppercase">
             &nbsp;discover another universe
           </h3>
           <h3 className="marque-title text-8xl font-bold uppercase">
             &nbsp;discover another universe
           </h3>
+          </>
         </Marquee>
       </div>
       <Container>
+        <>
         {blocks &&
           blocks
             .sort((a, b) => (a.item.work1.sort < b.item.work1.sort ? -1 : 1))
@@ -189,6 +192,7 @@ function WorksGrid({ blocks }: Props) {
                   );
               }
             })}
+            </>
         <HandScrollUp />
       </Container>
     </>
