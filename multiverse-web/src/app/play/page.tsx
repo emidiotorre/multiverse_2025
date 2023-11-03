@@ -1,4 +1,3 @@
-import React from 'react'
 import Container from '@/app/components/Container'
 import { GET_PLAYS_IMAGE, GET_PLAYS_TITLES } from '../apollo/queries'
 import PlaysGrid from '../components/PlaysGrid'

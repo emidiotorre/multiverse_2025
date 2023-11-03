@@ -1,10 +1,7 @@
-"use client";
-import React, { useState } from "react";
+"use client"
 import Item from "./Item";
-
-import Gallery from "./Gallery";
-import Hand from "./Hand";
 import HandScrollUp from "./HandScrollUp";
+import { Masonry } from 'react-plock';
 
 type Props = {
   play_page: any;
@@ -24,23 +21,28 @@ function PlaysGrid(props: Props) {
           <h1 dangerouslySetInnerHTML={{ __html: props.play_page.subtitle }} />
         </div>
       </div>
-      <Gallery>
-        {props?.plays?.map((play: any, idx: number) => {
-          return (
-            <Item
-              id={idx}
-              height={play?.image?.height}
-              width={play?.image?.width}
-              key={"subgrid_item_" + idx}
-              image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
-                play?.image?.id
-              }`}
-              video_url={play.videoUrl}
-              body={play.body}
-            ></Item>
-          );
-        })}
-      </Gallery>
+      <Masonry
+      items={props?.plays}
+      config={{
+        columns: [1, 2, 3],
+        gap: [24, 12, 6],
+        media: [640, 768, 1024],
+      }}
+      render={(play, idx) => (
+        <Item
+        id={idx}
+        height={play?.image?.height}
+        width={play?.image?.width}
+        key={"subgrid_item_" + idx}
+        image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
+          play?.image?.id
+        }`}
+        video_url={play.videoUrl}
+        body={play.body}
+      ></Item>
+      )}
+    />
+      
       <HandScrollUp />
     </>
   );

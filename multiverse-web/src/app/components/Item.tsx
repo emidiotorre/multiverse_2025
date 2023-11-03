@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { VideoAutoPlayer } from "./VideoPlayer";
@@ -15,10 +16,10 @@ type Props = {
 function Item(props: Props) {
   return (
     <div
-      className={`grid-item absolute max-w-[80vw] block mb-5`}
+      className={`grid-item relative max-w-[80vw] block mb-5`}
       style={{
         ...props.style,
-        width: (props.width ?? 1200) / 3,
+       /*  width: (props.width ?? 1200) / 3, */
       }}
     >
       {props.video_url && (
@@ -31,7 +32,7 @@ function Item(props: Props) {
           alt={""}
           quality={80}
           height={(props.height ?? 1200) / 3}
-          width={(props.width ?? 1200) / 3}
+          width={(props.width ?? 1200) / 3} 
         />
       )}
       <div className="absolute -bottom-4 flex justify-start font-Sharp_Grotesk_Book25">
