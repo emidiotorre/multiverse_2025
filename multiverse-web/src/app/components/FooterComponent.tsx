@@ -70,7 +70,6 @@ function FooterComponent({ footer }: Props) {
                         <span key={idx} className=" ">
                           {contact.type == "email" && (
                             <a
-                            passHref legacyBehavior  
                             href={"mailto:" + contact.content}
                               className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
@@ -79,7 +78,6 @@ function FooterComponent({ footer }: Props) {
                           )}
                           {contact.type == "tel" && (
                             <a
-                            passHref legacyBehavior  
                             href={"tel:" + contact.content}
                               className="whitespace-pre-line cursor-pointer hover:text-[#F40000] break-keep"
                             >
@@ -90,7 +88,6 @@ function FooterComponent({ footer }: Props) {
                             <>
                               <br className="md:hidden" />
                               <a
-                                passHref legacyBehavior
                                 href={contact.googlemapsLink}
                                 target="_blank"
                                 rel="noreferrer"
