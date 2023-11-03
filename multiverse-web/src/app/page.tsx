@@ -5,7 +5,10 @@ import Logo from './components/Logo'
 import Container from './components/Container'
 
 export default async function Home() {
+
+  //@ts-ignore
   const { home } = await fetcher({ query: GET_HOME, variables: null })
+  
   return (
     <>
       <Container>

@@ -4,10 +4,12 @@ import PlaysGrid from '../components/PlaysGrid'
 import { fetcher } from '../apollo'
 
 export default async function Play() {
+  //@ts-ignore
   const { play_page } = await fetcher({
     query: GET_PLAYS_TITLES,
     variables: null,
-  })
+  })    
+  //@ts-ignore
   const { plays } = await fetcher({
     query: GET_PLAYS_IMAGE,
     variables: null,

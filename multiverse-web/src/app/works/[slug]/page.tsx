@@ -4,6 +4,7 @@ import { GET_WORK_BY_SLUG } from '@/app/apollo/queries'
 import Project from '@/app/components/Project'
 
 export default async function Work({ params }: { params: { slug: string } }) {
+  //@ts-ignore
   const { work } = await fetcher({
     query: GET_WORK_BY_SLUG,
     variables: {
