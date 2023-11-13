@@ -21,12 +21,14 @@ export function VideoAutoPlayer({
   src,
   showControls = false,
   style={},
-  square = false,
+  videoWidth,
+  videoHeight,
 }: {
   src: string;
   showControls: boolean;
   style?: any
-  square?: boolean
+  videoHeight?: number;
+  videoWidth?: number;
 }) {
   const [playing, setPlaying] = useState(false);
   const [mute, setMute] = useState(true);
@@ -97,7 +99,7 @@ export function VideoAutoPlayer({
           marginTop: "0.5rem",
           zIndex: 10,
           borderRadius: "0.5rem",
-          aspectRatio: square ? "1/1":"16/9",
+          aspectRatio: videoWidth&&videoHeight ? videoWidth/videoHeight : "16/9",
           ...style
         }}
         playsinline={true}

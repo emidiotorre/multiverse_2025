@@ -7,11 +7,12 @@ type Props = {
   id: number;
   height?: number;
   width?: number;
+  videoHeight?: number;
+  videoWidth?: number;
   body: string;
   image_url?: string;
   video_url?: string;
   style?: any;
-  square?: boolean;
 };
 
 function Item(props: Props) {
@@ -24,7 +25,10 @@ function Item(props: Props) {
       }}
     >
       {props.video_url && (
-        <VideoAutoPlayer src={props.video_url} showControls={false} square={props.square} />
+        <VideoAutoPlayer src={props.video_url} showControls={false} 
+        videoHeight={props.videoHeight}
+        videoWidth={props.videoWidth}
+         />
       )}
       {props.image_url && !props.video_url && (
         <Image
