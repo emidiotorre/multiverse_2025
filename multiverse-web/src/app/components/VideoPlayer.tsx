@@ -20,11 +20,13 @@ import screenfull from "screenfull";
 export function VideoAutoPlayer({
   src,
   showControls = false,
-  style={}
+  style={},
+  square = false,
 }: {
   src: string;
   showControls: boolean;
   style?: any
+  square?: boolean
 }) {
   const [playing, setPlaying] = useState(false);
   const [mute, setMute] = useState(true);
@@ -95,7 +97,7 @@ export function VideoAutoPlayer({
           marginTop: "0.5rem",
           zIndex: 10,
           borderRadius: "0.5rem",
-          aspectRatio: "16/9",
+          aspectRatio: square ? "1/1":"16/9",
           ...style
         }}
         playsinline={true}

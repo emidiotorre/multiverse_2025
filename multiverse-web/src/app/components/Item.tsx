@@ -11,6 +11,7 @@ type Props = {
   image_url?: string;
   video_url?: string;
   style?: any;
+  square?: boolean;
 };
 
 function Item(props: Props) {
@@ -23,7 +24,7 @@ function Item(props: Props) {
       }}
     >
       {props.video_url && (
-        <VideoAutoPlayer src={props.video_url} showControls={false} />
+        <VideoAutoPlayer src={props.video_url} showControls={false} square={props.square} />
       )}
       {props.image_url && !props.video_url && (
         <Image

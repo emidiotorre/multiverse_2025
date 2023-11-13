@@ -38,6 +38,7 @@ function PlaysGrid(props: Props) {
           play?.image?.id
         }`}
         video_url={play.videoUrl}
+        square={play?.square}
         body={play.body}
       ></Item>
       )}
