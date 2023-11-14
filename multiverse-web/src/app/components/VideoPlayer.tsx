@@ -94,13 +94,13 @@ export function VideoAutoPlayer({
       <ReactPlayer
         loop={true}
         style={{
+          ...style,
           overflow: "hidden",
           position: "relative",
           marginTop: "0.5rem",
           zIndex: 10,
           borderRadius: "0.5rem",
           aspectRatio: videoWidth&&videoHeight ? videoWidth/videoHeight : "16/9",
-          ...style
         }}
         playsinline={true}
         width={"auto"}
