@@ -21,7 +21,7 @@ function Item(props: Props) {
       className={`grid-item relative block mb-8 mx-2`}
       style={{
         ...props.style,
-        aspectRatio: (props.width!/props.height!),
+        aspectRatio: (props.videoHeight && props.videoWidth) ? ( props.videoWidth / props.videoHeight): (props.width!/props.height!),
       }}
     >
       {props.video_url && (
