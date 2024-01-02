@@ -11,7 +11,7 @@ function Header() {
   const pathname = usePathname()
   return (
     <>
-      <div className="font-sans fixed bottom-0 w-full md:static md:top-0 text-xs z-50 bg-white flex-col-reverse">
+      <div className={`font-sans fixed bottom-0 w-full md:static md:top-0 text-xs z-50 flex-col-reverse ${pathname?.split('/').includes('play')?"bg-black":"bg-white"}`}>
         <header>
           <Container>
             <div className="flex justify-between py-4 md:pt-6 md:pb-2 w-full ">
@@ -21,7 +21,7 @@ function Header() {
                   prefetch={true}
                   className="h-fit-content"
                 >
-                  <LogoSmall className="h-[2em] md:h-[2.5em]  w-auto" />
+                  <LogoSmall className="h-[2em] md:h-[2.5em]  w-auto" fill={pathname?.split('/').includes('play')?"white":"black"}/>
                 </Link>
 
                 <MenuSwitch></MenuSwitch>

@@ -43,7 +43,7 @@ function Item(props: Props) {
       )}
       <div className="absolute -bottom-5 flex justify-start font-Sharp_Grotesk_Book25">
         <div
-          className="text-black text-[10px] "
+          className="text-white text-[10px] "
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
       </div>

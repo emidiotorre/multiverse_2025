@@ -16,7 +16,7 @@ export default async function Play() {
   })
   return (
     <>
-      <Container>
+      <Container className="bg-black text-white">
         <PlaysGrid play_page={play_page} plays={plays} />
       </Container>
     </>
