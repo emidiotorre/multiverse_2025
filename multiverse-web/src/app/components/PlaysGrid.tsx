@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import Item from "./Item";
 import HandScrollUp from "./HandScrollUp";
-import { Masonry } from 'react-plock';
+import { Masonry } from "react-plock";
 
 type Props = {
   play_page: any;
@@ -12,39 +12,39 @@ function PlaysGrid(props: Props) {
   return (
     <>
       <div key={props.play_page.id} className="flex justify-center mt-6">
-        <div className="font-sans  text-3xl md:text-7xl md:mt-20 break-words font-semibold text-center">
-          <h1 dangerouslySetInnerHTML={{ __html: props.play_page.title }} />
-        </div>
-      </div>
-      <div className="flex justify-center">
-        <div className="font-mono break-words max-w-[70%] md:max-w-[32%] text-xs md:text-sm font-light my-10 md:my-32 text-center">
-          <h1 dangerouslySetInnerHTML={{ __html: props.play_page.subtitle }} />
-        </div>
+        <h1
+          className=" text-3xl md:text-5xl my-[30vh] text-center"
+          // dangerouslySetInnerHTML={{ __html: props.play_page.title }}
+        >
+          All work and no play makes
+          <br />
+          Multiverse a dull agency.
+        </h1>
       </div>
       <Masonry
-      items={props?.plays.filter(p=>p.status==="published")}
-      config={{
-        columns: [1, 2, 3, 4],
-        gap: [24, 12],
-        media: [640, 768, 1024, 1480],
-      }}
-      render={(play, idx) => (
-        <Item
-        id={idx}
-        height={play?.image?.height}
-        width={play?.image?.width}
-        key={"subgrid_item_" + idx}
-        image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
-          play?.image?.id
-        }`}
-        video_url={play.videoUrl}
-        videoHeight={play?.video_height}
-        videoWidth={play?.video_width}
-        body={play.body}
-      ></Item>
-      )}
-    />
-      
+        items={props?.plays.filter((p) => p.status === "published")}
+        config={{
+          columns: [1, 2, 3, 4],
+          gap: [24, 12],
+          media: [640, 768, 1024, 1480],
+        }}
+        render={(play, idx) => (
+          <Item
+            id={idx}
+            height={play?.image?.height}
+            width={play?.image?.width}
+            key={"subgrid_item_" + idx}
+            image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
+              play?.image?.id
+            }`}
+            video_url={play.videoUrl}
+            videoHeight={play?.video_height}
+            videoWidth={play?.video_width}
+            body={play.body}
+          ></Item>
+        )}
+      />
+
       <HandScrollUp />
     </>
   );

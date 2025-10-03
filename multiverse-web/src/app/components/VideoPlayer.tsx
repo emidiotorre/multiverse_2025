@@ -20,13 +20,13 @@ import screenfull from "screenfull";
 export function VideoAutoPlayer({
   src,
   showControls = false,
-  style={},
+  style = {},
   videoWidth,
   videoHeight,
 }: {
   src: string;
   showControls: boolean;
-  style?: any
+  style?: any;
   videoHeight?: number;
   videoWidth?: number;
 }) {
@@ -100,7 +100,8 @@ export function VideoAutoPlayer({
           marginTop: "0.5rem",
           zIndex: 10,
           borderRadius: "0.5rem",
-          aspectRatio: videoWidth&&videoHeight ? videoWidth/videoHeight : "16/9",
+          aspectRatio:
+            videoWidth && videoHeight ? videoWidth / videoHeight : "16/9",
         }}
         playsinline={true}
         width={"auto"}
@@ -117,7 +118,7 @@ export function VideoAutoPlayer({
           onMouseLeave={() => setShow(false)}
           onMouseEnter={() => setShow(true)}
         >
-          {show && (
+          {/*{show && (
             <>
               <div className="flex">
                 <div onClick={() => setPlaying(!playing)} className="mr-4">
@@ -176,7 +177,7 @@ export function VideoAutoPlayer({
                 </div>
               </div>
             </>
-          )}
+          )}*/}
         </div>
       )}
     </div>

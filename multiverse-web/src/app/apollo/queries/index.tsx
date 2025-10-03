@@ -19,6 +19,8 @@ export const GET_WORKS_IMG = gql`
               aspectRatioImage
               image {
                 id
+                width
+                height
               }
             }
             work2 {
@@ -30,6 +32,8 @@ export const GET_WORKS_IMG = gql`
               Name
               image {
                 id
+                width
+                height
               }
             }
             work3 {
@@ -41,6 +45,8 @@ export const GET_WORKS_IMG = gql`
               Name
               image {
                 id
+                width
+                height
               }
             }
           }

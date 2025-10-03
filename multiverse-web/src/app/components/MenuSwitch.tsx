@@ -7,30 +7,30 @@ type Props = {};
 function MenuSwitch({}: Props) {
   const pathname = usePathname();
   return (
-    <div className="font-Sharp_Grotesk_Book20 text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] rounded-full  ">
+    <div className=" text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] h-[2rem] rounded-[3px] ">
       <Link
         prefetch={true}
         href="/works"
-        className="	 mx-4 md:mx-6 my-0 py-1 md:py-2 z-10"
+        className="flex items-center align-center px-5 z-10 uppercase "
       >
         work
       </Link>{" "}
       <div
-        className={` absolute z-0 drop-shadow-lg  bg-[#F40000] h-full w-1/2 rounded-full transform-gpu transition-colors
-         transition-transform ${
+        className={` absolute  block z-0  bg-[#FF164B] h-[2rem] w-1/2 transform-gpu transition-colors rounded-[3px]
+         transition-all ${
            pathname?.split("/").includes("works")
-             ? "translate-x-0"
+             ? "left-0"
              : pathname?.split("/").includes("play")
-             ? "translate-x-[100%]"
-             : pathname == "/" || pathname == "/about"
-             ? "opacity-0"
-             : ""
+               ? "left-[51%]"
+               : pathname == "/" || pathname == "/studio"
+                 ? "opacity-0"
+                 : ""
          }`}
       ></div>
       <Link
         prefetch={true}
         href="/play"
-        className=" mx-4 md:mx-6 my-0 py-1 md:py-2 z-10 "
+        className=" flex items-center align-center px-5 z-10 uppercase "
       >
         play
       </Link>
