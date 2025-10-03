@@ -76,7 +76,7 @@ const Project = ({ work }: Props) => {
                             position: "relative",
                             marginBottom: "0.5rem",
                             objectFit: "cover",
-                            borderRadius: "0.5rem",
+                            borderRadius: "3px",
                             aspectRatio: img?.item.aspect_ratio,
                           }}
                           playsinline={true}
@@ -115,7 +115,7 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         style={{
                           overflow: "hidden",
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           position: "relative",
                           //marginBottom: "0.5rem",
                           objectFit: "cover",
@@ -150,7 +150,7 @@ const Project = ({ work }: Props) => {
                     <div className="  aspect-[8/5] w-full h-full">
                       <ReactPlayer
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           objectFit: "cover",
@@ -183,7 +183,7 @@ const Project = ({ work }: Props) => {
                     <div className=" aspect-[8/5]  w-full h-full">
                       <ReactPlayer
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           objectFit: "cover",
@@ -227,7 +227,7 @@ const Project = ({ work }: Props) => {
                         <ReactPlayer
                           muted={true}
                           style={{
-                            borderRadius: "0.5rem",
+                            borderRadius: "3px",
                             overflow: "hidden",
                             position: "relative",
                             objectFit: "cover",
@@ -261,7 +261,7 @@ const Project = ({ work }: Props) => {
                           <ReactPlayer
                             muted={true}
                             style={{
-                              borderRadius: "0.5rem",
+                              borderRadius: "3px",
                               overflow: "hidden",
                               position: "relative",
                               //marginBottom: '0.5rem',
@@ -294,7 +294,7 @@ const Project = ({ work }: Props) => {
                       <div className="   w-full h-full">
                         <ReactPlayer
                           style={{
-                            borderRadius: "0.5rem",
+                            borderRadius: "3px",
                             overflow: "hidden",
                             position: "relative",
                             //marginBottom: '0.5rem',
@@ -345,7 +345,7 @@ const Project = ({ work }: Props) => {
                         style={{
                           overflow: "hidden",
                           position: "relative",
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           objectFit: "cover",
                           aspectRatio: img?.item.aspect_ratio,
                         }}
@@ -386,7 +386,7 @@ const Project = ({ work }: Props) => {
                     >
                       <ReactPlayer
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           objectFit: "cover",
@@ -433,7 +433,7 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           //marginBottom: "0.5rem",
@@ -467,7 +467,7 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           //marginBottom: "0.5rem",
@@ -501,7 +501,7 @@ const Project = ({ work }: Props) => {
                       <ReactPlayer
                         muted={true}
                         style={{
-                          borderRadius: "0.5rem",
+                          borderRadius: "3px",
                           overflow: "hidden",
                           position: "relative",
                           //marginBottom: "0.5rem",

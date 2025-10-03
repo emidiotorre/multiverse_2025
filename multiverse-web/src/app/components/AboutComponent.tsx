@@ -95,7 +95,7 @@ const AboutComponent = async ({ blocks }: Props) => {
               src={`/image_11.png`}
               alt={"hero image"}
             />
-            <div className="bg-[#d0d0d0] flex-1 rounded-[3px] p-4 flex flex-col gap-4 justify-center">
+            <div className="bg-[#d0d0d0] flex-1 rounded-[3px] p-4 flex flex-col gap-4 justify-between">
               <p className="text-2xl mb-12 leading-6">
                 Palazzo Barone is our home. On the threshold, carved in
                 stone,the Lion warns: Cor tibi magis domus pandit. "This
@@ -107,11 +107,11 @@ const AboutComponent = async ({ blocks }: Props) => {
                 gargoyles, merlons and arches of clear Islamic-Byzantine
                 inspiration that overlook the sea.
               </p>
-              <img src="/mamozzio.svg" alt="" className="h-[30rem] " />
+              <img src="/mamozzio.svg" alt="" className="h-[38rem] " />
             </div>
           </div>
           <div className="w-full bg-black rounded-[3px] px-4 py-4">
-            <h1 className="text-white text-3xl mb-24">
+            <h1 className="text-white text-4xl mb-24">
               Over the past year, we’ve received national and international
               awards for our work in packaging, branding and storytelling.
             </h1>
@@ -140,7 +140,7 @@ const AboutComponent = async ({ blocks }: Props) => {
               </table>
             </div>
           </div>
-          <div className="w-full rounded-[3px] mb-4">
+          <div className="w-full rounded-[3px] my-4">
             <VideoAutoPlayer
               src="https://vimeo.com/1114253200"
               showControls={false}

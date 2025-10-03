@@ -2,6 +2,7 @@
 import Item from "./Item";
 import HandScrollUp from "./HandScrollUp";
 import { Masonry } from "react-plock";
+import { VideoAutoPlayer } from "./VideoPlayer";
 
 type Props = {
   play_page: any;
@@ -12,14 +13,22 @@ function PlaysGrid(props: Props) {
   return (
     <>
       <div key={props.play_page.id} className="flex justify-center mt-6">
-        <h1
+        <div className="relative select-none w-full">
+          <VideoAutoPlayer
+            src="https://vimeo.com/1114252273"
+            showControls={false}
+            videoHeight={184}
+            videoWidth={426}
+          />
+        </div>
+        {/*<h1
           className=" text-3xl md:text-5xl my-[30vh] text-center"
           // dangerouslySetInnerHTML={{ __html: props.play_page.title }}
         >
           All work and no play makes
           <br />
           Multiverse a dull agency.
-        </h1>
+        </h1>*/}
       </div>
       <Masonry
         items={props?.plays.filter((p) => p.status === "published")}

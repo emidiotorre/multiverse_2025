@@ -97,9 +97,8 @@ export function VideoAutoPlayer({
           ...style,
           overflow: "hidden",
           position: "relative",
-          marginTop: "0.5rem",
           zIndex: 10,
-          borderRadius: "0.5rem",
+          borderRadius: "3px",
           aspectRatio:
             videoWidth && videoHeight ? videoWidth / videoHeight : "16/9",
         }}
