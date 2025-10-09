@@ -34,8 +34,8 @@ const Card = (props: Props) => {
               <Image
                 // style={{ aspectRatio: props.aspect_ratio }}
                 className="h-full w-full rounded-[3px] "
-                width={props.width / 4 ?? 600}
-                height={props.height / 4 ?? 600}
+                width={props?.width! / 4}
+                height={props?.height! / 4}
                 src={props.image_url}
                 alt={""}
                 quality={100}

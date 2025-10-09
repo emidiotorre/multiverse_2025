@@ -55,7 +55,7 @@ const awards = [
   },
 ];
 
-const AboutComponent = async ({ blocks }: Props) => {
+const AboutComponent = ({ blocks }: Props) => {
   const matches = useMediaQuery("(min-width: 768px)");
 
   return (
