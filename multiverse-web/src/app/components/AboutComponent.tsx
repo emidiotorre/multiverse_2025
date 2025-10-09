@@ -97,10 +97,10 @@ const AboutComponent = async ({ blocks }: Props) => {
             />
             <div className="bg-[#d0d0d0] flex-1 rounded-[3px] p-4 flex flex-col gap-4 justify-between">
               <p className="text-2xl mb-12 leading-6">
-                Palazzo Barone is our home. On the threshold, carved in
-                stone,the Lion warns: Cor tibi magis domus pandit. "This
-                building opens a heart bigger than the door you're passing
-                through." The portal has blown us into a universe with
+                Palazzo Barone is our home. On the threshold, carved in stone,
+                the Lion warns: Cor tibi magis domus pandit. &quot;This building
+                opens a heart bigger than the door you&apos;re passing
+                through.&quot; The portal has blown us into a universe with
                 retro-futuristic traits in full science-fiction style. There is
                 our whole world full of neo-Gothic images that hypnotize us. The
                 Studio is in a Palace dug into the rock, enlivened by lions,
