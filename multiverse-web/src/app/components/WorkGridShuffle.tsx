@@ -37,6 +37,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           slug={block.item.work1?.slug}
                           Name={block.item.work1?.Name}
                           priority={idx <= 2}
+                          key={block.item.work1?.id}
                         ></Card>
                       </>
                     );
@@ -55,6 +56,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work1?.image?.width}
                           height={block.item.work1?.image?.height}
+                          key={block.item.work1?.id}
                         ></Card>
                         <Card
                           status={block.item.work2?.status}
@@ -68,11 +70,11 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work2?.image?.width}
                           height={block.item.work2?.image?.height}
+                          key={block.item.work2?.id}
                         ></Card>
                         <Card
                           status={block.item.work3?.status}
                           aspect_ratio={block.item.work3?.aspectRatioImage}
-                          key={block.item.work3.id}
                           id={block.item.work3.id}
                           image_url={`${"https://multiverse-dev-directus.rizo.tech"}/assets/${
                             block.item.work3.image?.id
@@ -82,6 +84,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work3?.image?.width}
                           height={block.item.work3?.image?.height}
+                          key={block.item.work3.id}
                         ></Card>
                       </>
                     );
@@ -101,6 +104,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work1?.image?.width}
                           height={block.item.work1?.image?.height}
+                          key={block.item.work1.id}
                         ></Card>
                         <Card
                           status={block.item.work2?.status}
@@ -114,6 +118,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work2?.image?.width}
                           height={block.item.work2?.image?.height}
+                          key={block.item.work2.id}
                         ></Card>
                         <Card
                           status={block.item.work3?.status}
@@ -127,6 +132,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work3?.image?.width}
                           height={block.item.work3?.image?.height}
+                          key={block.item.work3.id}
                         ></Card>
                       </>
                     );
@@ -145,6 +151,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           status={block.item.work1?.status}
                           width={block.item.work1?.image?.width}
                           height={block.item.work1?.image?.height}
+                          key={block.item.work1.id}
                         ></Card>
                         <Card
                           status={block.item.work2?.status}
@@ -158,6 +165,7 @@ function WorksGridShuffle({ blocks }: Props) {
                           priority={idx <= 2}
                           width={block.item.work2?.image?.width}
                           height={block.item.work2?.image?.height}
+                          key={block.item.work2.id}
                         ></Card>
                       </>
                     );

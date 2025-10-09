@@ -107,7 +107,7 @@ export function VideoAutoPlayer({
         height={"auto"}
         muted={mute}
         playing={playing}
-        full
+        full={true}
         url={src}
         controls={showControls}
       />
