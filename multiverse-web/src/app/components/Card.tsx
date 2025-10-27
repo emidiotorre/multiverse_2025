@@ -17,7 +17,13 @@ type Props = {
 
 const Card = (props: Props) => {
   return (
-    <div className="flex-grow rounded-[3px]" style={props.style}>
+    <div
+      className=" rounded-[3px] w-full md:w-auto"
+      style={{
+        ...props.style,
+        //width: `min(${props?.width! / 3}px, 40vw)`,
+      }}
+    >
       {props.status != "published" ? (
         <div
         // style={{ aspectRatio: props.aspect_ratio }}
@@ -32,10 +38,14 @@ const Card = (props: Props) => {
           <>
             <div className="">
               <Image
-                // style={{ aspectRatio: props.aspect_ratio }}
-                className="h-full w-full rounded-[3px] "
-                width={props?.width! / 4}
-                height={props?.height! / 4}
+                style={{
+                  aspectRatio: props.aspect_ratio,
+                  objectFit: "cover",
+                  //height: `min(${props?.height!}px, 250px)`,
+                }}
+                className="h-full w-full rounded-[3px] w-full md:w-auto"
+                width={Math.min(props?.width! / 2, 900)}
+                height={Math.min(props?.height! / 2, 900)}
                 src={props.image_url}
                 alt={""}
                 quality={100}

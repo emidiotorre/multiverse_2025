@@ -7,7 +7,7 @@ type Props = {};
 function MenuSwitch({}: Props) {
   const pathname = usePathname();
   return (
-    <div className=" text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] h-[2rem] rounded-[3px] ">
+    <div className="hover:bg-[#B9B9B9] text-xs flex ml-2 md:ml-4 relative bg-[#d0d0d0] h-[2rem] rounded-[3px] ">
       <Link
         prefetch={true}
         href="/works"

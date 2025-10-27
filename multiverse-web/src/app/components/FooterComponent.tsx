@@ -50,16 +50,16 @@ function FooterComponent({ footer }: Props) {
         alt=""
       />
       <footer
-        className={` top-auto flex-1 w-full max-w-full  flex align-bottom font-Sharp_Grotesk_Book20 md:text-xs ${pathname?.split("/").includes("play") ? "bg-black text-white" : "bg-white"} `}
+        className={` top-auto flex-1 w-full max-w-full flex align-bottom  ${pathname?.split("/").includes("play") ? "bg-black text-white" : "bg-white"} `}
       >
         <Container style={{ alignSelf: "flex-end" }}>
-          <hr className={borderTop} />
-          <div className="flex-col md:flex-row md:columns-2 flex justify-between text-[12px] md:text-sm gap-2 md:items-end md:py-5 uppercase ">
+          {/*<hr className={borderTop} />*/}
+          <div className="flex-col md:flex-row md:columns-2 flex justify-between gap-2 md:items-end md:py-2 uppercase ">
             <div className="md:col-span-1 pt-0 ">
               <small>
                 <Link
                   href="https://www.instagram.com/joinmvs/"
-                  className="hover:underline mr-4 hover:text-[#FF164B]"
+                  className="hover:underline text-[1rem] mr-4 hover:text-[#FF164B]"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -76,51 +76,60 @@ function FooterComponent({ footer }: Props) {
                 </Link> */}
                 <Link
                   href="https://www.behance.net/multiversestudio"
-                  className="hover:underline ml-4 hover:text-[#FF164B]"
+                  className="hover:underline text-[1rem] ml-4 hover:text-[#FF164B]"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Behance
                 </Link>
-                {/*
-              </small>
 
-            <small className="flex flex-row" key={footer.id}> */}
                 {footer.contacts &&
                   footer.contacts.map((contact: any, idx: number) => {
                     return (
-                      <>
+                      <div key={contact.id}>
                         <span
+                          key={contact.id}
                           className={
                             "mx-4 " +
-                            (contact.type != "email" ? "hidden md:inline" : "")
+                            (contact.type != "email"
+                              ? "hidden md:inline"
+                              : "hidden md:inline")
                           }
                         ></span>
                         <span key={idx} className=" ">
                           {contact.type == "email" && (
-                            <a
-                              href={"mailto:" + contact.content}
-                              className="whitespace-pre-line cursor-pointer hover:text-[#FF164B] break-keep"
-                            >
-                              {contact.content}
-                            </a>
+                            <>
+                              <a
+                                key={contact.id}
+                                href={"mailto:" + contact.content}
+                                className="whitespace-pre-line text-[1rem] cursor-pointer hover:text-[#FF164B] break-keep"
+                              >
+                                {contact.content}
+                              </a>
+                              <br className="md:hidden" />
+                            </>
                           )}
                           {contact.type == "tel" && (
-                            <a
-                              href={"tel:" + contact.content}
-                              className="whitespace-pre-line cursor-pointer hover:text-[#FF164B] break-keep"
-                            >
-                              {contact.content}
-                            </a>
+                            <>
+                              <a
+                                key={contact.id}
+                                href={"tel:" + contact.content}
+                                className="whitespace-pre-line text-[1rem] cursor-pointer hover:text-[#FF164B] break-keep"
+                              >
+                                {contact.content}
+                              </a>
+                              <br className="md:hidden" />
+                            </>
                           )}
                           {contact.type == "address" && (
                             <>
                               <br className="md:hidden" />
                               <a
+                                key={contact.id}
                                 href={contact.googlemapsLink}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="whitespace-pre-line cursor-pointer hover:text-[#FF164B] break-keep"
+                                className="whitespace-pre-line text-[1rem] cursor-pointer hover:text-[#FF164B] break-keep"
                               >
                                 {contact.content}
                               </a>
@@ -128,7 +137,7 @@ function FooterComponent({ footer }: Props) {
                             </>
                           )}
                         </span>
-                      </>
+                      </div>
                     );
                   })}
               </small>
@@ -136,7 +145,7 @@ function FooterComponent({ footer }: Props) {
             <div>
               <Link
                 href="#"
-                className="hover:underline mr-4 hover:text-[#FF164B]"
+                className="hover:underline text-[1rem] mr-4 hover:text-[#FF164B]"
                 target="_blank"
                 rel="noreferrer"
               >

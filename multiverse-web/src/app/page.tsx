@@ -14,7 +14,7 @@ export default async function Home() {
         <div className="flex flex-col">
           <h1
             key={home.id}
-            className=" w-full text-[1.6rem] md:text-5xl  pb-8 break-words leading-[1.1] overflow-visible pt-4"
+            className=" w-full text-[1.5rem] md:text-5xl  pb-8 break-words leading-[1] overflow-visible pt-4"
           >
             {/*<span>{home?.header}</span>*/}
             Multiverse is a multidimensional laboratory that combines multiple

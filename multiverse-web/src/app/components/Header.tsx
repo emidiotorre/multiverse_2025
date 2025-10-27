@@ -19,11 +19,11 @@ function Header() {
             <div className="flex justify-between py-4 md:pt-6 md:pb-2 w-full ">
               <div className="flex justify-start max-w-screen-2xl items-center ">
                 <div
-                  className={` flex justify-center items-center px-2 rounded-[3px] h-[2rem]   ${
+                  className={` hover:bg-[#B9B9B9] flex justify-center items-center px-2 rounded-[3px] h-[2rem]   ${
                     pathname == "/" ? " bg-[#FF164B]" : "  bg-[#d0d0d0]"
                   } `}
                 >
-                  <Link href="/" prefetch={true} className="h-fit-content">
+                  <Link href="/" prefetch={true} className="h-fit-content ">
                     MULTIVERSE STUDIO
                   </Link>
                 </div>
@@ -34,7 +34,7 @@ function Header() {
                 <Link
                   prefetch={true}
                   href="/studio"
-                  className={`flex items-center align-center px-3 rounded-[3px] transition-colors uppercase  ${
+                  className={`hover:bg-[#B9B9B9] flex items-center align-center px-3 rounded-[3px] transition-colors uppercase  ${
                     pathname?.split("/").includes("studio")
                       ? " bg-[#FF164B] z-10"
                       : " -ml-12 z-0 bg-[#d0d0d0]"
