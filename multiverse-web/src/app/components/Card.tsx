@@ -44,8 +44,8 @@ const Card = (props: Props) => {
                   //height: `min(${props?.height!}px, 250px)`,
                 }}
                 className="h-full w-full rounded-[3px] w-full md:w-auto"
-                width={Math.min(props?.width! / 2, 900)}
-                height={Math.min(props?.height! / 2, 900)}
+                width={Math.min(props?.width! / 4, 500)}
+                height={Math.min(props?.height! / 4, 500)}
                 src={props.image_url}
                 alt={""}
                 quality={100}

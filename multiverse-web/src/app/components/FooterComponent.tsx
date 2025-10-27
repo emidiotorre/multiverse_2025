@@ -86,7 +86,7 @@ function FooterComponent({ footer }: Props) {
                 {footer.contacts &&
                   footer.contacts.map((contact: any, idx: number) => {
                     return (
-                      <div key={contact.id}>
+                      <>
                         <span
                           key={contact.id}
                           className={
@@ -137,7 +137,7 @@ function FooterComponent({ footer }: Props) {
                             </>
                           )}
                         </span>
-                      </div>
+                      </>
                     );
                   })}
               </small>
